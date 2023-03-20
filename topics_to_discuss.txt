@@ -1,0 +1,25 @@
+block.py, add_transaction:
+	we should not only verify, but also validate transactions before adding them to the block, right?
+
+create TransactionOutputs at sender or at receiver?
+	- fuck the assignment pdf...
+
+
+* receive transaction from broadcast (for gossip maybe retransmit)
+* receive block from broadcast (for gossip maybe retransmit)
+
+
+block.py - mine()
+	write a mini class for msg_to_hash to avoid creating a tuple for each attempt
+
+broadcast transaction to yourself and validate it?!
+
+accumulate the amount by using the smallest utxos first => utxos unordered results in bad efficiency => set instead of dict
+
+!Somehow create a thread that polls blocks_to_mine
+
+
+!!! αν εγω αλλαζω τα utxos οσο μου ερχονται transactions, αλλα τελικα οταν τελειωσω το mining δε μπορω πλεον βαλω το block στο blockchain γιατι ηρθε καποιο αλλο block πρώτα, θα υπάρχει inconsistency μεταξυ του state του node και του blockchain
+πιθανη λυση θα ηταν το current block να κραταει καποιο δικο του state και να κανει override το state του node μονο αφου μπει στο blockchain
+
+που θα μπει το generate output? στην create ή στην execute??
