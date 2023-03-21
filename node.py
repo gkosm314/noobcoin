@@ -11,8 +11,8 @@ class bootstrap_node:
 		print("initializing bootstrap")
 		self.wallet = wallet.Wallet()
 		self.number_of_nodes = number_of_nodes_arg
-		self.public_key_table = {}
-		self.network_info_table = {} # TODO: I removed bootstrap data from the tables
+		self.public_key_table = {0: self.wallet.public_key}
+		self.network_info_table = {self.wallet.public_key: (bootstrap_ip_arg, bootstrap_port_arg)}
 		self.max_id = 0
 		self.create_genesis_block()
 		
@@ -83,7 +83,7 @@ class uninitialized_node:
 
 	def produce_node(self):
 		return node(self.node_id, self.wallet.private_key, self.public_key_table, self.network_info_table, self.genesis_block)
-
+	
 
 class node:
 
@@ -100,8 +100,10 @@ class node:
 		self.network_info = network_info_dict_arg
 
 		self.current_blockchain = blockchain.Blockchain(genesis_block_arg, self.public_key.values())
-		
+
 		self.current_block = block.Block(1,genesis_block_arg.previous_hash)
+		self.transactions_buffer = []
+		self.blocks_buffer = []
 
 	def create_transaction(self, recipient_id_arg, amount_arg):
 		#Select appropriate UTXOs to cover the amount by including UTXOs until you reach the needed amount
@@ -162,9 +164,14 @@ class node:
 		'''Broadcasts a block to every node'''
 
 		headers = {"Content-Type": "application/json; charset=utf-8"}
-		payload = tx.toJSON()
-		for (ip, port) in self.bootstrap_node.network_info_table.values():
-			req = requests.post(f"http://{ip}:{port}/receive_transaction", headers=headers, data = json.dumps(payload))
+		payload_dict = {
+            "tx_obj": tx, 
+        }
+		payload_json = jsonpickle.encode(payload_dict, keys=True)
+
+		for public_key, network_info_tuple in self.bootstrap_node.network_info_table.items():
+			ip, port = network_info_tuple
+			req = requests.post(f"http://{ip}:{port}/post_transaction", headers=headers, data=payload_json)
 
 	def verify_signature(self, tx: transaction):
 		'''
@@ -242,6 +249,10 @@ class node:
 
 		return True
 
+	def receive_transaction(self, tx):
+		''' '''
+		self.transactions_buffer.append(tx)
+
 	def wallet_balance(self, public_key_arg):
 		'''Returns the balance of a specific public address.'''
 		return self.current_blockchain.wallet_sum[public_key_arg]
@@ -250,9 +261,10 @@ class node:
 		'''Broadcasts a block to every node'''
 
 		headers = {"Content-Type": "application/json; charset=utf-8"}
-		payload = b.toJSON()
+		payload_dict = {"block_obj": b}
+		payload_json = jsonpickle.encode(payload_dict, keys=True)
 		for (ip, port) in self.bootstrap_node.network_info_table.values():
-			req = requests.post(f"http://{ip}:{port}/receive_block", headers=headers, data = json.dumps(payload))
+			req = requests.post(f"http://{ip}:{port}/post_block", headers=headers, data = payload_json)
 	
 	def valid_hash_of_block(self, b: block):
 		'''Check that the current_hash of the block_to_validate is actually its hash by recalculating it'''	

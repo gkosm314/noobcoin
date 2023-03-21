@@ -1,2 +1,5 @@
 __pycache__/
 config.py
+test_stuff.py
+demo_server.py
+hit_post.py

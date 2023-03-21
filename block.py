@@ -90,13 +90,3 @@ class Block:
         #hash of this block
         #type: bytes
         self.current_hash = next_hash
-
-    def toJSON(self):
-        return {
-            'index': self.index,
-            'timestamp': self.timestamp,
-            'transactions': [t.toJSON() for t in self.transactions],
-            'previous_hash': self.previous_hash.hex(),
-            'current_hash': self.current_hash.hex(),
-            'nonce': self.nonce
-        }
