@@ -1,5 +1,6 @@
 import block
 import transaction
+import state
 
 class Blockchain:
 
@@ -14,35 +15,55 @@ class Blockchain:
         #type: list of 'block' objects		
 		self.chain = [genesis_block]
 
-		#self.utxo 						- dict such that utxo[public] is a dict of utxos
-		#self.utxo 						- dict of dicts of utxos
-		#self.utxo[public_key]			- dict of utxos
-		#self.utxo[public_key][utxo_id]	- TransactionOutput object	
-		
-		self.utxo = dict()
-		for public_key in public_key_values:
-			self.utxo[public_key] = dict()
+		#Create an empty utxo state for the public addresses that will be involved in this blockchain
+		self.state = state.State(public_key_values, genesis_block)
 
-		#self.wallet_sum - dict such that wallet_sum[public_key] = sum of TransactionOutput.value inside self.utxo[public_key]
-		self.wallet_sum = dict()
-		for public_key in public_key_values:
-			self.wallet_sum[public_key] = 0	
-
-		#Add initial UTXO of bootstrap node
-		initial_tx = genesis_block.transactions[0]
-		initial_utxo = transaction.TransactionOutput(initial_tx.transaction_id, 0, initial_tx.receiver_address, initial_tx.amount)
-		self.utxo[initial_tx.receiver_address][initial_utxo.output_id] = initial_utxo
-
+		#Empty set that will include all transaction_id of every transaction in the blockchain
+		self.transactions_included = set()
 
 	def __len__(self):
 		return len(self.chain)
 
-	def add_block(self, new_block: block, new_block_utxo):
+	def attach_block(self, new_block: block):
 		'''
 		Assumption: the new_block is already validated.
 		'''
-		
+				
+		#Execute each transaction inside the block and add its id to the set of transactions included in the blockchain
+		#We do not validate because we assume that the TX is already validated by whoever added it to the block
+		for tx in new_block.transactions:
+			self.state.execute_transcation(tx)
+			self.transactions_included.add(tx.transaction_id)
+
 		#Append new block to the list of validated blocks and update blockchain's available UTXOs
 		self.chain.append(new_block)
-		self.utxo = new_block_utxo
 
+	def hashes_of_blocks(self):
+		return [b.current_hash for b in self.chain]
+
+	def attach_chain(self, list_of_blocks, hash_of_last_remaining_block):
+
+		index_of_last_remaining_block = 0
+		while self.chain[index_of_last_remaining_block].current_hash != hash_of_last_remaining_block:
+			index_of_last_remaining_block += 1
+
+		#Update the transactions_included set
+		for b in self.chain[(index_of_last_remaining_block+1):]:
+			for tx in b.transactions:
+				self.transactions_included.remove(tx.transaction_id)
+
+		for b in list_of_blocks:
+			for tx in b.transactions:
+				self.transactions_included.add(tx.transaction_id)
+
+		#Keep the remaining part of the list and concat the list of the new blocks
+		self.chain = self.chain[0:(index_of_last_remaining_block+1)] + list_of_blocks
+
+		#Reconstruct blockchain state - TODO: replace with undo and redo
+		self.state = state.State(public_key_values, genesis_block)
+		for b in self.chain:
+			if b.index == 0:
+				continue
+			else:
+				for tx in b.transactions:
+					self.state.execute_transcation(tx)
