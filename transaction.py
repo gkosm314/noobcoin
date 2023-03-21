@@ -105,6 +105,15 @@ class Transaction:
 			tx_output_recipient = TransactionOutput(self.transaction_id,0,self.receiver_address,self.amount)
 			self.transaction_outputs = [tx_output_recipient]			
 
+	def toJSON(self):
+		return {
+			"sender_address": wallet.public_key2str(self.sender_address),
+			"receiver_address": wallet.public_key2str(self.receiver_address),
+			"amount": self.amount,
+			"transaction_inputs": self.transaction_inputs,
+			"signature": self.signature.hex(), 
+			"transaction_id": self.transaction_id.hex()
+		}
 
 class TransactionOutput:
 

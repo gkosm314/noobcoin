@@ -1,5 +1,5 @@
 import requests
-import json, jsonpickle
+import json
 import sys 
 import time
 import pickle
@@ -33,48 +33,23 @@ class node_network_wrapper:
 
         headers = {"Content-Type": "application/json; charset=utf-8"}
         
-        payload_dict = {
-            "my_public_key": self.node.wallet.public_key, 
-            "my_ip": self.ip, 
-            "my_port": self.port
-        }
-        payload_json = jsonpickle.encode(payload_dict, keys=True)
-        
-        req = requests.post(f"http://{self.bootstrap_ip}:{self.bootstrap_port}/register", headers=headers, data = payload_json)
+        # serialize public key
+        public_key = wallet.public_key2str(self.node.wallet.public_key)
+        payload = {"my_public_key": public_key, "my_ip": self.ip, "my_port": self.port}
+        req = requests.post(f"http://{self.bootstrap_ip}:{self.bootstrap_port}/register", headers=headers, data = json.dumps(payload))
         print("i just registered myself and received", req.json())
-        added_flag = req.json()['added']
-        my_id = req.json()['assigned_id']
-        if added_flag:
-            self.node.set_node_id(my_id)
         
 
     def save_net_info(self, public_keys_table_arg, ips_table_arg, genesis_block_arg):
-        self.node.set_network_info_table(ips_table_arg)
-        self.node.set_public_key_table(public_keys_table_arg)
-        self.node.set_genesis_block(genesis_block_arg)
+        
+        # self.node.set_network_info_table(ips_table_arg)
+        # self.node.set_public_key_table(public_keys_table_arg)
+        # self.node.set_genesis_block(genesis_block_arg)
 
-        self.node = self.node.produce_node()
+        # self.node = self.node.produce_node()
         self.registration_completed = True
         print("saving info...")
 
-    def handle_incoming_tx(self, tx):
-        self.node.receive_transaction(tx)
-
-    def handle_incoming_block(self, b):
-        self.node.receive_transaction(tx)
-
-    def get_blockchain_length(self):
-        return len(self.node.current_blockchain)
-
-    def get_blockchain_diff(self, hashes_list):
-        i = 0
-        while i < len(hashes_list):
-            if hashes_list[i] == self.current_blockchain.chain[i].current_hash: 
-                i+=1
-            else:
-                break
-        diff = self.current_blockchain.chain[i:]
-        return diff
 
 class boostrap_network_wrapper:
     
@@ -98,18 +73,18 @@ class boostrap_network_wrapper:
         self.bcast_initial_state()
 
     def register_node(self, node_ip, node_port, node_public_key): 
+        if (self.nodes_cnt >= self.bootstrap_node.number_of_nodes):
+            self.registration_completed = True
+            return {"added": False, "assigned_id": -1}
+        
+        #de-serialize public key
+        node_public_key = wallet.str2public_key(node_public_key)
         new_id = self.bootstrap_node.add_node(node_public_key, node_ip, node_port)
         
         if (new_id == -1): # node has been already added
             return {"added": False, "assigned_id": -1}
 
         self.nodes_cnt+=1
-
-        if (self.nodes_cnt == self.bootstrap_node.number_of_nodes): # all nodes have registered
-            self.registration_completed = True
-
-        elif (self.nodes_cnt > self.bootstrap_node.number_of_nodes): # all nodes have registered
-            return {"added": False, "assigned_id": -2}
 
         return {"added": True, "assigned_id": new_id}
 
@@ -119,20 +94,16 @@ class boostrap_network_wrapper:
         
         print("broadcasting init state")
         headers = {"Content-Type": "application/json; charset=utf-8"}
-        payload_dict = {
-            "public_keys_table": self.bootstrap_node.public_key_table, 
-            "ips_table": self.bootstrap_node.network_info_table, 
-            "genesis_block": self.bootstrap_node.g
+        payload = {
+            'public_keys_table': wallet.public_keys_table2json(self.bootstrap_node.public_key_table), 
+            'ips_table': wallet.network_info_table2json(self.bootstrap_node.network_info_table), 
+            'genesis_block': self.bootstrap_node.g.toJSON()
         }
-        payload_json = jsonpickle.encode(payload_dict, keys=True)
+        
+        for (ip, port) in self.bootstrap_node.network_info_table.values():
+            req = requests.post(f"http://{ip}:{port}/net-info", headers=headers, data = json.dumps(payload))
+            print(req.json())
 
-        for public_key, network_info_tuple in self.bootstrap_node.network_info_table.items():
-            if public_key == self.bootstrap_node.wallet.public_key:
-                # don't broadcast to self
-                continue
-            ip, port = network_info_tuple
-            req = requests.post(f"http://{ip}:{port}/post_net_info", headers=headers, data = payload_json)
-            
     
 
 if __name__=="__main__":
@@ -141,7 +112,6 @@ if __name__=="__main__":
     if role == "bootstrap":
         bootstrap_wrapper = boostrap_network_wrapper(BOOTSTRAP_IP, BOOTSTRAP_PORT, TOTAL_NODES)
         print("end of init phase")
-        # node_wrapper = node_network_wrapper(NODE_IP, NODE_PORT, BOOTSTRAP_IP, BOOTSTRAP_PORT)
 
     elif role == "node1":
         node_wrapper = node_network_wrapper(NODE_IP, NODE_PORT, BOOTSTRAP_IP, BOOTSTRAP_PORT)
