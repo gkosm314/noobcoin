@@ -51,11 +51,13 @@ class Block:
 
         #We cannot add the tx if the block will have more than the allowed transactions after the addition
         if len(self.transactions) + 1 > config.capacity:
-            raise Exception('Block already full, no more transactions can be added.')
+            #raise Exception('Block already full, no more transactions can be added.')
+            return False
 
         #Add the transaction to the block by appending it to the transactions list
         self.transactions.append(tx)
         self.transaction_hashes.append(tx.transaction_id)
+        return True
 
     def full(self):
         '''Returns True if the block is full and False otherwise'''

@@ -99,7 +99,7 @@ class node_api_server():
             # print(f"[POST request blockchain length handler] received req")                
             
             length = self.node_wrapper.get_blockchain_length()
-            print("\n\n\n\n\n\n\n\nLENGTH\n\n\n\n\n\n\n\n")
+            # print("\n\n\n\n\n\n\n\nLENGTH\n\n\n\n\n\n\n\n")
             payload_dict = {"length": length}
             payload_json = jsonpickle.encode(payload_dict, keys=True)
             return payload_json, 201
@@ -115,12 +115,12 @@ class node_api_server():
             
             incoming_payload_json = request.get_data()
             incoming_payload_dict = jsonpickle.decode(incoming_payload_json, keys=True)
-            print("\n\n\n\n\n\n", incoming_payload_dict)
+            # print("\n\n\n\n\n\n", incoming_payload_dict)
 
             hashes_list = incoming_payload_dict["hashes_list"]
             blockchain_diff, parent_hash = self.node_wrapper.get_blockchain_diff(hashes_list)
             # print("\n\n\n\n\n", blockchain_diff)
-            print(parent_hash)
+            # print(parent_hash)
 
             outcoming_payload_dict = {
                 "list_of_blocks": blockchain_diff,

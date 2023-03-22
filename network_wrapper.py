@@ -49,6 +49,7 @@ class node_network_wrapper:
             self.bcast_initial_state()
             self.node = self.bootstrap_node.produce_node()
 
+
     def register(self):
         '''send public key to bootstrap'''
 
@@ -88,17 +89,20 @@ class node_network_wrapper:
         return len(self.node.current_blockchain)
 
     def get_blockchain_diff(self, hashes_list):
-        return (['a','b'], b'v')
-        # i = 0
-        # while i < len(hashes_list):
-        #     if hashes_list[i] == self.node.current_blockchain.chain[i].current_hash: 
-        #         i+=1
-        #     else:
-        #         break
-        # diff = self.node.current_blockchain.chain[i:]
-        # print(diff)
-        # parent_hash = diff[0].previous_hash
-        # return (diff, parent_hash)
+        i = 0
+        while i < len(hashes_list):
+            if hashes_list[i] == self.node.current_blockchain.chain[i].current_hash: 
+                i+=1
+            else:
+                break
+        diff = self.node.current_blockchain.chain[i:]
+        print(diff)
+        if not diff: # diff is empty
+            parent_hash = hashes_list[-1]
+        else:    
+            parent_hash = diff[0].previous_hash
+        print(parent_hash)
+        return (diff, parent_hash)
 
     def register_node(self, node_ip, node_port, node_public_key): 
         new_id = self.bootstrap_node.add_node(node_public_key, node_ip, node_port)
@@ -145,37 +149,74 @@ if __name__=="__main__":
         print("end of init phase")
         # node_wrapper = node_network_wrapper(NODE_IP, NODE_PORT, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT)
 
-        # n = bootstrap_wrapper.node
-        # n.create_transaction(1, 100)
-        # n.create_transaction(2, 100)
-        # n.create_transaction(3, 100)
+        n = bootstrap_wrapper.node
+        time.sleep(5)
+        n.create_transaction(1, 100)
+        n.create_transaction(2, 100)
+        n.create_transaction(3, 100)
+        time.sleep(20)
+        n.view_transactions()   
+        print([str(tx) for tx in n.transactions_buffer])
+        print(len(n.current_blockchain.transactions_included))     
+        print(n.wallet_balance(0))
+        print(n.wallet_balance(1))
+        print(n.wallet_balance(2))
+        print(n.wallet_balance(3))
 
     elif role == "node1":
         node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
-        # print(node_wrapper.node.node_id)
-        # print('\n\n\n')
-        # print(node_wrapper.node.network_info)
-        # print('\n\n\n')
-        # print(node_wrapper.node.public_key)
         print("end of init phase")
-        n = node_wrapper.node
+        n = node_wrapper.node        
+        time.sleep(10)
+        n.create_transaction(3, 1)
+        n.create_transaction(0, 1)
+        n.create_transaction(2, 1)
+        n.create_transaction(3, 1)
+        n.create_transaction(2, 1)
+        time.sleep(20)       
+        n.view_transactions()
+        print([str(tx) for tx in n.transactions_buffer])
+        print(len(n.current_blockchain.transactions_included))              
+        print(n.wallet_balance(0))
+        print(n.wallet_balance(1))
+        print(n.wallet_balance(2))
+        print(n.wallet_balance(3))
 
     elif role == "node2":
         node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+1, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
-        # print(node_wrapper.node.node_id)
-        # print('\n\n\n')
-        # print(node_wrapper.node.network_info)
-        # sprint('\n\n\n')
-        # print(node_wrapper.node.public_key)
         print("end of init phase")
-        n = node_wrapper.node
+        n = node_wrapper.node        
+        time.sleep(10)     
+        n.create_transaction(1, 1)
+        n.create_transaction(3, 1)
+        n.create_transaction(0, 1)
+        n.create_transaction(1, 1)
+        n.create_transaction(1, 1) 
+        n.create_transaction(0, 1)
+        n.create_transaction(1, 1)
+        time.sleep(20)
+        n.view_transactions()
+        print([str(tx) for tx in n.transactions_buffer])  
+        print(len(n.current_blockchain.transactions_included))     
+        print(n.wallet_balance(0))
+        print(n.wallet_balance(1))
+        print(n.wallet_balance(2))
+        print(n.wallet_balance(3))        
 
     elif role == "node3":
         node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+2, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
-        # print(node_wrapper.node.node_id)
-        # print('\n\n\n')
-        # print(node_wrapper.node.network_info)
-        # print('\n\n\n')
-        # print(node_wrapper.node.public_key)
         print("end of init phase")
-        n = node_wrapper.node        
+        n = node_wrapper.node
+        time.sleep(10)    
+        n.create_transaction(0, 1)
+        n.create_transaction(1, 1)
+        n.create_transaction(2, 1)
+        n.create_transaction(1, 1)
+        time.sleep(10)
+        n.view_transactions()
+        print([str(tx) for tx in n.transactions_buffer])
+        print(len(n.current_blockchain.transactions_included))
+        print(n.wallet_balance(0))
+        print(n.wallet_balance(1))
+        print(n.wallet_balance(2))
+        print(n.wallet_balance(3))          

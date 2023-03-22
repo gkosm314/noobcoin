@@ -114,7 +114,7 @@ class node:
 		
 		#empty block that will be filled with the transactions we will receive
 		self.current_block = block.Block(1,genesis_block_arg.current_hash)
-		self.current_block_available = True
+		# self.current_block_available = True
 		
 		#state the corresponds to the state of the blockchain if the transactions inside the current_block were executed
 		self.current_state = state.State(public_key_list_arg.values(), genesis_block_arg)
@@ -128,6 +128,9 @@ class node:
 		#lock which prevents mining while adding transactions to the current block
 		self.mine_lock_held = False
 
+		#lock which prevents two transactions to be created simultaneously
+		self.create_tx_lock_held = False		
+
 		# start a new thread for mining:
 		t = threading.Thread(target=lambda: self.poll_for_mining())
 		t.start()
@@ -140,6 +143,11 @@ class node:
 			time.sleep(1)
 
 	def create_transaction(self, recipient_id_arg, amount_arg):
+		#Busy waiting so that no more than one transaction can be created simultaneously
+		while self.create_tx_lock_held:
+			time.sleep(1)
+		self.create_tx_lock_held = True	
+
 		my_public_key = self.public_key[self.node_id]
 
 		#Select appropriate UTXOs to cover the amount by including UTXOs until you reach the needed amount
@@ -191,7 +199,11 @@ class node:
 			self.receive_transaction(tx)
 		else:
 			print("Your wallet does not have enough coins for this transcaction to be performed.")
+			self.create_tx_lock_held = False
 			return False
+
+		self.create_tx_lock_held = False
+		return True
 		
 	def view_transactions(self):
 		'''Prints the transactions that are included in the last block.'''
@@ -214,21 +226,22 @@ class node:
 			self.current_block.add_transaction(tx)
 		self.mine_lock_held = False
 
-
 	def receive_transaction(self, tx: transaction):
 		''' This method is called by the network_wrapper when a transaction is received.'''
 		print(f"receive tx {tx.transaction_id}")
 		#If the current_block still accepts more TXs, then work with it
-		if self.current_block_available:
+		# if self.current_block_available:
+		if not self.current_block.full():
 			self.add_transaction_to_current_block(tx)
 		else:
 			#If the current_block is full, append the TX to a buffer so that a future block can grab it
+			print("yo")
 			self.transactions_buffer.append(tx)
 
 	def mine_current_block(self):
 		print("start mine_current_block")
-		#Flag current_block as unavailable
-		self.current_block_available = False
+		# #Flag current_block as unavailable
+		# self.current_block_available = False
 
 		#Mine this block
 		self.current_block.mine()
@@ -259,9 +272,12 @@ class node:
 		while self.transactions_buffer:
 			tx = self.transactions_buffer.pop()
 			self.add_transaction_to_current_block(tx)
+		# print("stop consuming transaction buffer")
+		print(self.transactions_buffer)
 
+		# #Flag current_block as unavailable
+		# self.current_block_available = True
 
-		print("stop consuming transaction buffer")
 		print("end mine_current_block")
 
 	def broadcast_transaction(self, tx: transaction):
@@ -281,9 +297,9 @@ class node:
 				continue			
 			req = requests.post(f"http://{ip}:{port}/post_transaction", headers=headers, data=payload_json)
 
-	def wallet_balance(self, public_key_arg):
+	def wallet_balance(self, node_id_arg):
 		'''Returns the balance of a specific public address.'''
-		return self.current_blockchain.state.wallet_sum[public_key_arg]
+		return self.current_blockchain.state.wallet_sum[self.public_key[node_id_arg]]
 
 	def broadcast_block(self, b: block):
 		'''Broadcasts a block to every node'''
@@ -388,7 +404,7 @@ class node:
 	
 		#Initialize variable for the maximum length sent so far by other nodes
 		longest_blockchain_node = self.node_id
-		longest_blockchain_length = 1
+		longest_blockchain_length = len(self.current_blockchain)
 
 		#Broadcast request for blockchain length
 		headers = {"Content-Type": "application/json; charset=utf-8"}
@@ -407,7 +423,7 @@ class node:
 			
 			payload_dict = jsonpickle.decode(req.json(), keys=True)
 			length_of_blockchain = payload_dict["length"]
-			print("received length: ", length_of_blockchain)
+			# print("received length: ", length_of_blockchain)
 
 			#Compare the length you received to find out which node to ask for its blockchain
 			if length_of_blockchain > longest_blockchain_length:
@@ -417,15 +433,18 @@ class node:
 				longest_blockchain_node = id_of_node
 				longest_blockchain_length = length_of_blockchain
 
+		if longest_blockchain_node == self.node_id:
+			return True
+		
 		#Grab the hashes of the blocks in the blockchain and construct the payload
 		hashes_of_blockchain = self.current_blockchain.hashes_of_blocks()
 		hashes_of_blockchain_payload_dict = {"hashes_list": hashes_of_blockchain}
-		print(hashes_of_blockchain_payload_dict)
+		# print(hashes_of_blockchain_payload_dict)
 		hashes_of_blockchain_payload_json = jsonpickle.encode(hashes_of_blockchain_payload_dict, keys=True)
 
 		#Send request to the node with the largest 
 		req = requests.post(f"http://{ip}:{port}/request_blockchain_diff", headers=headers, data=hashes_of_blockchain_payload_json)
-		print("\n\n\n\n handling stuff")
+		# print("\n\n\n\n handling stuff")
 		payload_dict = jsonpickle.decode(req.json(), keys=True)
 
 		#TODO: deserialize response to this request and extract

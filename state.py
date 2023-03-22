@@ -27,6 +27,7 @@ class State(object):
 		
 		#Add the UTXO to the recipient's (=bootstrap) UTXOs and update its wallet
 		self.utxo[initial_utxo.recipient_address][initial_utxo.output_id] = initial_utxo
+		self.wallet_sum[initial_utxo.recipient_address] += initial_utxo.value
 
 	def add_utxo(self, utxo_arg):
 		#Add UTXO and update recipient's wallet amount
