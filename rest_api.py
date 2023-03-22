@@ -13,6 +13,9 @@ class node_api_server():
         self.port = port_arg
         self.parent_class = parent_class_arg
         
+        api.add_resource(self.register_endpoint, '/register', 
+            resource_class_kwargs={'network_wrapper_class_arg': self.parent_class})
+
         api.add_resource(self.net_info_endpoint, '/post_net_info', 
             resource_class_kwargs={'network_wrapper_class_arg': self.parent_class})
         
@@ -117,17 +120,6 @@ class node_api_server():
             outcoming_payload_json = jsonpickle.encode(incoming_payload_dict, keys=True)
 
             return outcoming_payload_json, 201
-
-
-class bootstrap_api_server(node_api_server):
-    def __init__(self, ip_arg, port_arg, parent_class_arg):
-        super(bootstrap_api_server, self).__init__()      
-        api.add_resource(self.register_endpoint, '/register', resource_class_kwargs={'network_wrapper_class_arg': self.parent_class})
-
-
-    def run(self):
-        t = threading.Thread(target=lambda: app.run(host=self.ip, port=self.port, debug=True, use_reloader=False))
-        t.start()
 
     class register_endpoint(Resource):
         def __init__(self, network_wrapper_class_arg):

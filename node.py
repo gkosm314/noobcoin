@@ -67,7 +67,7 @@ class bootstrap_node:
 		return node_id
 
 	def produce_node(self):
-		return node(0, self.wallet.private_key, self.public_key_table, self.network_info_table, self.genesis_block)
+		return node(0, self.wallet.private_key, self.public_key_table, self.network_info_table, self.g)
 
 
 

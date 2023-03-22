@@ -13,26 +13,42 @@ import wallet
 
 class node_network_wrapper:
     
-    def __init__(self, node_ip_arg, node_port_arg, bootstrap_ip_arg, bootstrap_port_arg):
-        self.node = node.uninitialized_node()
+    def __init__(self, node_ip_arg, node_port_arg, bootstrap_ip_arg, bootstrap_port_arg, total_nodes_arg, is_bootstrap):
+        if not is_bootstrap:
+            self.node = node.uninitialized_node()
+        else:
+            self.bootstrap_node = node.bootstrap_node(total_nodes_arg, bootstrap_ip_arg, bootstrap_port_arg)
+            self.nodes_cnt = 0
 
-        self.ip = node_ip_arg     # maybe move them to bootstrap_api_server
-        self.port = node_port_arg # maybe move them to bootstrap_api_server
-        self.bootstrap_ip = bootstrap_ip_arg     # maybe move them to bootstrap_api_server
-        self.bootstrap_port = bootstrap_port_arg # maybe move them to bootstrap_api_server
-        
+        self.ip = node_ip_arg     
+        self.port = node_port_arg 
+        self.bootstrap_ip = bootstrap_ip_arg     
+        self.bootstrap_port = bootstrap_port_arg 
+
         self.api_server = rest_api.node_api_server(self.ip, self.port, self)
-        self.registration_completed = False # for the uninitialized node registration completes when mutates to node
-        
-        self.api_server.run() 
-        time.sleep(3)
-        self.register()
+        self.registration_completed = False 
 
-        while 1:
-            if self.registration_completed:
-                print("node registered")
-                break
-            time.sleep(1)
+        self.api_server.run() 
+
+        if not is_bootstrap:
+            time.sleep(3)
+            self.register()
+
+            while 1:
+                if self.registration_completed:
+                    print("node registered")
+                    break
+                time.sleep(1)
+        else:
+            while 1:
+                if self.registration_completed: 
+                    print("All nodes registered")
+                    break
+                time.sleep(1)
+        
+            time.sleep(10)
+            self.bcast_initial_state()
+            self.node = self.bootstrap_node.produce_node()
 
     def register(self):
         '''send public key to bootstrap'''
@@ -52,8 +68,7 @@ class node_network_wrapper:
         added_flag = req.json()['added']
         my_id = req.json()['assigned_id']
         if added_flag:
-            self.node.set_node_id(my_id)
-        
+            self.node.set_node_id(my_id)  
 
     def save_net_info(self, public_keys_table_arg, ips_table_arg, genesis_block_arg):
         self.node.set_network_info_table(ips_table_arg)
@@ -83,28 +98,6 @@ class node_network_wrapper:
         diff = self.current_blockchain.chain[i:]
         return diff
 
-class boostrap_network_wrapper:
-    
-    def __init__(self, bootstrap_ip_arg, bootstrap_port_arg, total_nodes_arg):
-        self.bootstrap_node = node.bootstrap_node(total_nodes_arg, bootstrap_ip_arg, bootstrap_port_arg)
-
-        self.bootstrap_ip = bootstrap_ip_arg     # maybe move them to bootstrap_api_server
-        self.bootstrap_port = bootstrap_port_arg # maybe move them to bootstrap_api_server
-        self.api_server = rest_api.bootstrap_api_server(self.bootstrap_ip, self.bootstrap_port, self)
-        self.nodes_cnt = 0
-        self.registration_completed = False
-
-        self.api_server.run()    
-        
-        while 1:
-            if self.registration_completed: 
-                print("All nodes registered")
-                break
-            time.sleep(1)
-        
-        time.sleep(10)
-        self.bcast_initial_state()
-
     def register_node(self, node_ip, node_port, node_public_key): 
         new_id = self.bootstrap_node.add_node(node_public_key, node_ip, node_port)
         
@@ -120,7 +113,6 @@ class boostrap_network_wrapper:
             return {"added": False, "assigned_id": -2}
 
         return {"added": True, "assigned_id": new_id}
-
 
     def bcast_initial_state(self):
         '''Broadcast to all the nodes the network info table, public key table and genesis block'''
@@ -147,12 +139,15 @@ if __name__=="__main__":
     role = sys.argv[1]
 
     if role == "bootstrap":
-        bootstrap_wrapper = boostrap_network_wrapper(BOOTSTRAP_IP, BOOTSTRAP_PORT, TOTAL_NODES)
+        bootstrap_wrapper = node_network_wrapper(BOOTSTRAP_IP, BOOTSTRAP_PORT, BOOTSTRAP_IP, BOOTSTRAP_PORT, TOTAL_NODES, True)
         print("end of init phase")
         # node_wrapper = node_network_wrapper(NODE_IP, NODE_PORT, BOOTSTRAP_IP, BOOTSTRAP_PORT)
 
+        n = bootstrap_wrapper.node
+        n.view_transactions()
+
     elif role == "node1":
-        node_wrapper = node_network_wrapper(NODE_IP, NODE_PORT, BOOTSTRAP_IP, BOOTSTRAP_PORT)
+        node_wrapper = node_network_wrapper(NODE_IP, NODE_PORT, BOOTSTRAP_IP, BOOTSTRAP_PORT, TOTAL_NODES, False)
         # print(node_wrapper.node.node_id)
         # print('\n\n\n')
         # print(node_wrapper.node.network_info)
@@ -163,7 +158,7 @@ if __name__=="__main__":
         n.view_transactions()
 
     elif role == "node2":
-        node_wrapper = node_network_wrapper(NODE_IP, NODE_PORT+1, BOOTSTRAP_IP, BOOTSTRAP_PORT)
+        node_wrapper = node_network_wrapper(NODE_IP, NODE_PORT+1, BOOTSTRAP_IP, BOOTSTRAP_PORT, TOTAL_NODES, False)
         # print(node_wrapper.node.node_id)
         # print('\n\n\n')
         # print(node_wrapper.node.network_info)
@@ -174,7 +169,7 @@ if __name__=="__main__":
         n.view_transactions()
         
     elif role == "node3":
-        node_wrapper = node_network_wrapper(NODE_IP, NODE_PORT+2, BOOTSTRAP_IP, BOOTSTRAP_PORT)
+        node_wrapper = node_network_wrapper(NODE_IP, NODE_PORT+2, BOOTSTRAP_IP, BOOTSTRAP_PORT, TOTAL_NODES, False)
         # print(node_wrapper.node.node_id)
         # print('\n\n\n')
         # print(node_wrapper.node.network_info)
