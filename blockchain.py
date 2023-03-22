@@ -11,12 +11,15 @@ class Blockchain:
 		This object keeps the list of validated blocks and the UTXOs at the end of the 
 		'''
 
+		#list of public keys
+		self.public_key_list = public_key_values
+
         #list of validated blocks
         #type: list of 'block' objects		
 		self.chain = [genesis_block]
 
 		#Create an empty utxo state for the public addresses that will be involved in this blockchain
-		self.state = state.State(public_key_values, genesis_block)
+		self.state = state.State(self.public_key_list, genesis_block)
 
 		#Empty set that will include all transaction_id of every transaction in the blockchain
 		self.transactions_included = set()
@@ -60,7 +63,7 @@ class Blockchain:
 		self.chain = self.chain[0:(index_of_last_remaining_block+1)] + list_of_blocks
 
 		#Reconstruct blockchain state - TODO: replace with undo and redo
-		self.state = state.State(public_key_values, genesis_block)
+		self.state = state.State(self.public_key_list, self.chain[0])
 		for b in self.chain:
 			if b.index == 0:
 				continue

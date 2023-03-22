@@ -1,7 +1,7 @@
 import time
 import transaction
 import rsa
-from config import *
+import config 
 
 def starts_with_difficulty_zeros(next_hash, difficulty):
     next_hash = int.from_bytes(next_hash, "big")   
@@ -48,7 +48,7 @@ class Block:
         '''
 
         #We cannot add the tx if the block will have more than the allowed transactions after the addition
-        if len(self.transactions) + 1 > capacity:
+        if len(self.transactions) + 1 > config.capacity:
             raise Exception('Block already full, no more transactions can be added.')
 
         #Add the transaction to the block by appending it to the transactions list
@@ -57,7 +57,7 @@ class Block:
     def full(self):
         '''Returns True if the block is full and False otherwise'''
 
-        if len(self.transactions) < capacity:
+        if len(self.transactions) < config.capacity:
             return False
         else:
             return True
@@ -73,7 +73,7 @@ class Block:
         next_hash = rsa.compute_hash(candidate_msg_to_hash.encode(), 'SHA-1')
 
         #Note: this one-liner is also used at valid_hash_of_block() in node.py. In case it is changed, change it there too!    
-        while not starts_with_difficulty_zeros(next_hash, difficulty):
+        while not starts_with_difficulty_zeros(next_hash, config.difficulty):
             #try another nonce
             candidate_nonce += 1
             candidate_msg_to_hash = str((self.index, self.timestamp, self.transactions, self.previous_hash, candidate_nonce))

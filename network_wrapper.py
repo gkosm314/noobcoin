@@ -3,9 +3,8 @@ import json, jsonpickle
 import sys 
 import time
 import pickle
-
+import config
 import node
-from config import *
 import rest_api
 import wallet
 
@@ -18,12 +17,12 @@ class node_network_wrapper:
             self.node = node.uninitialized_node()
         else:
             self.bootstrap_node = node.bootstrap_node(total_nodes_arg, bootstrap_ip_arg, bootstrap_port_arg)
-            self.nodes_cnt = 0
+            self.nodes_cnt = 1 # take into account bootstrap
 
         self.ip = node_ip_arg     
         self.port = node_port_arg 
-        self.bootstrap_ip = bootstrap_ip_arg     
-        self.bootstrap_port = bootstrap_port_arg 
+        self.bootstrap_ip = bootstrap_ip_arg
+        self.bootstrap_port = bootstrap_port_arg
 
         self.api_server = rest_api.node_api_server(self.ip, self.port, self)
         self.registration_completed = False 
@@ -76,14 +75,14 @@ class node_network_wrapper:
         self.node.set_genesis_block(genesis_block_arg)
 
         self.node = self.node.produce_node()
-        self.registration_completed = True
         print("saving info...")
+        self.registration_completed = True
 
     def handle_incoming_tx(self, tx):
         self.node.receive_transaction(tx)
 
     def handle_incoming_block(self, b):
-        self.node.receive_transaction(tx)
+        self.node.receive_transaction(b)
 
     def get_blockchain_length(self):
         return len(self.node.current_blockchain)
@@ -139,15 +138,17 @@ if __name__=="__main__":
     role = sys.argv[1]
 
     if role == "bootstrap":
-        bootstrap_wrapper = node_network_wrapper(BOOTSTRAP_IP, BOOTSTRAP_PORT, BOOTSTRAP_IP, BOOTSTRAP_PORT, TOTAL_NODES, True)
+        bootstrap_wrapper = node_network_wrapper(config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, True)
         print("end of init phase")
-        # node_wrapper = node_network_wrapper(NODE_IP, NODE_PORT, BOOTSTRAP_IP, BOOTSTRAP_PORT)
+        # node_wrapper = node_network_wrapper(NODE_IP, NODE_PORT, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT)
 
         n = bootstrap_wrapper.node
-        n.view_transactions()
+        n.create_transaction(1, 100)
+        n.create_transaction(2, 100)
+        n.create_transaction(3, 100)
 
     elif role == "node1":
-        node_wrapper = node_network_wrapper(NODE_IP, NODE_PORT, BOOTSTRAP_IP, BOOTSTRAP_PORT, TOTAL_NODES, False)
+        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
         # print(node_wrapper.node.node_id)
         # print('\n\n\n')
         # print(node_wrapper.node.network_info)
@@ -155,27 +156,23 @@ if __name__=="__main__":
         # print(node_wrapper.node.public_key)
         print("end of init phase")
         n = node_wrapper.node
-        n.view_transactions()
 
     elif role == "node2":
-        node_wrapper = node_network_wrapper(NODE_IP, NODE_PORT+1, BOOTSTRAP_IP, BOOTSTRAP_PORT, TOTAL_NODES, False)
+        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+1, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
         # print(node_wrapper.node.node_id)
         # print('\n\n\n')
         # print(node_wrapper.node.network_info)
-        print('\n\n\n')
+        # sprint('\n\n\n')
         # print(node_wrapper.node.public_key)
         print("end of init phase")
         n = node_wrapper.node
-        n.view_transactions()
-        
-    elif role == "node3":
-        node_wrapper = node_network_wrapper(NODE_IP, NODE_PORT+2, BOOTSTRAP_IP, BOOTSTRAP_PORT, TOTAL_NODES, False)
-        # print(node_wrapper.node.node_id)
-        # print('\n\n\n')
-        # print(node_wrapper.node.network_info)
-        print('\n\n\n')
-        # print(node_wrapper.node.public_key)
-        print("end of init phase")
-        n = node_wrapper.node
-        n.view_transactions()
 
+    elif role == "node3":
+        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+2, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
+        # print(node_wrapper.node.node_id)
+        # print('\n\n\n')
+        # print(node_wrapper.node.network_info)
+        # print('\n\n\n')
+        # print(node_wrapper.node.public_key)
+        print("end of init phase")
+        n = node_wrapper.node        

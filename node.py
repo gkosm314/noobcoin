@@ -5,8 +5,9 @@ import transaction
 import rsa
 import state
 from copy import deepcopy
-from config import *
+import config
 import jsonpickle
+import requests
 
 class bootstrap_node:
 
@@ -131,12 +132,12 @@ class node:
 		required_amount_reached = False
 
 		#The UTXOs that this sender/node has available
-		available_utxos = self.current_blockchain.state.utxo[my_public_key].items()
+		available_utxos = self.current_state.utxo[my_public_key].items()
 
 		#Iterated the avaialble utxos from the smallest to the largest one, so that you use the minimal possible total transfer amount
 		for x in sorted(available_utxos, key=lambda i: i[1].value):
 			#Skip UTXOs that you already spent
-			if x[0] in self.utxos_already_spent_by_me:
+			if x[0] in self.utxos_already_spent:
 				continue
 
 			selected_utxos.append(x[1])
@@ -149,7 +150,7 @@ class node:
 		if required_amount_reached:	
 
 			#Convert UTXOs to TransactionInputs
-			tx_input_list = [TransactionInput(i) for i in selected_utxos]
+			tx_input_list = [transaction.TransactionInput(i) for i in selected_utxos]
 			#Remove UTXOs from available UTXOs and add UTXO id to the set of ids of spent UTXOs
 			for tx_input_to_remove in tx_input_list:
 				self.utxos_already_spent.add(tx_input_to_remove.previous_output_id)
@@ -166,9 +167,12 @@ class node:
 			tx.hash()
 			#Sign the transaction with the wallet's private key
 			tx.sign(self.private_key)
-
+			
 			#Broadcast transaction
 			self.broadcast_transaction(tx)
+
+			#Receive my transaction to handle it
+			self.receive_transaction(tx)
 		else:
 			print("Your wallet does not have enough coins for this transcaction to be performed.")
 			return False
@@ -199,7 +203,7 @@ class node:
 
 	def receive_transaction(self, tx: transaction):
 		''' This method is called by the network_wrapper when a transaction is received.'''
-
+		print(f"receive tx {tx.transaction_id}")
 		#If the current_block still accepts more TXs, then work with it
 		if self.current_block_available:
 			self.add_transaction_to_current_block(tx)
@@ -208,6 +212,7 @@ class node:
 			self.transactions_buffer.append(tx)
 
 	def mine_current_block(self):
+		print("start mine_current_block")
 		#Flag current_block as unavailable
 		self.current_block_available = False
 
@@ -234,10 +239,14 @@ class node:
 
 		#TODO: discuss this...
 		while self.transactions_buffer:
-			self.add_transaction_to_current_block()
+			self.add_transaction_to_current_block(tx)
+		print("end mine_current_block")
 
 	def broadcast_transaction(self, tx: transaction):
 		'''Broadcasts a block to every node'''
+
+		#Grab my network info
+		my_network_info = self.network_info[self.public_key[self.node_id]]
 
 		headers = {"Content-Type": "application/json; charset=utf-8"}
 		payload_dict = {
@@ -245,8 +254,9 @@ class node:
 		}
 		payload_json = jsonpickle.encode(payload_dict, keys=True)
 
-		for public_key, network_info_tuple in self.network_info.values():
-			ip, port = network_info_tuple
+		for (ip, port) in self.network_info.values():
+			if (ip, port) == my_network_info:
+				continue			
 			req = requests.post(f"http://{ip}:{port}/post_transaction", headers=headers, data=payload_json)
 
 	def wallet_balance(self, public_key_arg):
@@ -272,7 +282,7 @@ class node:
 		'''Check that the current_hash of the block_to_validate is actually its hash by recalculating it'''	
 		
 		#Note: this one-liner is also used at mine() in block.py. In case it is changed, change it there too!
-		hash_begins_with_d_zeros_flag = block.starts_with_difficulty_zeros(b.current_hash, difficulty)
+		hash_begins_with_d_zeros_flag = block.starts_with_difficulty_zeros(b.current_hash, config.difficulty)
 
 		#If this raises and error after deserialization to a different node, change m to self.msg_to_hash
 		m = str((b.index, b.timestamp, b.transactions, b.previous_hash, b.nonce))
@@ -374,7 +384,7 @@ class node:
 		#Grab the hashes of the blocks in the blockchain and construct the payload
 		hashes_of_blockchain = self.current_blockchain.hashes_of_blocks()
 		hashes_of_blockchain_payload_dict = {"hashes_list": hashes_of_blockchain}
-		hashes_of_blockchain_payload_json = jsonpickle.encode(payload_dict, keys=True)
+		hashes_of_blockchain_payload_json = jsonpickle.encode(hashes_of_blockchain_payload_dict, keys=True)
 
 		#Send request to the node with the largest 
 		req = requests.post(f"http://{ip}:{port}/request_blockchain_diff", headers=headers, data=hashes_of_blockchain_payload_json)
