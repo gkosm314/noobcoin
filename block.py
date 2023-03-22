@@ -29,6 +29,8 @@ class Block:
         #type: bytes
         self.previous_hash = previous_hash_arg 
 
+        self.transaction_hashes = []
+
     def __str__(self):
         '''
         Implements string method that is called when you attempt to print() the block.
@@ -53,6 +55,7 @@ class Block:
 
         #Add the transaction to the block by appending it to the transactions list
         self.transactions.append(tx)
+        self.transaction_hashes.append(tx.transaction_id)
 
     def full(self):
         '''Returns True if the block is full and False otherwise'''
@@ -67,16 +70,17 @@ class Block:
         This method does not check that the block is full. It is responsibility of the caller to perform the check.
         Finds proof-of-work for this block and updates nonce and current hash fields accordingly.
         '''
+        print("mining proccess starts")
 
         candidate_nonce = 0
-        candidate_msg_to_hash = str((self.index, self.timestamp, self.transactions, self.previous_hash, candidate_nonce))
+        candidate_msg_to_hash = str((self.index, self.timestamp, self.transaction_hashes, self.previous_hash, candidate_nonce))
         next_hash = rsa.compute_hash(candidate_msg_to_hash.encode(), 'SHA-1')
 
         #Note: this one-liner is also used at valid_hash_of_block() in node.py. In case it is changed, change it there too!    
         while not starts_with_difficulty_zeros(next_hash, config.difficulty):
             #try another nonce
             candidate_nonce += 1
-            candidate_msg_to_hash = str((self.index, self.timestamp, self.transactions, self.previous_hash, candidate_nonce))
+            candidate_msg_to_hash = str((self.index, self.timestamp, self.transaction_hashes, self.previous_hash, candidate_nonce))
             next_hash = rsa.compute_hash(candidate_msg_to_hash.encode(), 'SHA-1')
 
         #nonce for this block
@@ -90,3 +94,4 @@ class Block:
         #hash of this block
         #type: bytes
         self.current_hash = next_hash
+        print("mining done")

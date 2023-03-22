@@ -8,6 +8,8 @@ from copy import deepcopy
 import config
 import jsonpickle
 import requests
+import threading
+import time
 
 class bootstrap_node:
 
@@ -23,7 +25,7 @@ class bootstrap_node:
 	def create_genesis_block(self):
 		''' Construct a block and manually configure it to be the genesis block '''
 
-		self.g = block.Block(0,b"1")
+		self.g = block.Block(0,b'1')
 		self.g.nonce = 0
 		
 		#Create the initial transaction that loads the bootstrap with coins
@@ -111,7 +113,7 @@ class node:
 		self.current_blockchain = blockchain.Blockchain(genesis_block_arg, public_key_list_arg.values())
 		
 		#empty block that will be filled with the transactions we will receive
-		self.current_block = block.Block(1,genesis_block_arg.previous_hash)
+		self.current_block = block.Block(1,genesis_block_arg.current_hash)
 		self.current_block_available = True
 		
 		#state the corresponds to the state of the blockchain if the transactions inside the current_block were executed
@@ -122,6 +124,20 @@ class node:
 
 		#set of ids of UTXOs that this node has already spent = used to create a transaction
 		self.utxos_already_spent = set()
+
+		#lock which prevents mining while adding transactions to the current block
+		self.mine_lock_held = False
+
+		# start a new thread for mining:
+		t = threading.Thread(target=lambda: self.poll_for_mining())
+		t.start()
+
+	def poll_for_mining(self):
+		#If the block reached full capacity
+		while 1:
+			if self.current_block.full() and not self.mine_lock_held:
+				self.mine_current_block()
+			time.sleep(1)
 
 	def create_transaction(self, recipient_id_arg, amount_arg):
 		my_public_key = self.public_key[self.node_id]
@@ -189,17 +205,15 @@ class node:
 		Adds a transaction to the current block.
 		If the current block becomes full by this transaction, the mining process is triggered.
 		'''
-
+		self.mine_lock_held = True
 		#If the block is valid, execute it on the current block's state (not on the global blockchain state)
 		#Otherwise throw it away
 		if self.current_state.validate_transaction(tx):
 			#Execute transaction on the current state and add it to the current block
 			self.current_state.execute_transcation(tx)
 			self.current_block.add_transaction(tx)
+		self.mine_lock_held = False
 
-			#If the block reached full capacity
-			if self.current_block.full():
-				self.mine_current_block()
 
 	def receive_transaction(self, tx: transaction):
 		''' This method is called by the network_wrapper when a transaction is received.'''
@@ -218,7 +232,7 @@ class node:
 
 		#Mine this block
 		self.current_block.mine()
-
+		
 		#Attempt to attach the block to the blockchain (like you would if you had received it from another node)
 		if self.receive_block(self.current_block, False):
 			#If you are successful, broadcast the mined block to the other nodes so that they can attempt to attach it too
@@ -231,15 +245,23 @@ class node:
 				if not (tx in self.current_blockchain.transactions_included):
 					transactions_to_reprocess.append(tx)
 			self.transactions_buffer = transactions_to_reprocess + self.transactions_buffer
-
+		
+		print("start creation of new block")
 		#Create a new empty current_block and a new updated state
 		last_block = self.current_blockchain.chain[-1]
 		self.current_block = block.Block(last_block.index + 1, last_block.current_hash)
 		self.current_state = deepcopy(self.current_blockchain.state)
+		print("end creation of new block")
 
+		print("start consuming transaction buffer")
 		#TODO: discuss this...
+		print(self.transactions_buffer)
 		while self.transactions_buffer:
+			tx = self.transactions_buffer.pop()
 			self.add_transaction_to_current_block(tx)
+
+
+		print("stop consuming transaction buffer")
 		print("end mine_current_block")
 
 	def broadcast_transaction(self, tx: transaction):
@@ -285,7 +307,9 @@ class node:
 		hash_begins_with_d_zeros_flag = block.starts_with_difficulty_zeros(b.current_hash, config.difficulty)
 
 		#If this raises and error after deserialization to a different node, change m to self.msg_to_hash
-		m = str((b.index, b.timestamp, b.transactions, b.previous_hash, b.nonce))
+		m = str((b.index, b.timestamp, b.transaction_hashes, b.previous_hash, b.nonce))
+		print(b.msg_to_hash)
+		print(m)
 		if (rsa.compute_hash(m.encode(), 'SHA-1') == b.current_hash) and hash_begins_with_d_zeros_flag:
 			return True
 		else:
@@ -298,7 +322,7 @@ class node:
 		that the previous_hash of the block equals the current_hash of the last block of the blockchain.
 		Note: this function should not be called for the genesis block
 		'''
-
+		print("validate block starts")
 		#Check that the current_hash of the block_to_validate is actually its hash by recalculating the hash
 		if not self.valid_hash_of_block(block_to_validate):
 			raise Exception("We received a block whose current_hash is different than the one we computed for it.")
@@ -306,11 +330,16 @@ class node:
 		#Check that the previous_hash of the block_to_validate is the current hash of the last block in the chain
 		try:
 			if self.current_blockchain.chain[-1].current_hash != block_to_validate.previous_hash:
+				print(len(self.current_blockchain.chain))
+				print(self.current_blockchain.chain[-1].current_hash)
+				print(block_to_validate.previous_hash)
+				print("validate block returns False")
 				return False
 		except:
 			raise "This function should not be called for the genesis block."
 
 		#If both checks are succesful, then the block is valid
+		print("validate block returns True")
 		return True
 
 	def validate_chain(self, blockchain_to_validate: blockchain):
@@ -340,14 +369,18 @@ class node:
 		#Check that the block is valid:
 		#	- correctly calculated hash (!Note: in this case an Exception will be thrown)
 		#	- previous_hash equals current_hash of the last block already in the blockchain (in this case return False)
+
+		print("receive block starts")
 		if self.validate_block(b):
 			#If the block is valid for the blockchain, attach it and return True
 			self.current_blockchain.attach_block(b)
+			print("receive block ends with attachment")
 			return True
 		else:
 			#Otherwise, ask the other nodes to help you continue and then return False as you didn't manage to attach the block
 			if block_received_from_network_flag:
 				self.resolve_conflict()
+				print("receive block ends with resolution")
 			return False
 
 	def resolve_conflict(self):
@@ -371,7 +404,10 @@ class node:
 
 			#Send request for blockchain length and extract the length from the response
 			req = requests.post(f"http://{ip}:{port}/request_blockchain_length", headers=headers)
-			length_of_blockchain = ... #TODO
+			
+			payload_dict = jsonpickle.decode(req.json(), keys=True)
+			length_of_blockchain = payload_dict["length"]
+			print("received length: ", length_of_blockchain)
 
 			#Compare the length you received to find out which node to ask for its blockchain
 			if length_of_blockchain > longest_blockchain_length:
@@ -384,16 +420,20 @@ class node:
 		#Grab the hashes of the blocks in the blockchain and construct the payload
 		hashes_of_blockchain = self.current_blockchain.hashes_of_blocks()
 		hashes_of_blockchain_payload_dict = {"hashes_list": hashes_of_blockchain}
+		print(hashes_of_blockchain_payload_dict)
 		hashes_of_blockchain_payload_json = jsonpickle.encode(hashes_of_blockchain_payload_dict, keys=True)
 
 		#Send request to the node with the largest 
 		req = requests.post(f"http://{ip}:{port}/request_blockchain_diff", headers=headers, data=hashes_of_blockchain_payload_json)
+		print("\n\n\n\n handling stuff")
+		payload_dict = jsonpickle.decode(req.json(), keys=True)
+
 		#TODO: deserialize response to this request and extract
 		#	- current_block of the last block that survives
 		#	- list of Block objects that will be added to the Blockchain to solve the conflict
 
-		#list_of_new_blocks = ...
-		#hash_of_parent_block = ...
+		list_of_new_blocks = payload_dict["list_of_blocks"]
+		hash_of_parent_block = payload_dict["parent_hash"]
 
 		#Attach the chain to the blockchain
 		self.current_blockchain.attach_chain(list_of_new_blocks, hash_of_parent_block)

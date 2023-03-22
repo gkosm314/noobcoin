@@ -99,7 +99,10 @@ class node_api_server():
             # print(f"[POST request blockchain length handler] received req")                
             
             length = self.node_wrapper.get_blockchain_length()
-            return {"length": length}, 201
+            print("\n\n\n\n\n\n\n\nLENGTH\n\n\n\n\n\n\n\n")
+            payload_dict = {"length": length}
+            payload_json = jsonpickle.encode(payload_dict, keys=True)
+            return payload_json, 201
 
     class request_blockchain_diff_endpoint(Resource):
         def __init__(self, network_wrapper_class_arg):
@@ -112,12 +115,18 @@ class node_api_server():
             
             incoming_payload_json = request.get_data()
             incoming_payload_dict = jsonpickle.decode(incoming_payload_json, keys=True)
+            print("\n\n\n\n\n\n", incoming_payload_dict)
 
-            hashes_list = incoming_payload_dict['hashes_list']
-            blockchain_diff = self.node_wrapper.get_blockchain_diff(hashes_list)
+            hashes_list = incoming_payload_dict["hashes_list"]
+            blockchain_diff, parent_hash = self.node_wrapper.get_blockchain_diff(hashes_list)
+            # print("\n\n\n\n\n", blockchain_diff)
+            print(parent_hash)
 
-            outcoming_payload_dict = {"blockchain_diff": blockchain_diff}
-            outcoming_payload_json = jsonpickle.encode(incoming_payload_dict, keys=True)
+            outcoming_payload_dict = {
+                "list_of_blocks": blockchain_diff,
+                "parent_hash": parent_hash
+            }
+            outcoming_payload_json = jsonpickle.encode(outcoming_payload_dict, keys=True)
 
             return outcoming_payload_json, 201
 

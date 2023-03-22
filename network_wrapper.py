@@ -82,20 +82,23 @@ class node_network_wrapper:
         self.node.receive_transaction(tx)
 
     def handle_incoming_block(self, b):
-        self.node.receive_transaction(b)
+        self.node.receive_block(b, True)
 
     def get_blockchain_length(self):
         return len(self.node.current_blockchain)
 
     def get_blockchain_diff(self, hashes_list):
-        i = 0
-        while i < len(hashes_list):
-            if hashes_list[i] == self.current_blockchain.chain[i].current_hash: 
-                i+=1
-            else:
-                break
-        diff = self.current_blockchain.chain[i:]
-        return diff
+        return (['a','b'], b'v')
+        # i = 0
+        # while i < len(hashes_list):
+        #     if hashes_list[i] == self.node.current_blockchain.chain[i].current_hash: 
+        #         i+=1
+        #     else:
+        #         break
+        # diff = self.node.current_blockchain.chain[i:]
+        # print(diff)
+        # parent_hash = diff[0].previous_hash
+        # return (diff, parent_hash)
 
     def register_node(self, node_ip, node_port, node_public_key): 
         new_id = self.bootstrap_node.add_node(node_public_key, node_ip, node_port)
@@ -142,10 +145,10 @@ if __name__=="__main__":
         print("end of init phase")
         # node_wrapper = node_network_wrapper(NODE_IP, NODE_PORT, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT)
 
-        n = bootstrap_wrapper.node
-        n.create_transaction(1, 100)
-        n.create_transaction(2, 100)
-        n.create_transaction(3, 100)
+        # n = bootstrap_wrapper.node
+        # n.create_transaction(1, 100)
+        # n.create_transaction(2, 100)
+        # n.create_transaction(3, 100)
 
     elif role == "node1":
         node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
