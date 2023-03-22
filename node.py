@@ -66,7 +66,11 @@ class bootstrap_node:
 		print(f"node {node_id} registered")
 		return node_id
 
-	
+	def produce_node(self):
+		return node(0, self.wallet.private_key, self.public_key_table, self.network_info_table, self.genesis_block)
+
+
+
 class uninitialized_node:
 
 	def __init__(self):

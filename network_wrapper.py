@@ -28,6 +28,12 @@ class node_network_wrapper:
         time.sleep(3)
         self.register()
 
+        while 1:
+            if self.registration_completed:
+                print("node registered")
+                break
+            time.sleep(1)
+
     def register(self):
         '''send public key to bootstrap'''
 
@@ -41,6 +47,7 @@ class node_network_wrapper:
         payload_json = jsonpickle.encode(payload_dict, keys=True)
         
         req = requests.post(f"http://{self.bootstrap_ip}:{self.bootstrap_port}/register", headers=headers, data = payload_json)
+        time.sleep(5)
         print("i just registered myself and received", req.json())
         added_flag = req.json()['added']
         my_id = req.json()['assigned_id']
@@ -94,7 +101,8 @@ class boostrap_network_wrapper:
                 print("All nodes registered")
                 break
             time.sleep(1)
-
+        
+        time.sleep(10)
         self.bcast_initial_state()
 
     def register_node(self, node_ip, node_port, node_public_key): 
@@ -145,12 +153,34 @@ if __name__=="__main__":
 
     elif role == "node1":
         node_wrapper = node_network_wrapper(NODE_IP, NODE_PORT, BOOTSTRAP_IP, BOOTSTRAP_PORT)
+        # print(node_wrapper.node.node_id)
+        # print('\n\n\n')
+        # print(node_wrapper.node.network_info)
+        # print('\n\n\n')
+        # print(node_wrapper.node.public_key)
         print("end of init phase")
+        n = node_wrapper.node
+        n.view_transactions()
 
     elif role == "node2":
         node_wrapper = node_network_wrapper(NODE_IP, NODE_PORT+1, BOOTSTRAP_IP, BOOTSTRAP_PORT)
+        # print(node_wrapper.node.node_id)
+        # print('\n\n\n')
+        # print(node_wrapper.node.network_info)
+        print('\n\n\n')
+        # print(node_wrapper.node.public_key)
         print("end of init phase")
-
-
-
+        n = node_wrapper.node
+        n.view_transactions()
+        
+    elif role == "node3":
+        node_wrapper = node_network_wrapper(NODE_IP, NODE_PORT+2, BOOTSTRAP_IP, BOOTSTRAP_PORT)
+        # print(node_wrapper.node.node_id)
+        # print('\n\n\n')
+        # print(node_wrapper.node.network_info)
+        print('\n\n\n')
+        # print(node_wrapper.node.public_key)
+        print("end of init phase")
+        n = node_wrapper.node
+        n.view_transactions()
 

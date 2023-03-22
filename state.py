@@ -1,4 +1,6 @@
 import rsa
+import block
+import transaction
 
 class State(object):
 
@@ -24,7 +26,7 @@ class State(object):
 		initial_utxo = transaction.TransactionOutput(initial_tx.transaction_id, 0, initial_tx.receiver_address, initial_tx.amount)
 		
 		#Add the UTXO to the recipient's (=bootstrap) UTXOs and update its wallet
-		self.utxo[utxo_arg.recipient_address][utxo_arg.output_id] = utxo_arg
+		self.utxo[initial_utxo.recipient_address][initial_utxo.output_id] = initial_utxo
 
 	def add_utxo(self, utxo_arg):
 		#Add UTXO and update recipient's wallet amount

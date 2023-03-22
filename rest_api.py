@@ -119,12 +119,9 @@ class node_api_server():
             return outcoming_payload_json, 201
 
 
-class bootstrap_api_server():
+class bootstrap_api_server(node_api_server):
     def __init__(self, ip_arg, port_arg, parent_class_arg):
-        self.ip = ip_arg
-        self.port = port_arg
-        self.parent_class = parent_class_arg
-        
+        super(bootstrap_api_server, self).__init__()      
         api.add_resource(self.register_endpoint, '/register', resource_class_kwargs={'network_wrapper_class_arg': self.parent_class})
 
 
