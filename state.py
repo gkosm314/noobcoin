@@ -2,6 +2,8 @@ import rsa
 import block
 import transaction
 
+import logging
+
 class State(object):
 
 	def __init__(self, public_key_values, genesis_block_arg: block):
@@ -109,4 +111,4 @@ class State(object):
 			new_utxo = i.reproduce_utxo()
 			self.add_utxo(new_utxo)
 
-		print("\n\n\n\n\n\n\n\n\n\n\nSUCCESS UNDO\n\n\n\n\n\n\n\n\n\n\n")
+		logging.info("\n\n\n\n\n\n\n\n\n\n\nSUCCESS UNDO\n\n\n\n\n\n\n\n\n\n\n")

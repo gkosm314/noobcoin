@@ -2,7 +2,10 @@ from flask import Flask
 from flask_restful import reqparse, abort, Api, Resource, request
 import threading
 import json, jsonpickle
+import sys
 
+cli = sys.modules['flask.cli']
+cli.show_server_banner = lambda *x: None
 # maybe put them also in bootstrap_api_server?
 app = Flask(__name__)  
 api = Api(app)
@@ -32,7 +35,7 @@ class node_api_server():
             resource_class_kwargs={'network_wrapper_class_arg': self.parent_class})
 
     def run(self):
-        t = threading.Thread(target=lambda: app.run(host=self.ip, port=self.port, debug=True, use_reloader=False))
+        t = threading.Thread(target=lambda: app.run(host=self.ip, port=self.port)) #debug=True, use_reloader=False
         t.start()
 
     class net_info_endpoint(Resource):

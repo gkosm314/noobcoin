@@ -3,6 +3,8 @@ import transaction
 import rsa
 import config 
 
+import logging
+
 def starts_with_difficulty_zeros(next_hash, difficulty):
     next_hash = int.from_bytes(next_hash, "big")   
     mask = (1<<(160-difficulty))-1
@@ -72,7 +74,7 @@ class Block:
         This method does not check that the block is full. It is responsibility of the caller to perform the check.
         Finds proof-of-work for this block and updates nonce and current hash fields accordingly.
         '''
-        print("mining proccess starts")
+        logging.info("mining proccess starts")
 
         candidate_nonce = 0
         candidate_msg_to_hash = str((self.index, self.timestamp, self.transaction_hashes, self.previous_hash, candidate_nonce))
@@ -96,4 +98,4 @@ class Block:
         #hash of this block
         #type: bytes
         self.current_hash = next_hash
-        print("mining done")
+        logging.info("mining done")

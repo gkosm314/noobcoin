@@ -9,12 +9,14 @@ import config
 import jsonpickle
 import requests
 import threading
+from multiprocessing.pool import ThreadPool as Pool
 import time
+import logging
 
 class bootstrap_node:
 
 	def __init__(self, number_of_nodes_arg, bootstrap_ip_arg, bootstrap_port_arg):
-		print("initializing bootstrap")
+		logging.info("initializing bootstrap")
 		self.wallet = wallet.Wallet()
 		self.number_of_nodes = number_of_nodes_arg
 		self.public_key_table = {0: self.wallet.public_key}
@@ -66,7 +68,7 @@ class bootstrap_node:
 		self.network_info_table[node_pub_key_arg] = (node_ip_arg, node_port_arg)
 
 
-		print(f"node {node_id} registered")
+		logging.info(f"node {node_id} registered")
 		return node_id
 
 	def produce_node(self):
@@ -129,7 +131,10 @@ class node:
 		self.mine_lock_held = False
 
 		#lock which prevents two transactions to be created simultaneously
-		self.create_tx_lock_held = False		
+		self.create_tx_lock_held = threading.Lock()
+		
+		#lock which prevents two conflict_resolve to run simultaneously
+		self.resolve_conflict_lock_held = threading.Lock()
 
 		self.utxos_returned_as_change = dict()
 
@@ -147,10 +152,8 @@ class node:
 			time.sleep(1)
 
 	def create_transaction(self, recipient_id_arg, amount_arg):
-		#Busy waiting so that no more than one transaction can be created simultaneously
-		while self.create_tx_lock_held:
-			time.sleep(1)
-		self.create_tx_lock_held = True	
+		#Waiting so that no more than one transaction can be created simultaneously
+		self.create_tx_lock_held.acquire()
 
 		my_public_key = self.public_key[self.node_id]
 
@@ -210,19 +213,19 @@ class node:
 				utxo_returned_back = transaction.TransactionOutput(tx.transaction_id,1,tx.sender_address,change_for_sender)
 				self.utxos_returned_as_change[utxo_returned_back.output_id] = utxo_returned_back #dict: uxto id -> TransactionOutput object
 		else:
-			print("Your wallet does not have enough coins for this transcaction to be performed.")
+			logging.info("Your wallet does not have enough coins for this transcaction to be performed.")
 			self.test_count_cancelled_tx += 1 
-			self.create_tx_lock_held = False
+			self.create_tx_lock_held.release()
 			return False
 
-		self.create_tx_lock_held = False
+		self.create_tx_lock_held.release()
 		return True
 		
 	def view_transactions(self):
 		'''Prints the transactions that are included in the last block.'''
 
 		s = str(self.current_blockchain.chain[-1])
-		print(f"\n NODE #{self.node_id} - " + s)
+		logging.info(f"\n NODE #{self.node_id} - " + s)
 		return s
 
 	def add_transaction_to_current_block(self, tx: transaction):
@@ -241,18 +244,18 @@ class node:
 
 	def receive_transaction(self, tx: transaction):
 		''' This method is called by the network_wrapper when a transaction is received.'''
-		print(f"receive tx {tx.transaction_id}")
+		logging.info(f"receive tx {tx.transaction_id}")
 		#If the current_block still accepts more TXs, then work with it
 		# if self.current_block_available:
 		if not self.current_block.full():
 			self.add_transaction_to_current_block(tx)
 		else:
 			#If the current_block is full, append the TX to a buffer so that a future block can grab it
-			print("yo")
+			logging.info("yo")
 			self.transactions_buffer.append(tx)
 
 	def mine_current_block(self):
-		print("start mine_current_block")
+		logging.info("start mine_current_block")
 		# #Flag current_block as unavailable
 		# self.current_block_available = False
 
@@ -272,26 +275,26 @@ class node:
 					transactions_to_reprocess.append(tx)
 			self.transactions_buffer = transactions_to_reprocess + self.transactions_buffer
 		
-		print("start creation of new block")
+		logging.info("start creation of new block")
 		#Create a new empty current_block and a new updated state
 		last_block = self.current_blockchain.chain[-1]
 		self.current_block = block.Block(last_block.index + 1, last_block.current_hash)
 		self.current_state = deepcopy(self.current_blockchain.state)
-		print("end creation of new block")
+		logging.info("end creation of new block")
 
-		print("start consuming transaction buffer")
+		logging.info("start consuming transaction buffer")
 		#TODO: discuss this...
-		print(self.transactions_buffer)
+		logging.info(self.transactions_buffer)
 		while self.transactions_buffer:
 			tx = self.transactions_buffer.pop()
 			self.add_transaction_to_current_block(tx)
 		# print("stop consuming transaction buffer")
-		print(self.transactions_buffer)
+		logging.info(self.transactions_buffer)
 
 		# #Flag current_block as unavailable
 		# self.current_block_available = True
 
-		print("end mine_current_block")
+		logging.info("end mine_current_block")
 
 	def broadcast_transaction(self, tx: transaction):
 		'''Broadcasts a block to every node'''
@@ -304,11 +307,20 @@ class node:
 			"tx_obj": tx, 
 		}
 		payload_json = jsonpickle.encode(payload_dict, keys=True)
+		
+		def unicast(ip_arg, port_arg, payload_json_arg):
+			req = requests.post(f"http://{ip_arg}:{port_arg}/post_transaction", headers=headers, data=payload_json_arg)
 
-		for (ip, port) in self.network_info.values():
+		senders = self.network_info.values()
+		pool = Pool(len(senders)-1)
+
+		for (ip, port) in senders:
 			if (ip, port) == my_network_info:
 				continue			
-			req = requests.post(f"http://{ip}:{port}/post_transaction", headers=headers, data=payload_json)
+			pool.apply_async(unicast, (ip, port, payload_json,))
+
+		pool.close()
+		pool.join()
 
 	def wallet_balance(self, node_id_arg):
 		'''Returns the balance of a specific public address.'''
@@ -323,11 +335,19 @@ class node:
 		headers = {"Content-Type": "application/json; charset=utf-8"}
 		payload_dict = {"block_obj": b}
 		payload_json = jsonpickle.encode(payload_dict, keys=True)
-		for (ip, port) in self.network_info.values():
+
+		def unicast(ip_arg, port_arg, payload_json_arg):
+			req = requests.post(f"http://{ip_arg}:{port_arg}/post_block", headers=headers, data=payload_json_arg)
+
+		senders = self.network_info.values()
+		pool = Pool(len(senders)-1)
+
+		for (ip, port) in senders:
 			if (ip, port) == my_network_info:
 				continue
-			else:
-				req = requests.post(f"http://{ip}:{port}/post_block", headers=headers, data = payload_json)
+			pool.apply_async(unicast, (ip, port, payload_json,))
+		pool.close()
+		pool.join()
 	
 	def valid_hash_of_block(self, b: block):
 		'''Check that the current_hash of the block_to_validate is actually its hash by recalculating it'''	
@@ -337,8 +357,8 @@ class node:
 
 		#If this raises and error after deserialization to a different node, change m to self.msg_to_hash
 		m = str((b.index, b.timestamp, b.transaction_hashes, b.previous_hash, b.nonce))
-		print(b.msg_to_hash)
-		print(m)
+		logging.info(b.msg_to_hash)
+		logging.info(m)
 		if (rsa.compute_hash(m.encode(), 'SHA-1') == b.current_hash) and hash_begins_with_d_zeros_flag:
 			return True
 		else:
@@ -351,7 +371,7 @@ class node:
 		that the previous_hash of the block equals the current_hash of the last block of the blockchain.
 		Note: this function should not be called for the genesis block
 		'''
-		print("validate block starts")
+		logging.info("validate block starts")
 		#Check that the current_hash of the block_to_validate is actually its hash by recalculating the hash
 		if not self.valid_hash_of_block(block_to_validate):
 			raise Exception("We received a block whose current_hash is different than the one we computed for it.")
@@ -359,16 +379,16 @@ class node:
 		#Check that the previous_hash of the block_to_validate is the current hash of the last block in the chain
 		try:
 			if self.current_blockchain.chain[-1].current_hash != block_to_validate.previous_hash:
-				print(len(self.current_blockchain.chain))
-				print(self.current_blockchain.chain[-1].current_hash)
-				print(block_to_validate.previous_hash)
-				print("validate block returns False")
+				logging.info(len(self.current_blockchain.chain))
+				logging.info(self.current_blockchain.chain[-1].current_hash)
+				logging.info(block_to_validate.previous_hash)
+				logging.info("validate block returns False")
 				return False
 		except:
 			raise "This function should not be called for the genesis block."
 
 		#If both checks are succesful, then the block is valid
-		print("validate block returns True")
+		logging.info("validate block returns True")
 		return True
 
 	def validate_chain(self, blockchain_to_validate: blockchain):
@@ -399,35 +419,30 @@ class node:
 		#	- correctly calculated hash (!Note: in this case an Exception will be thrown)
 		#	- previous_hash equals current_hash of the last block already in the blockchain (in this case return False)
 
-		print("receive block starts")
+		logging.info("receive block starts")
 		if self.validate_block(b):
 			#If the block is valid for the blockchain, attach it and return True
 			self.current_blockchain.attach_block(b)
-			print("receive block ends with attachment")
+			logging.info("receive block ends with attachment")
 			return True
 		else:
 			#Otherwise, ask the other nodes to help you continue and then return False as you didn't manage to attach the block
 			if block_received_from_network_flag:
 				self.resolve_conflict()
-				print("receive block ends with resolution")
+				logging.info("receive block ends with resolution")
 			return False
 
 	def resolve_conflict(self):
 		#DO NOT FORGET TO UPDATE self.current_blockchain.transactions_included
-	
-		#Initialize variable for the maximum length sent so far by other nodes
-		longest_blockchain_node = self.node_id
-		longest_blockchain_length = len(self.current_blockchain)
+
+		self.resolve_conflict_lock_held.acquire()
 
 		#Broadcast request for blockchain length
 		headers = {"Content-Type": "application/json; charset=utf-8"}
+		senders = self.public_key.items()
+		all_blockchain_lengths = [-1 for _ in senders] #save all the received values for reduction (max)
 
-		#Iterate over node ids to send request and choose who is going to solve your conflict
-		for (id_of_node,pub_addr_of_node) in self.public_key.items():
-			#Do not ask yourself for conflict resolution
-			if id_of_node == self.node_id:
-				continue
-			
+		def unicast(tid, pub_addr_of_node_arg):
 			#Grab network info of external node
 			(ip, port) = self.network_info[pub_addr_of_node]
 
@@ -435,9 +450,26 @@ class node:
 			req = requests.post(f"http://{ip}:{port}/request_blockchain_length", headers=headers)
 			
 			payload_dict = jsonpickle.decode(req.json(), keys=True)
-			length_of_blockchain = payload_dict["length"]
-			# print("received length: ", length_of_blockchain)
+			all_blockchain_lengths[tid] = payload_dict["length"]
+			# print("received length: ", all_blockchain_lengths)
 
+		pool = Pool(len(senders)-1)
+
+		#Iterate over node ids to send request and choose who is going to solve your conflict
+		for (id_of_node,pub_addr_of_node) in senders:
+			#Do not ask yourself for conflict resolution
+			if id_of_node == self.node_id:
+				continue
+			pool.apply_async(unicast, (id_of_node, pub_addr_of_node,))
+		pool.close()
+		pool.join()
+
+		#Initialize variable for the maximum length sent so far by other nodes
+		longest_blockchain_node = self.node_id
+		longest_blockchain_length = len(self.current_blockchain)
+		
+		#Compute the maximum length and the node who posseses that
+		for id_of_node, length_of_blockchain in enumerate(all_blockchain_lengths):
 			#Compare the length you received to find out which node to ask for its blockchain
 			if length_of_blockchain > longest_blockchain_length:
 				longest_blockchain_node = id_of_node
@@ -445,8 +477,9 @@ class node:
 			elif (length_of_blockchain == longest_blockchain_length) and (id_of_node < longest_blockchain_node):
 				longest_blockchain_node = id_of_node
 				longest_blockchain_length = length_of_blockchain
-
+		
 		if longest_blockchain_node == self.node_id:
+			self.resolve_conflict_lock_held.release()
 			return True
 		
 		#Grab the hashes of the blocks in the blockchain and construct the payload
@@ -456,6 +489,8 @@ class node:
 		hashes_of_blockchain_payload_json = jsonpickle.encode(hashes_of_blockchain_payload_dict, keys=True)
 
 		#Send request to the node with the largest 
+		longest_bchain_node_pubkey = self.public_key[longest_blockchain_node] # find the ip, port of...
+		ip, port = self.network_info[longest_bchain_node_pubkey]              # ...the longest blockchain node
 		req = requests.post(f"http://{ip}:{port}/request_blockchain_diff", headers=headers, data=hashes_of_blockchain_payload_json)
 		# print("\n\n\n\n handling stuff")
 		payload_dict = jsonpickle.decode(req.json(), keys=True)
@@ -475,3 +510,5 @@ class node:
 			for tx in transcations_of_removed_chain:
 				if not (tx in self.current_blockchain.transactions_included):
 					self.transactions_buffer.append(tx) #
+
+		self.resolve_conflict_lock_held.release()

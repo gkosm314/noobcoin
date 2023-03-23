@@ -3,11 +3,13 @@ import json, jsonpickle
 import sys 
 import time
 import pickle
+from multiprocessing.pool import ThreadPool as Pool
+import logging
+
 import config
 import node
 import rest_api
 import wallet
-
 
 
 class node_network_wrapper:
@@ -36,13 +38,13 @@ class node_network_wrapper:
 
             while 1:
                 if self.registration_completed:
-                    print("node registered")
+                    logging.info("node registered")
                     break
                 time.sleep(1)
         else:
             while 1:
                 if self.registration_completed: 
-                    print("All nodes registered")
+                    logging.info("All nodes registered")
                     break
                 time.sleep(1)
         
@@ -66,7 +68,7 @@ class node_network_wrapper:
         
         req = requests.post(f"http://{self.bootstrap_ip}:{self.bootstrap_port}/register", headers=headers, data = payload_json)
         time.sleep(5)
-        print("i just registered myself and received", req.json())
+        logging.info("i just registered myself and received", req.json())
         added_flag = req.json()['added']
         my_id = req.json()['assigned_id']
         if added_flag:
@@ -78,7 +80,7 @@ class node_network_wrapper:
         self.node.set_genesis_block(genesis_block_arg)
 
         self.node = self.node.produce_node()
-        print("saving info...")
+        logging.info("saving info...")
         self.registration_completed = True
 
     def handle_incoming_tx(self, tx):
@@ -127,7 +129,7 @@ class node_network_wrapper:
     def bcast_initial_state(self):
         '''Broadcast to all the nodes the network info table, public key table and genesis block'''
         
-        print("broadcasting init state")
+        logging.info("broadcasting init state")
         headers = {"Content-Type": "application/json; charset=utf-8"}
         payload_dict = {
             "public_keys_table": self.bootstrap_node.public_key_table, 
@@ -135,91 +137,20 @@ class node_network_wrapper:
             "genesis_block": self.bootstrap_node.g
         }
         payload_json = jsonpickle.encode(payload_dict, keys=True)
-
+        
+        def unicast(network_info_tuple_arg, payload_json_arg):
+            ip, port = network_info_tuple_arg
+            req = requests.post(f"http://{ip}:{port}/post_net_info", headers=headers, data = payload_json_arg)
+            
+        pool = Pool(self.bootstrap_node.number_of_nodes-1)
+        
         for public_key, network_info_tuple in self.bootstrap_node.network_info_table.items():
             if public_key == self.bootstrap_node.wallet.public_key:
                 # don't broadcast to self
                 continue
-            ip, port = network_info_tuple
-            req = requests.post(f"http://{ip}:{port}/post_net_info", headers=headers, data = payload_json)
-            
-    
-
-if __name__=="__main__":
-    role = sys.argv[1]
-
-    def test_func(n):
-        time.sleep(70)
-        n.view_transactions()
-        #print([str(tx) for tx in n.transactions_buffer])
-        #print([str(tx) for tx in n.current_block.transactions])
         
-        cnt_chain = len(n.current_blockchain.transactions_included)
-        cnt_buf = len(n.transactions_buffer)
-        cnt_cb = len(n.current_block.transactions)
-        cnt_cancel = n.test_count_cancelled_tx
+            pool.apply_async(unicast, (network_info_tuple, payload_json,))
 
-        print(f"in chain: {cnt_chain}")
-        print(f"in current block: {cnt_cb}")
-        print(f"in buffer: {cnt_buf}")
-        print(f"cancelled: {cnt_cancel}")
-        print(n.wallet_balance(0))
-        print(n.wallet_balance(1))
-        print(n.wallet_balance(2))
-        print(n.wallet_balance(3))          
-
-
-    if role == "bootstrap":
-        bootstrap_wrapper = node_network_wrapper(config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, True)
-        print("end of init phase")
-        # node_wrapper = node_network_wrapper(NODE_IP, NODE_PORT, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT)
-
-        n = bootstrap_wrapper.node
-        time.sleep(2)
-        n.create_transaction(1, 100)
-        n.create_transaction(2, 100)
-        n.create_transaction(3, 100)        
-        test_func(n)
-
-
-    elif role == "node1":
-        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
-        print("end of init phase")
-        n = node_wrapper.node        
-        time.sleep(10)
-        n.create_transaction(3, 1)
-        n.create_transaction(0, 1)
-        n.create_transaction(2, 1)
-        n.create_transaction(3, 1)
-        n.create_transaction(2, 1)
-        test_func(n)
-
-
-    elif role == "node2":
-        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+1, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
-        print("end of init phase")
-        n = node_wrapper.node
-        time.sleep(25)
-        n.create_transaction(1, 1000)           
-        n.create_transaction(1, 1)
-        n.create_transaction(3, 1)
-        n.create_transaction(0, 1)
-        n.create_transaction(1, 1)
-        n.create_transaction(1, 1) 
-        n.create_transaction(0, 1)
-        n.create_transaction(1, 1)
-        test_func(n)
-
-
-
-    elif role == "node3":
-        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+2, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
-        print("end of init phase")
-        n = node_wrapper.node
-        time.sleep(10)    
-        n.create_transaction(0, 1)
-        n.create_transaction(1, 1)
-        n.create_transaction(1, 1000)
-        n.create_transaction(2, 1)
-        n.create_transaction(1, 1)
-        test_func(n)
+        pool.close()
+        pool.join()
+    

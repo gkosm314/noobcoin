@@ -2,6 +2,8 @@ import block
 import transaction
 import state
 
+import logging
+
 class Blockchain:
 
 	def __init__(self, genesis_block: block, public_key_values):
@@ -31,7 +33,7 @@ class Blockchain:
 		'''
 		Assumption: the new_block is already validated.
 		'''
-		print("attach block starts")
+		logging.info("attach block starts")
 		#Execute each transaction inside the block and add its id to the set of transactions included in the blockchain
 		#We do not validate because we assume that the TX is already validated by whoever added it to the block
 		for tx in new_block.transactions:
@@ -40,7 +42,7 @@ class Blockchain:
 
 		#Append new block to the list of validated blocks and update blockchain's available UTXOs
 		self.chain.append(new_block)
-		print("attach block end")
+		logging.info("attach block end")
 
 	def hashes_of_blocks(self):
 		return [b.current_hash for b in self.chain]
