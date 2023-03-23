@@ -34,10 +34,10 @@ class State(object):
 		self.utxo[utxo_arg.recipient_address][utxo_arg.output_id] = utxo_arg
 		self.wallet_sum[utxo_arg.recipient_address] += utxo_arg.value
 
-	def remove_utxo(self, transaction_input_arg, tx_sender_address_arg):
+	def remove_utxo(self, utxo_id_arg, utxo_value_arg, tx_sender_address_arg):
 		'''Takes a TransactionInput and the sender's address and removes the respective UXTO'''
-		del self.utxo[tx_sender_address_arg][transaction_input_arg.previous_output_id]
-		self.wallet_sum[tx_sender_address_arg] -= transaction_input_arg.value
+		del self.utxo[tx_sender_address_arg][utxo_id_arg]
+		self.wallet_sum[tx_sender_address_arg] -= utxo_value_arg
 
 	def verify_signature(self, tx: transaction):
 		'''
@@ -89,7 +89,7 @@ class State(object):
 
 		#Remove the transaction inputs from UTXOs and substract their amount from the sender's balance
 		for i in tx.transaction_inputs:
-			self.remove_utxo(i, tx.sender_address)
+			self.remove_utxo(i.previous_output_id, i.value, tx.sender_address)
 
 		#Generate TransactionOutputs and add them to the current state's UTXOs
 		tx.generate_outputs()
@@ -97,3 +97,16 @@ class State(object):
 			self.add_utxo(new_utxo)
 			
 		return True
+	
+	def undo_transaction(self,tx):
+
+		#Remove UTXOs that were produced by this transaction
+		for utxo_to_remove in tx.transaction_outputs:
+			self.remove_utxo(utxo_to_remove.output_id, utxo_to_remove.value, tx.sender_address)
+
+		#Re-insert utxos that were consumed by this transaction
+		for i in tx.transaction_inputs:
+			new_utxo = i.reproduce_utxo()
+			self.add_utxo(new_utxo)
+
+		print("\n\n\n\n\n\n\n\n\n\n\nSUCCESS UNDO\n\n\n\n\n\n\n\n\n\n\n")

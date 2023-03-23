@@ -131,6 +131,10 @@ class node:
 		#lock which prevents two transactions to be created simultaneously
 		self.create_tx_lock_held = False		
 
+		self.utxos_returned_as_change = dict()
+
+		self.test_count_cancelled_tx = 0
+
 		# start a new thread for mining:
 		t = threading.Thread(target=lambda: self.poll_for_mining())
 		t.start()
@@ -156,7 +160,7 @@ class node:
 		required_amount_reached = False
 
 		#The UTXOs that this sender/node has available
-		available_utxos = self.current_state.utxo[my_public_key].items()
+		available_utxos = list(self.current_state.utxo[my_public_key].items()) + list(self.utxos_returned_as_change.items())
 
 		#Iterated the avaialble utxos from the smallest to the largest one, so that you use the minimal possible total transfer amount
 		for x in sorted(available_utxos, key=lambda i: i[1].value):
@@ -178,6 +182,8 @@ class node:
 			#Remove UTXOs from available UTXOs and add UTXO id to the set of ids of spent UTXOs
 			for tx_input_to_remove in tx_input_list:
 				self.utxos_already_spent.add(tx_input_to_remove.previous_output_id)
+				if tx_input_to_remove.previous_output_id in self.utxos_returned_as_change:
+					del self.utxos_returned_as_change[tx_input_to_remove.previous_output_id]
 
 			#Construct the transaction object
 			args = {
@@ -191,14 +197,21 @@ class node:
 			tx.hash()
 			#Sign the transaction with the wallet's private key
 			tx.sign(self.private_key)
-			
+						
 			#Broadcast transaction
 			self.broadcast_transaction(tx)
 
 			#Receive my transaction to handle it
 			self.receive_transaction(tx)
+
+			#Add TransactionOutput to the local list of my_utxos, if you have change returned to you
+			if amount_accumulated > amount_arg:
+				change_for_sender = amount_accumulated - amount_arg
+				utxo_returned_back = transaction.TransactionOutput(tx.transaction_id,1,tx.sender_address,change_for_sender)
+				self.utxos_returned_as_change[utxo_returned_back.output_id] = utxo_returned_back #dict: uxto id -> TransactionOutput object
 		else:
 			print("Your wallet does not have enough coins for this transcaction to be performed.")
+			self.test_count_cancelled_tx += 1 
 			self.create_tx_lock_held = False
 			return False
 
@@ -453,6 +466,12 @@ class node:
 
 		list_of_new_blocks = payload_dict["list_of_blocks"]
 		hash_of_parent_block = payload_dict["parent_hash"]
+		expected_length_after_attach = payload_dict["length_after_attach"]
 
-		#Attach the chain to the blockchain
-		self.current_blockchain.attach_chain(list_of_new_blocks, hash_of_parent_block)
+		#Attach the chain to the blockchain, if it is still the longest chain
+		if expected_length_after_attach > len(self.current_blockchain):
+			transcations_of_removed_chain = self.current_blockchain.attach_chain(list_of_new_blocks, hash_of_parent_block)	
+			#If the transaction was not included in the final blockchain (= re-entered by the new chain),then it needs to be processed again!
+			for tx in transcations_of_removed_chain:
+				if not (tx in self.current_blockchain.transactions_included):
+					self.transactions_buffer.append(tx) #

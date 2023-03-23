@@ -118,13 +118,14 @@ class node_api_server():
             # print("\n\n\n\n\n\n", incoming_payload_dict)
 
             hashes_list = incoming_payload_dict["hashes_list"]
-            blockchain_diff, parent_hash = self.node_wrapper.get_blockchain_diff(hashes_list)
+            blockchain_diff, parent_hash, length = self.node_wrapper.get_blockchain_diff(hashes_list)
             # print("\n\n\n\n\n", blockchain_diff)
             # print(parent_hash)
 
             outcoming_payload_dict = {
                 "list_of_blocks": blockchain_diff,
-                "parent_hash": parent_hash
+                "parent_hash": parent_hash,
+                "length_after_attach": length
             }
             outcoming_payload_json = jsonpickle.encode(outcoming_payload_dict, keys=True)
 

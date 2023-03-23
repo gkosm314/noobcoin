@@ -141,6 +141,17 @@ class TransactionInput:
 		#type: tuple (bytes,int)
 		self.previous_output_id = utxo.output_id
 
+		#transaction_id of the TX from which this UTXO was produced
+		#type: bytes
+		self.transaction_id = utxo.transaction_id
+
+		#address (public key) of the recipient
+		#type: rsa.key.PublicKey
+		self.recipient_address = utxo.recipient_address
+
 		#amount of coins transfered
 		#type: float
 		self.value = utxo.value
+
+	def reproduce_utxo(self):
+		return TransactionOutput(self.transaction_id, self.previous_output_id[1], self.recipient_address, self.value)
