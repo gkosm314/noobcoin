@@ -33,10 +33,7 @@ class node_api_server():
         
         api.add_resource(self.request_blockchain_diff_endpoint, '/request_blockchain_diff', 
             resource_class_kwargs={'network_wrapper_class_arg': self.parent_class})
-
-        api.add_resource(self.start_transacting_endpoint, '/start_transacting', 
-            resource_class_kwargs={'network_wrapper_class_arg': self.parent_class})
-
+    
     def run(self):
         t = threading.Thread(target=lambda: app.run(host=self.ip, port=self.port)) #debug=True, use_reloader=False
         t.start()
@@ -62,7 +59,7 @@ class node_api_server():
             
             self.node_wrapper.save_net_info(public_keys_table, ips_table, genesis_block)
 
-            return {"status": "OK", "node_id": self.node_wrapper.node.node_id}, 201
+            return {"status": "OK"}, 201
 
     class transaction_endpoint(Resource):
         def __init__(self, network_wrapper_class_arg):
@@ -161,14 +158,3 @@ class node_api_server():
             res_code = 201 if res_msg["added"] == True else 500
 
             return res_msg, res_code
-
-    class start_transacting_endpoint(Resource):
-        def __init__(self, network_wrapper_class_arg):
-            self.bootstrap_wrapper = network_wrapper_class_arg
-
-        # bootstrap posts to node to signal they can start making txs
-        def post(self):
-            self.bootstrap_wrapper.can_start_transacting = True
-            return {"status": "OK"}, 201
-
-    

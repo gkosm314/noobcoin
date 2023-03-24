@@ -28,11 +28,11 @@ class node_network_wrapper:
 
         self.api_server = rest_api.node_api_server(self.ip, self.port, self)
         self.registration_completed = False 
-        self.can_start_transacting = False 
+        self.init_state_bcast_completed = False 
 
         self.api_server.run() 
 
-        if not is_bootstrap: # normal node
+        if not is_bootstrap:
             time.sleep(3)
             self.register()
 
@@ -41,15 +41,6 @@ class node_network_wrapper:
                     logging.info("node registered")
                     break
                 time.sleep(1)
-
-            while 1:
-                if self.can_start_transacting:
-                    logging.info("node can start transacting")
-                    break
-                time.sleep(1)
-
-            start = time.time()
-            print(f'start time FOR TESTCASE for node {self.node.node_id}: {start}')
         else:
             while 1:
                 if self.registration_completed: 
@@ -57,23 +48,10 @@ class node_network_wrapper:
                     break
                 time.sleep(1)
         
-            time.sleep(10) # wait for all nodes to receive their ids
+            time.sleep(10)
             self.bcast_initial_state()
-            # because posts are synchronous, here all nodes have received the net-infos
-            self.node = self.bootstrap_node.produce_node()
-
-            for node_id in self.node.public_key.keys():
-                if node_id == self.node.node_id:
-                    continue
-                self.node.create_transaction(node_id, 100)
             
-            # because posts are synchronous (and bcast tx is internally called), 
-            # here all nodes have received their first 100NBC
-
-            self.bcast_start_transacting()
-
-            start = time.time()
-            print(f'start time FOR TESTCASE for node {self.node.node_id}: {start}')
+            self.node = self.bootstrap_node.produce_node()
 
 
     def register(self):
@@ -175,39 +153,11 @@ class node_network_wrapper:
 
         pool.close()
         pool.join()
-
-    def bcast_start_transacting(self):
-        '''Broadcast to all the nodes that everyone has received their first 100NBC
-        and they can start making txs'''
-        
-        logging.info("broadcasting start transacting")
-        headers = {"Content-Type": "application/json; charset=utf-8"}
-
-        def unicast(network_info_tuple_arg):
-            ip, port = network_info_tuple_arg
-            req = requests.post(f"http://{ip}:{port}/start_transacting", headers=headers)
-            
-        pool = Pool(self.bootstrap_node.number_of_nodes-1)
-        
-        for public_key, network_info_tuple in self.bootstrap_node.network_info_table.items():
-            if public_key == self.bootstrap_node.wallet.public_key:
-                # don't broadcast to self
-                continue
-        
-            pool.apply_async(unicast, (network_info_tuple,))
-
-        pool.close()
-        pool.join()
-   
-
-
-if __name__=="__main__":
-    # logging.basicConfig(level=logging.WARNING)
-    # flog = logging.getLogger('werkzeug')
-    # flog.setLevel(logging.ERROR)
     
-    # logging.basicConfig(level=logging.DEBUG, filename="logfile", filemode="w+",
-    # format="%(asctime)-15s %(levelname)-8s %(message)s")
+if __name__=="__main__":
+    logging.basicConfig(level=logging.INFO)
+    flog = logging.getLogger('werkzeug')
+    #flog.setLevel(logging.ERROR)
 
     role = sys.argv[1]
 
@@ -216,6 +166,7 @@ if __name__=="__main__":
         n.view_transactions()
         print(n.current_block.transactions)
         print(n.transactions_buffer)
+        
 
     if role == "bootstrap":
         bootstrap_wrapper = node_network_wrapper(config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, True)
@@ -224,7 +175,9 @@ if __name__=="__main__":
 
         n = bootstrap_wrapper.node
         time.sleep(2)
-        
+        n.create_transaction(1, 100)
+        n.create_transaction(2, 100)
+        n.create_transaction(3, 100)
         n.create_transaction(1, 4)
         n.create_transaction(2, 4)
         n.create_transaction(3, 4)  
@@ -232,13 +185,14 @@ if __name__=="__main__":
         n.create_transaction(2, 4)
         n.create_transaction(3, 4)               
         test_func(n)
+       
 
 
     elif role == "node1":
         node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
         print("end of init phase")
         n = node_wrapper.node        
-        
+        time.sleep(15)
         n.create_transaction(3, 1)
         n.create_transaction(0, 1)
         n.create_transaction(2, 1)
@@ -268,15 +222,16 @@ if __name__=="__main__":
         n.create_transaction(0, 1)
         n.create_transaction(2, 1)
         n.create_transaction(3, 1)
-        n.create_transaction(2, 1)      
+        n.create_transaction(2, 1)                        
         test_func(n)
+       
 
 
     elif role == "node2":
         node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+1, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
         print("end of init phase")
         n = node_wrapper.node
-        
+        time.sleep(10)
         n.create_transaction(1, 1000)           
         n.create_transaction(1, 1)
         n.create_transaction(3, 1)
@@ -305,8 +260,9 @@ if __name__=="__main__":
         n.create_transaction(1, 1)
         n.create_transaction(1, 1) 
         n.create_transaction(0, 1)
-        n.create_transaction(1, 1)            
+        n.create_transaction(1, 1)                    
         test_func(n)
+       
 
 
 
@@ -314,7 +270,7 @@ if __name__=="__main__":
         node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+2, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
         print("end of init phase")
         n = node_wrapper.node
-        
+        time.sleep(10)    
         n.create_transaction(0, 1)
         n.create_transaction(1, 1)
         n.create_transaction(1, 1000)
@@ -324,6 +280,6 @@ if __name__=="__main__":
         n.create_transaction(1, 1)
         n.create_transaction(1, 1000)
         n.create_transaction(2, 1)
-        n.create_transaction(1, 1)       
+        n.create_transaction(1, 1)        
         test_func(n)
-    
+       

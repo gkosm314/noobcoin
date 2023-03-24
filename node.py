@@ -104,7 +104,7 @@ class node:
 		#self.node_id - int that represents the node's id
 		self.node_id = node_id_arg
 
-		#self.public_key - dict such that public_key[id] = public key of node with given id
+		#self.public_key - list such that public_key[id] = public key of node with given id
 		self.private_key = private_key_arg
 		self.public_key = public_key_list_arg
 
@@ -347,8 +347,8 @@ class node:
 
 		#If this raises and error after deserialization to a different node, change m to self.msg_to_hash
 		m = str((b.index, b.timestamp, b.transaction_hashes, b.previous_hash, b.nonce))
-		# logging.info(b.msg_to_hash)
-		# logging.info(m)
+		logging.info(b.msg_to_hash)
+		logging.info(m)
 		if (rsa.compute_hash(m.encode(), 'SHA-1') == b.current_hash) and hash_begins_with_d_zeros_flag:
 			return True
 		else:
@@ -369,9 +369,9 @@ class node:
 		#Check that the previous_hash of the block_to_validate is the current hash of the last block in the chain
 		try:
 			if self.current_blockchain.chain[-1].current_hash != block_to_validate.previous_hash:
-				# logging.info(len(self.current_blockchain.chain))
-				# logging.info(self.current_blockchain.chain[-1].current_hash)
-				# logging.info(block_to_validate.previous_hash)
+				logging.info(len(self.current_blockchain.chain))
+				logging.info(self.current_blockchain.chain[-1].current_hash)
+				logging.info(block_to_validate.previous_hash)
 				logging.info("validate block returns False")
 				return False
 		except:
