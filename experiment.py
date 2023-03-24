@@ -23,7 +23,7 @@ n = node_wrapper.node
 
 
 #open and parse the input file:    
-input_filename = f'transactions_short/{config.TOTAL_NODES}nodes/transactions{n.node_id}.txt'
+input_filename = f'transactions/{config.TOTAL_NODES}nodes/transactions{n.node_id}.txt'
 
 regex = r"^id(\d) (\d+)"
 p = re.compile(regex)
