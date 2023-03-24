@@ -6,6 +6,21 @@ import logging
 logging.basicConfig(level=logging.DEBUG, filename="logfile", filemode="w+",
     format="%(asctime)-15s %(levelname)-8s %(message)s")
 
+if role == "bootstrap":
+    is_bootstrap = True
+    node_ip = config.BOOTSTRAP_IP
+    node_port = config.BOOTSTRAP_PORT
+
+elif role == "node":
+    is_bootstrap = False
+    node_ip = config.NODE_IP
+    node_port = config.NODE_PORT
+    
+node_wrapper = node_network_wrapper(node_ip, node_port, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, is_bootstrap)
+print("end of init phase")
+n = node_wrapper.node        
+
+
 #open and parse the input file:    
 input_filename = f'transactions_short/{config.TOTAL_NODES}nodes/transactions{n.node_id}.txt'
 
@@ -22,16 +37,6 @@ with open(input_filename, "r") as f:
         transactions.append((recipient_node_id, amount))
 
 role = sys.argv[1]
-
-if role == "bootstrap":
-    bootstrap_wrapper = node_network_wrapper(config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, True)
-    print("end of init phase")
-    n = bootstrap_wrapper.node
-
-elif role == "node":
-    node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
-    print("end of init phase")
-    n = node_wrapper.node        
 
 #execute the transactions:
 for (recipient_node_id, amount) in transactions:
