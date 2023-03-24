@@ -155,9 +155,12 @@ class node_network_wrapper:
         pool.join()
     
 if __name__=="__main__":
-    logging.basicConfig(level=logging.WARNING)
-    flog = logging.getLogger('werkzeug')
-    #flog.setLevel(logging.ERROR)
+    # logging.basicConfig(level=logging.WARNING)
+    # flog = logging.getLogger('werkzeug')
+    # #flog.setLevel(logging.ERROR)
+
+    logging.basicConfig(level=logging.DEBUG, filename="logfile", filemode="w+",
+    format="%(asctime)-15s %(levelname)-8s %(message)s")
 
     secs = 10
 
