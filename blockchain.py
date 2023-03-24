@@ -3,6 +3,7 @@ import transaction
 import state
 import threading
 import logging
+import time
 
 class Blockchain:
 
