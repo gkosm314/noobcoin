@@ -6,6 +6,7 @@ import logging
 logging.basicConfig(level=logging.DEBUG, filename="logfile", filemode="w+",
     format="%(asctime)-15s %(levelname)-8s %(message)s")
 
+role = sys.argv[1]
 if role == "bootstrap":
     is_bootstrap = True
     node_ip = config.BOOTSTRAP_IP
@@ -24,7 +25,7 @@ n = node_wrapper.node
 #open and parse the input file:    
 input_filename = f'transactions_short/{config.TOTAL_NODES}nodes/transactions{n.node_id}.txt'
 
-regex = r"^id(\d) (\d)"
+regex = r"^id(\d) (\d+)"
 p = re.compile(regex)
 transactions = []
 with open(input_filename, "r") as f:
@@ -36,10 +37,8 @@ with open(input_filename, "r") as f:
         amount = int(amount)
         transactions.append((recipient_node_id, amount))
 
-role = sys.argv[1]
-
 #execute the transactions:
 for (recipient_node_id, amount) in transactions:
     n.create_transaction(recipient_node_id, amount)
 
-n.view_transactions()
+# n.view_transactions()
