@@ -37,8 +37,8 @@ with open(input_filename, "r") as f:
 
 #execute the transactions:
 start = time.time()
+print(f'start time FOR SHORT TESTCASE for node {n.node_id}:{start}')
 for (recipient_node_id, amount) in transactions:
     n.create_transaction(recipient_node_id, amount)
-stop = time.time() # WE ARE NOT ACCOUNTING FOR THE LAST
-print(f'total time FOR SHORT TESTCASE:{stop-start}')
+
 n.view_transactions()

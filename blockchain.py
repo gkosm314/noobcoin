@@ -47,7 +47,7 @@ class Blockchain:
 		self.chain.append(new_block)
 		logging.info("attach block end")
 		now = time.time()
-		print(f'attached block: {now-new_block.timestamp}')
+		print(f'attach block: block time: {now-new_block.timestamp} current time:{now}')
 
 	def hashes_of_blocks(self):
 		return [b.current_hash for b in self.chain]
