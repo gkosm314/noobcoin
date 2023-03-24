@@ -45,6 +45,8 @@ class Blockchain:
 		#Append new block to the list of validated blocks and update blockchain's available UTXOs
 		self.chain.append(new_block)
 		logging.info("attach block end")
+		now = time.time()
+		print(f'attached block: {now-new_block.timestamp}')
 
 	def hashes_of_blocks(self):
 		return [b.current_hash for b in self.chain]

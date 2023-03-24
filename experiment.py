@@ -21,11 +21,11 @@ elif role == "node":
     time.sleep(15)
 
 #open and parse the input file:    
-input_filename = f'transactions/{config.TOTAL_NODES}nodes/transactions{n.node_id}.txt'
+input_filename = f'transactions_short/{config.TOTAL_NODES}nodes/transactions{n.node_id}.txt'
 
 regex = r"^id(\d) (\d)"
 p = re.compile(regex)
-
+transactions = []
 with open(input_filename, "r") as f:
     for line in f:
         matches = re.findall(regex, line)
@@ -33,8 +33,12 @@ with open(input_filename, "r") as f:
         
         recipient_node_id = int(recipient_node_id)
         amount = int(amount)
+        transactions.append((recipient_node_id, amount))
 
-        #execute the transactions:
-        n.create_transaction(recipient_node_id, amount)
-
+#execute the transactions:
+start = time.time()
+for (recipient_node_id, amount) in transactions:
+    n.create_transaction(recipient_node_id, amount)
+stop = time.time() # WE ARE NOT ACCOUNTING FOR THE LAST
+print(f'total time FOR SHORT TESTCASE:{stop-start}')
 n.view_transactions()
