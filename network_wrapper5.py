@@ -166,6 +166,15 @@ if __name__=="__main__":
 
     role = sys.argv[1]
 
+    # overwrite the config vars for automating exec
+    cap_cmd_arg = int(sys.argv[2])
+    diff_cmd_arg = int(sys.argv[3])
+    total_nodes_cmd_arg = int(sys.argv[4])
+
+    config.capacity = cap_cmd_arg
+    config.difficulty = diff_cmd_arg
+    config.TOTAL_NODES = total_nodes_cmd_arg
+
     def test_func(n):
         time.sleep(360)
         n.view_transactions()
@@ -174,6 +183,8 @@ if __name__=="__main__":
         print(len(n.current_blockchain))
         
 
+    print(f"running with d={config.difficulty}, cap={config.capacity}, total_nodes={config.TOTAL_NODES}")
+    
     if role == "bootstrap":
         bootstrap_wrapper = node_network_wrapper(config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, True)
         print("end of init phase")
