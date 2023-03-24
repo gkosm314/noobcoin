@@ -3,6 +3,7 @@ import transaction
 import state
 import threading
 import logging
+import time
 
 class Blockchain:
 
@@ -44,6 +45,8 @@ class Blockchain:
 
 		#Append new block to the list of validated blocks and update blockchain's available UTXOs
 		self.chain.append(new_block)
+		now = time.time()
+		print(f'attach block: block time: {now-new_block.timestamp} current time:{now}')
 		logging.info("attach block end")
 
 	def hashes_of_blocks(self):
