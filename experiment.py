@@ -27,13 +27,11 @@ if role == "bootstrap":
     bootstrap_wrapper = node_network_wrapper(config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, True)
     print("end of init phase")
     n = bootstrap_wrapper.node
-    time.sleep(2)
 
 elif role == "node":
     node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
     print("end of init phase")
     n = node_wrapper.node        
-    time.sleep(15) # NEED TO TAKE INTO ACCOUNT THESE
 
 #execute the transactions:
 for (recipient_node_id, amount) in transactions:
