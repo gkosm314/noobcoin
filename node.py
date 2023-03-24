@@ -235,17 +235,22 @@ class node:
 		#Otherwise throw it away
 		if self.current_state.validate_transaction(tx):
 			#Execute transaction on the current state and add it to the current block
-			self.current_state.execute_transcation(tx)
-			self.current_block.add_transaction(tx)
-		self.mine_lock_held = False
+			if self.current_block.add_transaction(tx):
+				self.current_state.execute_transcation(tx)
+				self.mine_lock_held = False
+				return True
 
+		self.mine_lock_held = False
+		return False
+		
 	def receive_transaction(self, tx: transaction):
 		''' This method is called by the network_wrapper when a transaction is received.'''
 		logging.info(f"receive tx {tx.transaction_id}")
 		#If the current_block still accepts more TXs, then work with it
 		# if self.current_block_available:
 		if not self.current_block.full():
-			self.add_transaction_to_current_block(tx)
+			if not self.add_transaction_to_current_block(tx):
+				self.transactions_buffer.append(tx)
 		else:
 			#If the current_block is full, append the TX to a buffer so that a future block can grab it
 			logging.info("yo")
@@ -291,9 +296,10 @@ class node:
 		logging.info("start consuming transaction buffer")
 		#TODO: discuss this...
 		logging.info(self.transactions_buffer)
-		while self.transactions_buffer:
-			tx = self.transactions_buffer.pop()
-			self.add_transaction_to_current_block(tx)
+		while self.transactions_buffer and (not self.current_block.full()):
+			tx = self.transactions_buffer[0]
+			if self.add_transaction_to_current_block(tx):
+				self.transactions_buffer.pop()
 		# print("stop consuming transaction buffer")
 		logging.info(self.transactions_buffer)
 
