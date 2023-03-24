@@ -62,9 +62,11 @@ class node_network_wrapper:
             # because posts are synchronous, here all nodes have received the net-infos
             self.node = self.bootstrap_node.produce_node()
 
-            self.node.create_transaction(1, 100)
-            self.node.create_transaction(2, 100)
-            self.node.create_transaction(3, 100)
+            for node_id in self.node.public_key.keys():
+                if node_id == self.node.node_id:
+                    continue
+                self.node.create_transaction(node_id, 100)
+            
             # because posts are synchronous (and bcast tx is internally called), 
             # here all nodes have received their first 100NC
 
