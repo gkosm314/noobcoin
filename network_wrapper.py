@@ -53,6 +53,9 @@ class node_network_wrapper:
             
             self.node = self.bootstrap_node.produce_node()
 
+            start = time.time()
+            print(f'start time FOR SHORT TESTCASE for node {self.node.node_id}:{start}')
+
 
     def register(self):
         '''send public key to bootstrap'''
