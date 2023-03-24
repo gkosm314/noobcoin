@@ -39,6 +39,9 @@ with open(input_filename, "r") as f:
 
 #execute the transactions:
 for (recipient_node_id, amount) in transactions:
+    print(f'creating tx to {recipient_node_id} of amount {amount}')
     n.create_transaction(recipient_node_id, amount)
+
+# time.sleep(secs)
 
 # n.view_transactions()

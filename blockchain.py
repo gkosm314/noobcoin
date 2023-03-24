@@ -65,12 +65,11 @@ class Blockchain:
 		for b in self.chain[(index_of_last_remaining_block+1):]:
 			for tx in b.transactions:
 				tx_of_removed_chain.append(tx)
-		debug_flag = False
+		
 		#From end to start, undo the transaction and remove it from transactions_included set
 		for tx in tx_of_removed_chain[::-1]:
 				self.state.undo_transaction(tx)
 				self.transactions_included.remove(tx.transaction_id)
-				debug_flag = True
 
 		#For the new chain, execute the transaction and add it to transaction_included set
 		for b in list_of_blocks:

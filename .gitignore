@@ -3,3 +3,4 @@ __pycache__
 logfile
 config.py
 parse.py
+results.txt

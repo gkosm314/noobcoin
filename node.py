@@ -144,9 +144,14 @@ class node:
 	def poll_for_mining(self):
 		#If the block reached full capacity
 		while 1:
-			if self.current_block.full() and not self.mine_lock_held:
-				self.mine_current_block()
-			time.sleep(1)
+			if self.transactions_buffer:
+				tx = self.transactions_buffer.pop(0)
+				self.add_transaction_to_current_block(tx)
+
+				if self.current_block.full():
+					self.mine_current_block()
+			else:
+				time.sleep(1)
 
 	def create_transaction(self, recipient_id_arg, amount_arg):
 		#Waiting so that no more than one transaction can be created simultaneously
@@ -235,31 +240,17 @@ class node:
 		#Otherwise throw it away
 		if self.current_state.validate_transaction(tx):
 			#Execute transaction on the current state and add it to the current block
-			if self.current_block.add_transaction(tx):
-				self.current_state.execute_transcation(tx)
-				self.mine_lock_held = False
-				return True
-
+			self.current_state.execute_transcation(tx)
+			self.current_block.add_transaction(tx)
 		self.mine_lock_held = False
-		return False
-		
+
 	def receive_transaction(self, tx: transaction):
 		''' This method is called by the network_wrapper when a transaction is received.'''
 		logging.info(f"receive tx {tx.transaction_id}")
-		#If the current_block still accepts more TXs, then work with it
-		# if self.current_block_available:
-		if not self.current_block.full():
-			if not self.add_transaction_to_current_block(tx):
-				self.transactions_buffer.append(tx)
-		else:
-			#If the current_block is full, append the TX to a buffer so that a future block can grab it
-			# logging.info("yo")
-			self.transactions_buffer.append(tx)
+		self.transactions_buffer.append(tx)
 
 	def mine_current_block(self):
 		logging.info("start mine_current_block")
-		# #Flag current_block as unavailable
-		# self.current_block_available = False
 
 		#Mine this block
 		t = threading.Thread(target=lambda: self.current_block.mine())
@@ -292,19 +283,6 @@ class node:
 		self.current_block = block.Block(last_block.index + 1, last_block.current_hash)
 		self.current_state = deepcopy(self.current_blockchain.state)
 		logging.info("end creation of new block")
-
-		logging.info("start consuming transaction buffer")
-		#TODO: discuss this...
-		# logging.info(self.transactions_buffer)
-		while self.transactions_buffer and (not self.current_block.full()):
-			tx = self.transactions_buffer[0]
-			if self.add_transaction_to_current_block(tx):
-				self.transactions_buffer.pop()
-		# print("stop consuming transaction buffer")
-		# logging.info(self.transactions_buffer)
-
-		# #Flag current_block as unavailable
-		# self.current_block_available = True
 
 		logging.info("end mine_current_block")
 

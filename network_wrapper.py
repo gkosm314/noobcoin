@@ -49,7 +49,7 @@ class node_network_wrapper:
                 time.sleep(1)
 
             start = time.time()
-            print(f'start time FOR SHORT TESTCASE for node {self.node.node_id}: {start}')
+            print(f'start time FOR TESTCASE for node {self.node.node_id}: {start}')
         else:
             while 1:
                 if self.registration_completed: 
@@ -68,12 +68,12 @@ class node_network_wrapper:
                 self.node.create_transaction(node_id, 100)
             
             # because posts are synchronous (and bcast tx is internally called), 
-            # here all nodes have received their first 100NC
+            # here all nodes have received their first 100NBC
 
             self.bcast_start_transacting()
 
             start = time.time()
-            print(f'start time FOR SHORT TESTCASE for node {self.node.node_id}: {start}')
+            print(f'start time FOR TESTCASE for node {self.node.node_id}: {start}')
 
 
     def register(self):
@@ -177,7 +177,7 @@ class node_network_wrapper:
         pool.join()
 
     def bcast_start_transacting(self):
-        '''Broadcast to all the nodes that everyone has received their first 100NC
+        '''Broadcast to all the nodes that everyone has received their first 100NBC
         and they can start making txs'''
         
         logging.info("broadcasting start transacting")
@@ -205,13 +205,17 @@ if __name__=="__main__":
     # logging.basicConfig(level=logging.WARNING)
     # flog = logging.getLogger('werkzeug')
     # flog.setLevel(logging.ERROR)
-    logging.basicConfig(level=logging.DEBUG, filename="logfile", filemode="w+",
-    format="%(asctime)-15s %(levelname)-8s %(message)s")
+    
+    # logging.basicConfig(level=logging.DEBUG, filename="logfile", filemode="w+",
+    # format="%(asctime)-15s %(levelname)-8s %(message)s")
 
     role = sys.argv[1]
 
     def test_func(n):
-        time.sleep(150)
+        time.sleep(240)
+        n.view_transactions()
+        print(n.current_block.transactions)
+        print(n.transactions_buffer)
 
     if role == "bootstrap":
         bootstrap_wrapper = node_network_wrapper(config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, True)
@@ -228,7 +232,6 @@ if __name__=="__main__":
         n.create_transaction(2, 4)
         n.create_transaction(3, 4)               
         test_func(n)
-        n.view_transactions()
 
 
     elif role == "node1":
@@ -245,9 +248,28 @@ if __name__=="__main__":
         n.create_transaction(0, 1)
         n.create_transaction(2, 1)
         n.create_transaction(3, 1)
-        n.create_transaction(2, 1)        
+        n.create_transaction(2, 1)
+        n.create_transaction(3, 1)
+        n.create_transaction(0, 1)
+        n.create_transaction(2, 1)
+        n.create_transaction(3, 1)
+        n.create_transaction(2, 1)
+        n.create_transaction(3, 1)
+        n.create_transaction(0, 1)
+        n.create_transaction(2, 1)
+        n.create_transaction(3, 1)
+        n.create_transaction(2, 1) 
+        n.create_transaction(3, 1)
+        n.create_transaction(0, 1)
+        n.create_transaction(2, 1)
+        n.create_transaction(3, 1)
+        n.create_transaction(2, 1)
+        n.create_transaction(3, 1)
+        n.create_transaction(0, 1)
+        n.create_transaction(2, 1)
+        n.create_transaction(3, 1)
+        n.create_transaction(2, 1)      
         test_func(n)
-        n.view_transactions()
 
 
     elif role == "node2":
@@ -269,9 +291,22 @@ if __name__=="__main__":
         n.create_transaction(1, 1)
         n.create_transaction(1, 1) 
         n.create_transaction(0, 1)
-        n.create_transaction(1, 1)        
+        n.create_transaction(1, 1) 
+        n.create_transaction(1, 1)
+        n.create_transaction(3, 1)
+        n.create_transaction(0, 1)
+        n.create_transaction(1, 1)
+        n.create_transaction(1, 1) 
+        n.create_transaction(0, 1)
+        n.create_transaction(1, 1)
+        n.create_transaction(1, 1)
+        n.create_transaction(3, 1)
+        n.create_transaction(0, 1)
+        n.create_transaction(1, 1)
+        n.create_transaction(1, 1) 
+        n.create_transaction(0, 1)
+        n.create_transaction(1, 1)            
         test_func(n)
-        n.view_transactions()
 
 
 
@@ -289,7 +324,6 @@ if __name__=="__main__":
         n.create_transaction(1, 1)
         n.create_transaction(1, 1000)
         n.create_transaction(2, 1)
-        n.create_transaction(1, 1)        
+        n.create_transaction(1, 1)       
         test_func(n)
-        n.view_transactions()
     
