@@ -1,0 +1,223 @@
+end of init phase
+attach block: block time: 3.008474349975586 current time:1679775034.2186584
+completed resolution at current time:1679775034.514925
+completed resolution at current time:1679775034.6335468
+completed resolution at current time:1679775034.8549256
+completed resolution at current time:1679775035.082149
+completed resolution at current time:1679775035.20643
+creating new block at time: 1679775035.3344934
+completed resolution at current time:1679775035.4288507
+completed resolution at current time:1679775035.5549939
+creating new block at time: 1679775035.6663878
+completed resolution at current time:1679775035.7853713
+completed resolution at current time:1679775035.9011126
+attach block: block time: 0.23709607124328613 current time:1679775035.9036283
+completed resolution at current time:1679775036.2578096
+creating new block at time: 1679775036.6106336
+starting time: 1679775041.457286
+completed resolution at current time:1679775041.7619157
+completed resolution at current time:1679775041.8762047
+creating new block at time: 1679775041.8783135
+attach block: block time: 0.06987285614013672 current time:1679775041.8810844
+creating new block at time: 1679775041.8828185
+attach block: block time: 0.03657698631286621 current time:1679775042.025811
+completed resolution at current time:1679775042.3972116
+completed resolution at current time:1679775042.6088588
+completed resolution at current time:1679775042.8530252
+creating new block at time: 1679775042.8890486
+completed resolution at current time:1679775043.0739262
+completed resolution at current time:1679775043.1889403
+completed resolution at current time:1679775043.30435
+completed resolution at current time:1679775043.4229562
+creating new block at time: 1679775043.4260805
+completed resolution at current time:1679775043.5372279
+completed resolution at current time:1679775043.6838531
+creating new block at time: 1679775043.6863701
+completed resolution at current time:1679775043.8226454
+creating new block at time: 1679775044.0392933
+completed resolution at current time:1679775044.166751
+completed resolution at current time:1679775044.302293
+creating new block at time: 1679775044.3044832
+completed resolution at current time:1679775044.4476106
+completed resolution at current time:1679775044.6763558
+creating new block at time: 1679775044.680162
+completed resolution at current time:1679775044.9047909
+completed resolution at current time:1679775045.0462637
+completed resolution at current time:1679775045.1685755
+completed resolution at current time:1679775045.390986
+creating new block at time: 1679775045.3944178
+completed resolution at current time:1679775045.7204068
+completed resolution at current time:1679775045.8382993
+completed resolution at current time:1679775045.9601858
+completed resolution at current time:1679775046.0779326
+creating new block at time: 1679775046.0800066
+completed resolution at current time:1679775046.2021997
+completed resolution at current time:1679775046.5292456
+completed resolution at current time:1679775046.6476052
+creating new block at time: 1679775046.6499135
+completed resolution at current time:1679775046.767516
+completed resolution at current time:1679775046.8868403
+completed resolution at current time:1679775047.1058228
+completed resolution at current time:1679775047.2279031
+creating new block at time: 1679775047.2312164
+completed resolution at current time:1679775047.3612046
+completed resolution at current time:1679775047.6028461
+completed resolution at current time:1679775047.7194793
+completed resolution at current time:1679775047.8378627
+creating new block at time: 1679775047.8405824
+completed resolution at current time:1679775047.977137
+completed resolution at current time:1679775048.0930984
+completed resolution at current time:1679775048.3119118
+creating new block at time: 1679775048.315594
+completed resolution at current time:1679775048.458118
+completed resolution at current time:1679775048.678822
+completed resolution at current time:1679775048.8228974
+completed resolution at current time:1679775048.9522734
+creating new block at time: 1679775048.9551945
+completed resolution at current time:1679775049.0752757
+completed resolution at current time:1679775049.3037658
+completed resolution at current time:1679775049.4230795
+completed resolution at current time:1679775049.5486329
+creating new block at time: 1679775049.5521414
+completed resolution at current time:1679775049.7977946
+completed resolution at current time:1679775049.9268045
+completed resolution at current time:1679775050.1538105
+creating new block at time: 1679775050.1568189
+completed resolution at current time:1679775050.2777882
+completed resolution at current time:1679775050.394626
+completed resolution at current time:1679775050.5146148
+completed resolution at current time:1679775050.6512449
+creating new block at time: 1679775050.7611892
+completed resolution at current time:1679775050.899277
+completed resolution at current time:1679775051.122683
+completed resolution at current time:1679775051.2429974
+completed resolution at current time:1679775051.3595414
+creating new block at time: 1679775051.3625412
+completed resolution at current time:1679775051.4890769
+completed resolution at current time:1679775051.605407
+completed resolution at current time:1679775051.71879
+completed resolution at current time:1679775051.8377554
+completed resolution at current time:1679775051.9551172
+creating new block at time: 1679775051.9586174
+completed resolution at current time:1679775052.0807254
+completed resolution at current time:1679775052.21789
+completed resolution at current time:1679775052.3393035
+completed resolution at current time:1679775052.4667559
+creating new block at time: 1679775052.57824
+completed resolution at current time:1679775052.697765
+completed resolution at current time:1679775052.8182418
+completed resolution at current time:1679775052.9314332
+completed resolution at current time:1679775053.0589929
+creating new block at time: 1679775053.0634816
+completed resolution at current time:1679775053.1834886
+completed resolution at current time:1679775053.406662
+completed resolution at current time:1679775053.5278
+completed resolution at current time:1679775053.641345
+creating new block at time: 1679775053.6441245
+completed resolution at current time:1679775053.7840946
+completed resolution at current time:1679775053.9276545
+completed resolution at current time:1679775054.0584795
+completed resolution at current time:1679775054.2918112
+creating new block at time: 1679775054.2967312
+completed resolution at current time:1679775054.4246483
+completed resolution at current time:1679775054.5458148
+completed resolution at current time:1679775054.772944
+creating new block at time: 1679775054.8840554
+completed resolution at current time:1679775055.0083556
+completed resolution at current time:1679775055.127908
+completed resolution at current time:1679775055.2485778
+completed resolution at current time:1679775055.478107
+creating new block at time: 1679775055.4808195
+completed resolution at current time:1679775055.715502
+completed resolution at current time:1679775055.8326378
+completed resolution at current time:1679775056.056261
+creating new block at time: 1679775056.0583167
+completed resolution at current time:1679775056.1769438
+completed resolution at current time:1679775056.3090417
+completed resolution at current time:1679775056.5410976
+completed resolution at current time:1679775056.663049
+creating new block at time: 1679775056.6678493
+completed resolution at current time:1679775056.7944436
+completed resolution at current time:1679775056.9207213
+completed resolution at current time:1679775057.1529875
+completed resolution at current time:1679775057.2723498
+creating new block at time: 1679775057.2752397
+completed resolution at current time:1679775057.515924
+completed resolution at current time:1679775057.6331077
+completed resolution at current time:1679775057.858508
+creating new block at time: 1679775057.861794
+completed resolution at current time:1679775057.9878142
+completed resolution at current time:1679775058.2165504
+completed resolution at current time:1679775058.3436546
+completed resolution at current time:1679775058.463266
+creating new block at time: 1679775058.4665897
+completed resolution at current time:1679775058.7034812
+completed resolution at current time:1679775058.934158
+completed resolution at current time:1679775059.0570242
+creating new block at time: 1679775059.060305
+completed resolution at current time:1679775059.1878698
+completed resolution at current time:1679775059.4154675
+completed resolution at current time:1679775059.643505
+creating new block at time: 1679775059.6465762
+completed resolution at current time:1679775059.7809289
+completed resolution at current time:1679775060.0026753
+completed resolution at current time:1679775060.1203418
+completed resolution at current time:1679775060.2385516
+creating new block at time: 1679775060.242314
+completed resolution at current time:1679775060.3737054
+completed resolution at current time:1679775060.4944088
+completed resolution at current time:1679775060.7265754
+completed resolution at current time:1679775060.844279
+creating new block at time: 1679775060.847221
+completed resolution at current time:1679775060.9807646
+completed resolution at current time:1679775061.224814
+completed resolution at current time:1679775061.4518385
+creating new block at time: 1679775061.4551146
+completed resolution at current time:1679775061.5828426
+completed resolution at current time:1679775061.7047706
+completed resolution at current time:1679775061.9468203
+completed resolution at current time:1679775062.0673826
+creating new block at time: 1679775062.070434
+completed resolution at current time:1679775062.2051592
+completed resolution at current time:1679775062.4423127
+completed resolution at current time:1679775062.566359
+completed resolution at current time:1679775062.6908188
+creating new block at time: 1679775062.6937966
+completed resolution at current time:1679775062.8217998
+completed resolution at current time:1679775062.969998
+completed resolution at current time:1679775063.2063699
+completed resolution at current time:1679775063.325252
+creating new block at time: 1679775063.3279002
+completed resolution at current time:1679775063.562819
+completed resolution at current time:1679775063.6983864
+completed resolution at current time:1679775063.9337823
+creating new block at time: 1679775063.9372919
+completed resolution at current time:1679775064.069006
+completed resolution at current time:1679775064.1870818
+completed resolution at current time:1679775064.3123357
+completed resolution at current time:1679775064.4331079
+completed resolution at current time:1679775064.5537915
+creating new block at time: 1679775064.5568604
+completed resolution at current time:1679775064.6868882
+completed resolution at current time:1679775064.8144164
+completed resolution at current time:1679775064.9383612
+completed resolution at current time:1679775065.161806
+creating new block at time: 1679775065.164172
+completed resolution at current time:1679775065.287517
+completed resolution at current time:1679775065.4047267
+completed resolution at current time:1679775065.5197697
+completed resolution at current time:1679775065.6377964
+completed resolution at current time:1679775065.758335
+
+ NODE #2 - BLOCK #165 - b'\x06\x85\xed\xcf&j(9\xcc\x0f\xa7]\xb51\x0e\xdd\x94i\xc7\xda'
+	------------------
+	Transaction Id: 840507730b4bb14290b840f6f150ebd87bd2d0a8
+	Amount: 4
+	Sender: PublicKey(7032601926812041477523301846496137314730404016636822688224134695737984937049364217890000487093087772862819916436669774064595048337092721002638610544053259, 65537)
+	Receiver: PublicKey(8048280864404329508384442918399218928192244068631010383953994080297120547795922854694135629900851819235153449956972287593682318768473929435906664581110091, 65537)
+	------------------
+			
+
+[]
+[]
+166

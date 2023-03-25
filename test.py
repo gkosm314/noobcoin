@@ -4,10 +4,10 @@ import time, random, string
 def starts_with_difficulty_zeros(hashvalue, difficulty):
     i = int.from_bytes(hashvalue, 'big')
     zeroes = 160 - i.bit_length()
-    res = zeroes >= difficulty
+    res = zeroes >= 4*difficulty
     return res
 
-for d in range(1,18):
+for d in [4,5]:
     my_str = str(''.join(random.choices(string.ascii_letters, k=20)))
     start_time = time.time()
     while 1:
@@ -17,4 +17,4 @@ for d in range(1,18):
             break
         else:
             my_str = str(''.join(random.choices(string.ascii_letters, k=20)))
-    print(f'found hash: {str_hash} with {d} zeros in {end_time-start_time} secs')
+    print(f'found hash: {str_hash} with {4*d} zeros (d={d}) in {end_time-start_time} secs')
