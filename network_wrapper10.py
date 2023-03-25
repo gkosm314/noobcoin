@@ -178,7 +178,7 @@ if __name__=="__main__":
 
 
     def test_func(n):
-        time.sleep(720)
+        time.sleep(50)
         n.view_transactions()
         print(n.current_block.transactions)
         print(n.transactions_buffer)
