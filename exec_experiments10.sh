@@ -4,7 +4,7 @@ mkdir -p auto_script/10nodes/logs/
 mkdir -p auto_script/10nodes/results/
 cat /dev/null > .pids
 
-zzz_time=720 # in secs
+zzz_time=60 # in secs
 n=10
 
 trap ctrl_c INT
@@ -20,8 +20,8 @@ schedule_exec_kill_cp() {
     local vm_num=$1
     local role=$2 
     local cpu=$3
-    # local PID=$(ssh node$vm_num "source venv/bin/activate;cd noobcoin; taskset --cpu-list $cpu python3.7 -u network_wrapper10.py $role $cap $d 10 > results$cpu.txt & echo \$!")
-    local PID=$(ssh node$vm_num "source venv/bin/activate;taskset --cpu-list $cpu python3.7 -u long_running.py $role > mylog & echo \$!")
+    local PID=$(ssh node$vm_num "source venv/bin/activate;cd noobcoin; taskset --cpu-list $cpu python3.7 -u network_wrapper10.py $role $cap $d 10 $cpu > results$cpu.txt & echo \$!")
+    # local PID=$(ssh node$vm_num "source venv/bin/activate;taskset --cpu-list $cpu python3.7 -u long_running.py $role > mylog & echo \$!")
     echo ssh node$vm_num \"kill ${PID}\" >> .pids
     sleep $zzz_time
     ssh node$vm_num "kill ${PID}"  

@@ -159,12 +159,23 @@ if __name__=="__main__":
     # flog = logging.getLogger('werkzeug')
     # #flog.setLevel(logging.ERROR)
 
-    logging.basicConfig(level=logging.DEBUG, filename="logfile", filemode="w+",
+    cpu = sys.argv[5]
+    logging.basicConfig(level=logging.DEBUG, filename="logfile"+cpu, filemode="w+",
     format="%(asctime)-15s %(levelname)-8s %(message)s")
 
     secs = 10
 
     role = sys.argv[1]
+    
+    # overwrite the config vars for automating exec
+    cap_cmd_arg = int(sys.argv[2])
+    diff_cmd_arg = int(sys.argv[3])
+    total_nodes_cmd_arg = int(sys.argv[4])
+
+    config.capacity = cap_cmd_arg
+    config.difficulty = diff_cmd_arg
+    config.TOTAL_NODES = total_nodes_cmd_arg
+
 
     def test_func(n):
         time.sleep(720)
