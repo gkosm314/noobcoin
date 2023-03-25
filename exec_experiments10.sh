@@ -4,7 +4,7 @@ mkdir -p auto_script/10nodes/logs/
 mkdir -p auto_script/10nodes/results/
 cat /dev/null > .pids
 
-zzz_time=60 # in secs
+zzz_time=100 # in secs
 n=10
 
 function zzz_sleep() {

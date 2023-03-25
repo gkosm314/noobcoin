@@ -278,6 +278,8 @@ class node:
 			self.transactions_buffer = transactions_to_reprocess + self.transactions_buffer
 		
 		logging.info("start creation of new block")
+		now = time.time()
+		print(f"creating new block at time: {now}")
 		#Create a new empty current_block and a new updated state
 		last_block = self.current_blockchain.chain[-1]
 		self.current_block = block.Block(last_block.index + 1, last_block.current_hash)
@@ -501,3 +503,5 @@ class node:
 			for tx in transcations_of_removed_chain:
 				if not (tx in self.current_blockchain.transactions_included):
 					self.transactions_buffer.append(tx)
+		now = time.time()
+		print(f"completed resolution at current time:{now}")
