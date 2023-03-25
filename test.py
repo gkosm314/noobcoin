@@ -1,17 +1,14 @@
 import rsa
-import time
+import time, random, string
 
-def starts_with_difficulty_zeros(next_hash, difficulty):
-    next_hash = int.from_bytes(next_hash, "big")   
-    mask = (1<<(160-difficulty))-1
-    mask &= next_hash
-    res = next_hash^mask == 0
+def starts_with_difficulty_zeros(hashvalue, difficulty):
+    i = int.from_bytes(hashvalue, 'big')
+    zeroes = 160 - i.bit_length()
+    res = zeroes >= difficulty
     return res
 
-d = 1
-
-for d in range(10):
-    my_str = "1"
+for d in range(100,108):
+    my_str = str(''.join(random.choices(string.ascii_letters, k=20)))
     start_time = time.time()
     while 1:
         str_hash = rsa.compute_hash(my_str.encode(), 'SHA-1')
@@ -19,5 +16,5 @@ for d in range(10):
             end_time = time.time()
             break
         else:
-            my_str = str(int(my_str)+1)
+            my_str = str(''.join(random.choices(string.ascii_letters, k=20)))
     print(f'found hash: {str_hash} with {d} zeros in {end_time-start_time} secs')

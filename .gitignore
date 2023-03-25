@@ -4,3 +4,4 @@ logfile
 config.py
 parse.py
 results.txt
+.pids
