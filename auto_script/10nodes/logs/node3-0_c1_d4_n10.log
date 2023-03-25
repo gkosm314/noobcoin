@@ -1,0 +1,6 @@
+2023-03-25 13:57:06,257 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://192.168.0.3:60206
+2023-03-25 13:57:06,257 INFO     [33mPress CTRL+C to quit[0m
+2023-03-25 13:57:09,256 DEBUG    Starting new HTTP connection (1): 192.168.0.1:50103
+2023-03-25 13:57:09,262 DEBUG    http://192.168.0.1:50103 "POST /register HTTP/1.1" 201 34
+2023-03-25 13:57:14,268 INFO     i just registered myself and received

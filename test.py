@@ -7,7 +7,7 @@ def starts_with_difficulty_zeros(hashvalue, difficulty):
     res = zeroes >= difficulty
     return res
 
-for d in range(100,108):
+for d in range(1,18):
     my_str = str(''.join(random.choices(string.ascii_letters, k=20)))
     start_time = time.time()
     while 1:

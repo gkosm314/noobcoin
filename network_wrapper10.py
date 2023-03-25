@@ -167,7 +167,7 @@ if __name__=="__main__":
     role = sys.argv[1]
 
     def test_func(n):
-        time.sleep(360)
+        time.sleep(720)
         n.view_transactions()
         print(n.current_block.transactions)
         print(n.transactions_buffer)
@@ -291,7 +291,7 @@ if __name__=="__main__":
         test_func(n)        
        
     elif role == "node1":
-        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
+        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+1, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
         print("end of init phase")
         n = node_wrapper.node        
         time.sleep(secs)
@@ -400,7 +400,7 @@ if __name__=="__main__":
         test_func(n)
        
     elif role == "node2":
-        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+1, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
+        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+2, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
         print("end of init phase")
         n = node_wrapper.node
         time.sleep(secs)
@@ -509,7 +509,7 @@ if __name__=="__main__":
         test_func(n)       
 
     elif role == "node3":
-        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+2, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
+        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+3, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
         print("end of init phase")
         n = node_wrapper.node
         time.sleep(secs)
@@ -618,7 +618,7 @@ if __name__=="__main__":
         test_func(n)
 
     elif role == "node4":
-        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+3, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
+        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+4, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
         print("end of init phase")
         n = node_wrapper.node
         time.sleep(secs)
@@ -727,7 +727,7 @@ if __name__=="__main__":
         test_func(n)
 
     elif role == "node5":
-        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+4, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
+        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+5, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
         print("end of init phase")
         n = node_wrapper.node
         time.sleep(secs)
@@ -836,7 +836,7 @@ if __name__=="__main__":
         test_func(n)
 
     elif role == "node6":
-        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+5, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
+        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+6, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
         print("end of init phase")
         n = node_wrapper.node
         time.sleep(secs)
@@ -945,7 +945,7 @@ if __name__=="__main__":
         test_func(n)
 
     elif role == "node7":
-        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+6, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
+        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+7, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
         print("end of init phase")
         n = node_wrapper.node
         time.sleep(secs)
@@ -1054,7 +1054,7 @@ if __name__=="__main__":
         test_func(n)
 
     elif role == "node8":
-        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+7, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
+        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+8, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
         print("end of init phase")
         n = node_wrapper.node
         time.sleep(secs)
@@ -1163,7 +1163,7 @@ if __name__=="__main__":
         test_func(n)
 
     elif role == "node9":
-        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+8, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
+        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT+9, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
         print("end of init phase")
         n = node_wrapper.node
         time.sleep(secs)

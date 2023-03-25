@@ -1,0 +1,19 @@
+2023-03-25 13:57:05,300 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://192.168.0.1:60202
+2023-03-25 13:57:05,300 INFO     [33mPress CTRL+C to quit[0m
+2023-03-25 13:57:08,300 DEBUG    Starting new HTTP conne2023-03-25 13:57:08,306 INFO 2023-03-25 13:57:08,309 DEBUG    http://192.168.0.1:50103 "POST /register HTTP/1.1" 201 34
+2023-03-25 13:57:13,313 INFO     i just registered myself and received
+ INFO     node 2 registered
+2023-03-25 13:57:09,122 INFO     192.168.0.2 - - [25/Mar/2023 13:57:09] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2023-03-25 13:57:09,130 INFO     node 3 registered
+2023-03-25 13:57:09,131 INFO     192.168.0.2 - - [25/Mar/2023 13:57:09] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2023-03-25 13:57:09,147 INFO     node 4 registered
+2023-03-25 13:57:09,147 INFO     192.168.0.5 - - [25/Mar/2023 13:57:09] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2023-03-25 13:57:09,196 INFO     node 5 registered
+2023-03-25 13:57:09,197 INFO     192.168.0.3 - - [25/Mar/2023 13:57:09] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2023-03-25 13:57:09,262 INFO     node 6 registered
+2023-03-25 13:57:09,264 INFO     192.168.0.3 - - [25/Mar/2023 13:57:09] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2023-03-25 13:57:09,284 INFO     node 7 registered
+2023-03-25 13:57:09,285 INFO     192.168.0.4 - - [25/Mar/2023 13:57:09] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2023-03-25 13:57:09,288 INFO     node 8 registered
+2023-03-25 13:57:09,288 INFO     192.168.0.4 - - [25/Mar/2023 13:57:09] "[35m[1mPOST /register HTTP/1.1[0m" 201 -

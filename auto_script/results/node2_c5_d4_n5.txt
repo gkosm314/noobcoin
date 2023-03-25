@@ -1,0 +1,12 @@
+running with d=4, cap=5, total_nodes=5
+end of init phase
+starting time: 1679744780.5537262
+attach block: block time: 11.022420167922974 current time:1679744780.6933577
+attach block: block time: 0.12095856666564941 current time:1679744781.5704987
+attach block: block time: 0.024672985076904297 current time:1679744786.3296566
+attach block: block time: 0.03517556190490723 current time:1679744786.747429
+attach block: block time: 0.009775400161743164 current time:1679744786.9219806
+attach block: block time: 0.02971172332763672 current time:1679744787.4509406
+attach block: block time: 0.008131027221679688 current time:1679744788.0465367
+attach block: block time: 0.029824018478393555 current time:1679744788.5695484
+attach block: block time: 0.0068416595458984375 current time:1679744789.1740935

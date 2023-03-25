@@ -1,0 +1,39 @@
+running with d=4, cap=5, total_nodes=5
+end of init phase
+starting time: 1679744780.5920606
+attach block: block time: 11.018511056900024 current time:1679744780.6859882
+attach block: block time: 0.21466779708862305 current time:1679744781.1137347
+attach block: block time: 0.010366678237915039 current time:1679744781.3330252
+attach block: block time: 0.1614391803741455 current time:1679744781.5782685
+attach block: block time: 0.12341547012329102 current time:1679744781.969274
+attach block: block time: 0.005749225616455078 current time:1679744782.5567737
+attach block: block time: 0.10187149047851562 current time:1679744782.9089622
+attach block: block time: 0.034768104553222656 current time:1679744783.0077178
+attach block: block time: 0.018998384475708008 current time:1679744783.0920763
+attach block: block time: 0.023872852325439453 current time:1679744783.250694
+attach block: block time: 0.040120601654052734 current time:1679744783.421997
+attach block: block time: 0.03890037536621094 current time:1679744783.6310992
+attach block: block time: 0.014223098754882812 current time:1679744783.7159226
+attach block: block time: 0.029148101806640625 current time:1679744783.8692136
+attach block: block time: 0.044504404067993164 current time:1679744784.047174
+attach block: block time: 0.03658795356750488 current time:1679744784.1546688
+attach block: block time: 0.012505531311035156 current time:1679744784.2413807
+attach block: block time: 0.026200056076049805 current time:1679744784.385136
+attach block: block time: 0.03764605522155762 current time:1679744784.5718267
+attach block: block time: 0.0311124324798584 current time:1679744784.6914282
+attach block: block time: 0.015367984771728516 current time:1679744784.7681208
+attach block: block time: 0.025075197219848633 current time:1679744784.9001715
+attach block: block time: 0.039142608642578125 current time:1679744785.0988119
+attach block: block time: 0.036011695861816406 current time:1679744785.2151423
+attach block: block time: 0.013780355453491211 current time:1679744785.2939303
+attach block: block time: 0.05521678924560547 current time:1679744785.4545963
+attach block: block time: 0.03517508506774902 current time:1679744785.6098742
+attach block: block time: 0.009137153625488281 current time:1679744785.819275
+attach block: block time: 0.02832818031311035 current time:1679744786.1203678
+attach block: block time: 0.023572206497192383 current time:1679744786.3285558
+attach block: block time: 0.03139352798461914 current time:1679744786.7436469
+attach block: block time: 0.038158416748046875 current time:1679744786.9503636
+attach block: block time: 0.029590606689453125 current time:1679744787.4508195
+attach block: block time: 0.03481316566467285 current time:1679744788.0732188
+attach block: block time: 0.029768705368041992 current time:1679744788.569493
+attach block: block time: 0.029054880142211914 current time:1679744789.1963067
