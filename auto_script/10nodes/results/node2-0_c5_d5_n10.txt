@@ -1,118 +1,117 @@
 end of init phase
-starting time: 1679775175.365706
-attach block: block time: 11.019767045974731 current time:1679775175.4714985
-completed resolution at current time:1679775175.676524
-completed resolution at current time:1679775175.9171767
-completed resolution at current time:1679775176.1557007
-completed resolution at current time:1679775176.4057894
-completed resolution at current time:1679775176.542662
-completed resolution at current time:1679775176.7739108
-creating new block at time: 1679775177.110072
-completed resolution at current time:1679775177.2046185
-completed resolution at current time:1679775177.320678
-completed resolution at current time:1679775177.5501673
-creating new block at time: 1679775177.553119
-completed resolution at current time:1679775177.7888215
-creating new block at time: 1679775177.791334
-completed resolution at current time:1679775178.0562177
-creating new block at time: 1679775178.05885
-completed resolution at current time:1679775178.2933264
-completed resolution at current time:1679775178.410605
-completed resolution at current time:1679775178.548869
-creating new block at time: 1679775178.5518188
-completed resolution at current time:1679775178.6969094
-completed resolution at current time:1679775178.8189483
-creating new block at time: 1679775178.8225398
-completed resolution at current time:1679775178.9602375
-creating new block at time: 1679775178.9629858
-completed resolution at current time:1679775179.078482
-attach block: block time: 0.11654043197631836 current time:1679775179.0804894
-completed resolution at current time:1679775179.4478662
-completed resolution at current time:1679775179.6770434
-completed resolution at current time:1679775179.8146973
-completed resolution at current time:1679775179.9368129
-completed resolution at current time:1679775180.0750318
-creating new block at time: 1679775180.108394
-completed resolution at current time:1679775180.1898637
-attach block: block time: 0.08413171768188477 current time:1679775180.192569
-completed resolution at current time:1679775180.739243
-completed resolution at current time:1679775180.8607826
-completed resolution at current time:1679775180.9837337
-completed resolution at current time:1679775181.1309628
-completed resolution at current time:1679775181.2595568
-creating new block at time: 1679775181.3127759
-completed resolution at current time:1679775181.3718524
-attach block: block time: 0.06135916709899902 current time:1679775181.374175
-attach block: block time: 0.03627157211303711 current time:1679775181.8297575
-creating new block at time: 1679775182.182701
-attach block: block time: 0.045328378677368164 current time:1679775182.3550632
-attach block: block time: 0.05932807922363281 current time:1679775182.9727502
-creating new block at time: 1679775183.1936574
-attach block: block time: 0.046483755111694336 current time:1679775183.481048
-completed resolution at current time:1679775183.7341936
-attach block: block time: 0.05115056037902832 current time:1679775184.0751085
-creating new block at time: 1679775184.207624
-completed resolution at current time:1679775184.3142357
-completed resolution at current time:1679775184.5347328
-attach block: block time: 0.041452646255493164 current time:1679775184.560686
-creating new block at time: 1679775185.2322726
-attach block: block time: 0.015038013458251953 current time:1679775185.2473667
-creating new block at time: 1679775185.355198
-attach block: block time: 0.05641293525695801 current time:1679775185.6446624
-creating new block at time: 1679775186.3661187
-attach block: block time: 0.020504474639892578 current time:1679775186.3867264
-completed resolution at current time:1679775186.6622367
-creating new block at time: 1679775186.6993434
-attach block: block time: 0.011092185974121094 current time:1679775186.7105255
-creating new block at time: 1679775187.2199082
-completed resolution at current time:1679775187.264437
-completed resolution at current time:1679775187.3889074
-completed resolution at current time:1679775187.5256734
-completed resolution at current time:1679775187.7329419
-attach block: block time: 0.04878687858581543 current time:1679775188.1750643
-creating new block at time: 1679775188.2322314
+starting time: 1679827311.5193605
+attach block: block time: 11.026489019393921 current time:1679827311.6901283
+completed resolution at current time:1679827312.0079248
+completed resolution at current time:1679827312.246917
+completed resolution at current time:1679827312.472723
+completed resolution at current time:1679827312.5995884
+completed resolution at current time:1679827312.8725731
+completed resolution at current time:1679827313.1714277
+completed resolution at current time:1679827313.298593
+creating new block at time: 1679827313.318842
+completed resolution at current time:1679827313.4305348
+completed resolution at current time:1679827313.6620185
+completed resolution at current time:1679827313.8319204
+completed resolution at current time:1679827313.971008
+completed resolution at current time:1679827314.2184846
+completed resolution at current time:1679827314.3980453
+completed resolution at current time:1679827314.5465648
+completed resolution at current time:1679827314.702408
+completed resolution at current time:1679827314.861313
+completed resolution at current time:1679827315.0108542
+completed resolution at current time:1679827315.161847
+attach block: block time: 0.9433352947235107 current time:1679827315.1650262
+completed resolution at current time:1679827315.584768
+completed resolution at current time:1679827315.7784562
+creating new block at time: 1679827315.9141479
+completed resolution at current time:1679827315.9648778
+completed resolution at current time:1679827316.120311
+completed resolution at current time:1679827316.2969546
+completed resolution at current time:1679827316.4169698
+completed resolution at current time:1679827316.5330663
+completed resolution at current time:1679827316.6701493
+completed resolution at current time:1679827316.7853758
+completed resolution at current time:1679827316.9303186
+completed resolution at current time:1679827317.2114692
+completed resolution at current time:1679827317.3466702
+completed resolution at current time:1679827317.4692864
+completed resolution at current time:1679827317.6011438
+completed resolution at current time:1679827317.7277384
+attach block: block time: 0.12682294845581055 current time:1679827317.7306445
+completed resolution at current time:1679827318.3305793
+completed resolution at current time:1679827318.5377748
+creating new block at time: 1679827318.579746
+completed resolution at current time:1679827318.7623007
+completed resolution at current time:1679827318.8813953
+completed resolution at current time:1679827319.0379894
+attach block: block time: 0.11734580993652344 current time:1679827319.1585715
+completed resolution at current time:1679827319.5962465
+completed resolution at current time:1679827319.7373846
+completed resolution at current time:1679827319.9794788
+creating new block at time: 1679827320.074547
+completed resolution at current time:1679827320.2393425
+completed resolution at current time:1679827320.4992428
+completed resolution at current time:1679827320.6262884
+completed resolution at current time:1679827320.7532566
+completed resolution at current time:1679827320.9949815
+completed resolution at current time:1679827321.2484279
+attach block: block time: 0.25221967697143555 current time:1679827321.2523615
+completed resolution at current time:1679827321.513514
+completed resolution at current time:1679827321.7857273
+completed resolution at current time:1679827321.972712
+attach block: block time: 0.15900349617004395 current time:1679827322.0826395
+attach block: block time: 0.04403209686279297 current time:1679827322.1153545
+attach block: block time: 0.03687644004821777 current time:1679827322.1581345
+creating new block at time: 1679827322.3000095
+attach block: block time: 0.05900454521179199 current time:1679827322.8534818
+attach block: block time: 0.3415403366088867 current time:1679827323.8805823
+completed resolution at current time:1679827324.2240224
+attach block: block time: 0.24692416191101074 current time:1679827324.2953181
+completed resolution at current time:1679827325.0041707
+completed resolution at current time:1679827325.1315482
+attach block: block time: 0.058592796325683594 current time:1679827325.3622625
 
- NODE #2 - BLOCK #35 - b'\x04\x8d\\U\t6K\xc9+\x0f\xe9\xad\x16T\x1b\xcf\xfe\x15\x87\xc0'
+ NODE #2 - BLOCK #31 - b'\x02\xc3\xab\xe2[c_w\xa6\x8dl~]k\xdaE\x9c\xbf\x82o'
 	------------------
-	Transaction Id: 09f2829c4ac1724e3d542d1796af85083726b33d
-	Amount: 1
-	Sender: PublicKey(10827008034775288193052288284132290957163392158151880198370159041184285304428669064571966577683238651572292849219428690241216315981406058610837818251320229, 65537)
-	Receiver: PublicKey(9919043501735785334448911838487715484708120060786772801515950368305753212535570789874336356832636157824373818114360942857995559834387932409371513121667961, 65537)
-	------------------
-			
-
-	------------------
-	Transaction Id: 48019e7a1ec2faaf2d01a9668b9b8801272dd824
-	Amount: 8
-	Sender: PublicKey(10827008034775288193052288284132290957163392158151880198370159041184285304428669064571966577683238651572292849219428690241216315981406058610837818251320229, 65537)
-	Receiver: PublicKey(9363924120228488283974612572946095736029712826166482046350839993313034704508938173046013829995521348493291353288107466847485552165237395221286612867398709, 65537)
-	------------------
-			
-
-	------------------
-	Transaction Id: 56ed243fbf487363c01eedbd9979e944e0ed8d52
+	Transaction Id: f786eaa46b39e6c428b0767a81762538dd0bb2b7
 	Amount: 6
-	Sender: PublicKey(10827008034775288193052288284132290957163392158151880198370159041184285304428669064571966577683238651572292849219428690241216315981406058610837818251320229, 65537)
-	Receiver: PublicKey(9363924120228488283974612572946095736029712826166482046350839993313034704508938173046013829995521348493291353288107466847485552165237395221286612867398709, 65537)
+	Sender: PublicKey(7458969473852214987367083634295621792112702520656413778064701425608183496683931196955342609172167632644912047145452092465442159174895930186422384852267847, 65537)
+	Receiver: PublicKey(7708661969508623891290824278546276197760808207483716321885889361987620103638541283536925573481571895391038583309424435938507915503144264354459323834346011, 65537)
 	------------------
 			
 
 	------------------
-	Transaction Id: feb3667eccb0f7214d2bada7e6fecce14cdb0af4
-	Amount: 3
-	Sender: PublicKey(10827008034775288193052288284132290957163392158151880198370159041184285304428669064571966577683238651572292849219428690241216315981406058610837818251320229, 65537)
-	Receiver: PublicKey(6790370331032613645792175410840980116976365632483967269027554611208598868500458465598142781010189536662040191949102300316784946808343187627126146588971089, 65537)
+	Transaction Id: aab32bdfb4f1dbb67529f45b38e855cdf77db105
+	Amount: 2
+	Sender: PublicKey(7458969473852214987367083634295621792112702520656413778064701425608183496683931196955342609172167632644912047145452092465442159174895930186422384852267847, 65537)
+	Receiver: PublicKey(9435766366155453918112214245236337066954264590262369812430094198170586766066161547120365467383016020392802158067368198683535835415267011823690603980886421, 65537)
 	------------------
 			
 
 	------------------
-	Transaction Id: e18be58c8dca4f4dec8ebe2c5b924969c7f3a167
-	Amount: 4
-	Sender: PublicKey(10827008034775288193052288284132290957163392158151880198370159041184285304428669064571966577683238651572292849219428690241216315981406058610837818251320229, 65537)
-	Receiver: PublicKey(9363924120228488283974612572946095736029712826166482046350839993313034704508938173046013829995521348493291353288107466847485552165237395221286612867398709, 65537)
+	Transaction Id: a3ac200eed9089d6226627d33c43ff0371588797
+	Amount: 1
+	Sender: PublicKey(7458969473852214987367083634295621792112702520656413778064701425608183496683931196955342609172167632644912047145452092465442159174895930186422384852267847, 65537)
+	Receiver: PublicKey(9297947003381623350761734627264832908950272921798974789418774358658433622090944627537210194451023255980842296561899707527534224351852316607044837912193659, 65537)
+	------------------
+			
+
+	------------------
+	Transaction Id: c9a8b8bfa11ccd5bea0bfa446bb31c1a486b4444
+	Amount: 8
+	Sender: PublicKey(7458969473852214987367083634295621792112702520656413778064701425608183496683931196955342609172167632644912047145452092465442159174895930186422384852267847, 65537)
+	Receiver: PublicKey(9435766366155453918112214245236337066954264590262369812430094198170586766066161547120365467383016020392802158067368198683535835415267011823690603980886421, 65537)
+	------------------
+			
+
+	------------------
+	Transaction Id: cc755f90237250f40f84a9fd048aaacb18c7bc35
+	Amount: 6
+	Sender: PublicKey(7458969473852214987367083634295621792112702520656413778064701425608183496683931196955342609172167632644912047145452092465442159174895930186422384852267847, 65537)
+	Receiver: PublicKey(9435766366155453918112214245236337066954264590262369812430094198170586766066161547120365467383016020392802158067368198683535835415267011823690603980886421, 65537)
 	------------------
 			
 
 []
-[]
-36
+[<transaction.Transaction object at 0x7ff6e43c8810>, <transaction.Transaction object at 0x7ff6e436e610>, <transaction.Transaction object at 0x7ff6e43a2290>, <transaction.Transaction object at 0x7ff6e4442710>, <transaction.Transaction object at 0x7ff6e4386b90>, <transaction.Transaction object at 0x7ff6e4442e50>, <transaction.Transaction object at 0x7ff6e4437c10>, <transaction.Transaction object at 0x7ff6e43e73d0>, <transaction.Transaction object at 0x7ff6e43e7d10>, <transaction.Transaction object at 0x7ff6e437cc50>, <transaction.Transaction object at 0x7ff6e43e7a10>, <transaction.Transaction object at 0x7ff6e740c910>, <transaction.Transaction object at 0x7ff6e43ad5d0>, <transaction.Transaction object at 0x7ff6e43ad790>, <transaction.Transaction object at 0x7ff6e43ad7d0>, <transaction.Transaction object at 0x7ff6e43ad290>, <transaction.Transaction object at 0x7ff6e43ad710>, <transaction.Transaction object at 0x7ff6e43919d0>, <transaction.Transaction object at 0x7ff6e4391b50>, <transaction.Transaction object at 0x7ff6e436ead0>, <transaction.Transaction object at 0x7ff6e4391c90>, <transaction.Transaction object at 0x7ff6e4391510>, <transaction.Transaction object at 0x7ff6e43a2e50>, <transaction.Transaction object at 0x7ff6e437c410>, <transaction.Transaction object at 0x7ff6e4386a90>, <transaction.Transaction object at 0x7ff6e4391310>, <transaction.Transaction object at 0x7ff6e437c910>]
+32

@@ -1,0 +1,153 @@
+running with d=4, cap=1, total_nodes=5
+end of init phase
+attach block: block time: 3.006345748901367 current time:1679829532.8867996
+completed resolution at current time:1679829533.0318556
+completed resolution at current time:1679829533.1501968
+completed resolution at current time:1679829533.263063
+attach block: block time: 0.31425929069519043 current time:1679829533.2883043
+creating new block at time: 1679829533.3938468
+attach block: block time: 0.0033702850341796875 current time:1679829533.3972642
+completed resolution at current time:1679829533.5307646
+creating new block at time: 1679829533.7013328
+starting time: 1679829540.6595762
+completed resolution at current time:1679829541.5758789
+completed resolution at current time:1679829541.7007635
+completed resolution at current time:1679829541.919073
+completed resolution at current time:1679829542.0335872
+completed resolution at current time:1679829542.1522226
+completed resolution at current time:1679829542.2709537
+completed resolution at current time:1679829542.4000683
+completed resolution at current time:1679829542.518064
+completed resolution at current time:1679829542.6779587
+completed resolution at current time:1679829542.7905226
+completed resolution at current time:1679829542.914228
+completed resolution at current time:1679829543.0298228
+completed resolution at current time:1679829543.1470768
+completed resolution at current time:1679829543.2675817
+completed resolution at current time:1679829543.3893034
+completed resolution at current time:1679829543.5041986
+completed resolution at current time:1679829543.6222327
+completed resolution at current time:1679829543.7347677
+completed resolution at current time:1679829543.8485854
+completed resolution at current time:1679829543.9690692
+completed resolution at current time:1679829544.0840533
+completed resolution at current time:1679829544.1998918
+completed resolution at current time:1679829544.3187377
+completed resolution at current time:1679829544.437405
+completed resolution at current time:1679829544.5639431
+completed resolution at current time:1679829544.683305
+completed resolution at current time:1679829544.8013754
+completed resolution at current time:1679829544.9167552
+completed resolution at current time:1679829545.0355723
+completed resolution at current time:1679829545.1493917
+completed resolution at current time:1679829545.2677896
+completed resolution at current time:1679829545.3940153
+completed resolution at current time:1679829545.5207834
+completed resolution at current time:1679829545.638325
+completed resolution at current time:1679829545.7579746
+completed resolution at current time:1679829545.8785849
+completed resolution at current time:1679829545.9963562
+completed resolution at current time:1679829546.1190603
+completed resolution at current time:1679829546.237763
+completed resolution at current time:1679829546.3560812
+completed resolution at current time:1679829546.4907475
+completed resolution at current time:1679829546.7164063
+completed resolution at current time:1679829546.8372881
+completed resolution at current time:1679829546.9570713
+completed resolution at current time:1679829547.0741963
+completed resolution at current time:1679829547.1935112
+completed resolution at current time:1679829547.3163354
+completed resolution at current time:1679829547.4423044
+completed resolution at current time:1679829547.567313
+completed resolution at current time:1679829547.682969
+completed resolution at current time:1679829547.801168
+completed resolution at current time:1679829547.926156
+completed resolution at current time:1679829548.0393124
+completed resolution at current time:1679829548.154595
+completed resolution at current time:1679829548.2806864
+completed resolution at current time:1679829548.4048185
+completed resolution at current time:1679829548.5214334
+completed resolution at current time:1679829548.646893
+completed resolution at current time:1679829548.762563
+completed resolution at current time:1679829548.879297
+completed resolution at current time:1679829549.0001984
+completed resolution at current time:1679829549.1209376
+completed resolution at current time:1679829549.2364843
+completed resolution at current time:1679829549.3583455
+completed resolution at current time:1679829549.473662
+completed resolution at current time:1679829549.589336
+completed resolution at current time:1679829549.7112904
+completed resolution at current time:1679829549.8305697
+completed resolution at current time:1679829549.9462354
+completed resolution at current time:1679829550.065259
+completed resolution at current time:1679829550.1826317
+completed resolution at current time:1679829550.2991164
+completed resolution at current time:1679829550.4241736
+completed resolution at current time:1679829550.5400925
+completed resolution at current time:1679829550.6588376
+completed resolution at current time:1679829550.7790394
+completed resolution at current time:1679829550.8961241
+completed resolution at current time:1679829551.0108428
+completed resolution at current time:1679829551.1357126
+completed resolution at current time:1679829551.252151
+completed resolution at current time:1679829551.3689892
+completed resolution at current time:1679829551.494216
+completed resolution at current time:1679829551.6108367
+completed resolution at current time:1679829551.7269893
+completed resolution at current time:1679829551.8504622
+completed resolution at current time:1679829551.9659235
+completed resolution at current time:1679829552.0798612
+completed resolution at current time:1679829552.20739
+completed resolution at current time:1679829552.3244915
+completed resolution at current time:1679829552.444742
+completed resolution at current time:1679829552.5667446
+completed resolution at current time:1679829552.685039
+completed resolution at current time:1679829552.8015966
+completed resolution at current time:1679829552.9245927
+completed resolution at current time:1679829553.03814
+completed resolution at current time:1679829553.1597862
+completed resolution at current time:1679829553.2848005
+completed resolution at current time:1679829553.4027183
+completed resolution at current time:1679829553.5181274
+completed resolution at current time:1679829553.651349
+completed resolution at current time:1679829553.7673411
+completed resolution at current time:1679829553.8937624
+completed resolution at current time:1679829554.011363
+completed resolution at current time:1679829554.1299539
+completed resolution at current time:1679829554.2570345
+completed resolution at current time:1679829554.3761146
+completed resolution at current time:1679829554.494042
+completed resolution at current time:1679829554.618968
+completed resolution at current time:1679829554.7375581
+completed resolution at current time:1679829554.8569129
+completed resolution at current time:1679829554.9859605
+completed resolution at current time:1679829555.1027493
+completed resolution at current time:1679829555.218807
+completed resolution at current time:1679829555.3448386
+completed resolution at current time:1679829555.4635096
+completed resolution at current time:1679829555.591524
+completed resolution at current time:1679829555.7208722
+completed resolution at current time:1679829555.8399227
+completed resolution at current time:1679829555.9593313
+completed resolution at current time:1679829556.0876815
+completed resolution at current time:1679829556.2080395
+completed resolution at current time:1679829556.324598
+completed resolution at current time:1679829556.445278
+completed resolution at current time:1679829556.563116
+completed resolution at current time:1679829556.67889
+completed resolution at current time:1679829556.8091683
+completed resolution at current time:1679829556.9251528
+completed resolution at current time:1679829557.0408237
+
+ NODE #1 - BLOCK #130 - b'\x0b\xacEbh\\<\xb8,U_\xa6)Q\xe3\x983/\xc5\xdb'
+	------------------
+	Transaction Id: b9073f0536d434dba2e8e76546b9aaab6e3504a1
+	Amount: 1
+	Sender: PublicKey(6800188810984670466059558762640369181833838121864364358385255470154070217090224998211514087273609033287781294532887211293689961209109983130006043817790973, 65537)
+	Receiver: PublicKey(7631861300462498318341547606297973852980383116765491200246627011749814061183474770918882428214939568834256317584132680947452072051831969793598441433021047, 65537)
+	------------------
+			
+
+[]
+[]
+131

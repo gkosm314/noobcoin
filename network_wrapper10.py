@@ -183,7 +183,8 @@ if __name__=="__main__":
         print(n.current_block.transactions)
         print(n.transactions_buffer)
         print(len(n.current_blockchain))
-        
+    
+    print(f"running with d={config.difficulty}, cap={config.capacity}, total_nodes={config.TOTAL_NODES}")
 
     if role == "bootstrap":
         bootstrap_wrapper = node_network_wrapper(config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, True)

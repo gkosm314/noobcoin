@@ -1,0 +1,1026 @@
+2023-03-26 14:22:53,255 INFO     initializing bootstrap
+2023-03-26 14:22:53,306 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://192.168.0.1:50103
+2023-03-26 14:22:53,306 INFO     [33mPress CTRL+C to quit[0m
+2023-03-26 14:22:58,706 INFO     node 1 registered
+2023-03-26 14:22:58,708 INFO     192.168.0.5 - - [26/Mar/2023 14:22:58] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2023-03-26 14:22:58,730 INFO     node 2 registered
+2023-03-26 14:22:58,730 INFO     192.168.0.2 - - [26/Mar/2023 14:22:58] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2023-03-26 14:22:58,769 INFO     node 3 registered
+2023-03-26 14:22:58,770 INFO     192.168.0.3 - - [26/Mar/2023 14:22:58] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2023-03-26 14:22:58,781 INFO     node 4 registered
+2023-03-26 14:22:58,782 INFO     192.168.0.4 - - [26/Mar/2023 14:22:58] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2023-03-26 14:22:59,304 INFO     All nodes registered
+2023-03-26 14:23:09,315 INFO     broadcasting init state
+2023-03-26 14:23:09,327 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:09,330 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:09,332 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:09,335 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:09,345 DEBUG    http://192.168.0.4:60204 "POST /post_net_info HTTP/1.1" 201 17
+2023-03-26 14:23:09,346 DEBUG    http://192.168.0.3:60203 "POST /post_net_info HTTP/1.1" 201 17
+2023-03-26 14:23:09,346 DEBUG    http://192.168.0.2:60202 "POST /post_net_info HTTP/1.1" 201 17
+2023-03-26 14:23:09,347 DEBUG    http://192.168.0.5:60205 "POST /post_net_info HTTP/1.1" 201 17
+2023-03-26 14:23:11,432 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:11,435 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:11,437 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:11,439 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:11,445 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:11,446 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:11,448 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:11,449 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:11,530 INFO     receive tx b'e\xbc\x8e\xe0\xb85W\x14B\x15\xcb\x17QgP\x0eS\xf3\x8b\xb6'
+2023-03-26 14:23:11,539 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:11,542 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:11,545 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:11,548 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:11,553 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:11,554 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:11,556 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:11,557 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:11,636 INFO     receive tx b'#?\x81\xa1\xab/e\x1eb\xc3\xe7\x9b\x9b\xcf\x8f\x13\x1c\x1f\x1c\x94'
+2023-03-26 14:23:11,644 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:11,647 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:11,649 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:11,652 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:11,657 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:11,659 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:11,660 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:11,662 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:11,742 INFO     receive tx b'1]P;\xadd\x1f\xda\xfd\xf5;\x05\xf9\xbc\xf6\x81B\x94\xb8n'
+2023-03-26 14:23:19,757 INFO     receive tx b'y\xf0\xa5\x93\x9c|\xc1l\xc5\x12\xa1\x15FB\xd7\x934\x81#\x98'
+2023-03-26 14:23:19,758 INFO     192.168.0.5 - - [26/Mar/2023 14:23:19] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:19,774 INFO     receive tx b'>\xb5\\(\x1bD\xac\xb1[\x99\xa6\xa4X\xd8\xbe\x88R`UX'
+2023-03-26 14:23:19,775 INFO     192.168.0.2 - - [26/Mar/2023 14:23:19] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:19,815 INFO     receive tx b'\xfe\xc5\xaa\xddB\xef\x15\xa4\xb9\xc2\xaf\xa8\xfb)\\33\xcf\x03\xe8'
+2023-03-26 14:23:19,816 INFO     192.168.0.3 - - [26/Mar/2023 14:23:19] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:19,862 INFO     receive tx b'\x9f\x1d\xce\xf1\xd8W\r\xd4w:\x889S\xc1\x8a\xd5~\xd7w?'
+2023-03-26 14:23:19,863 INFO     192.168.0.5 - - [26/Mar/2023 14:23:19] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:19,879 INFO     receive tx b'H\x9d\xd0\x0cJ\xaa\r\xbf\x07\xab\xe2\x07\x04\x0f\xd8$\x1c\x15\xabp'
+2023-03-26 14:23:19,880 INFO     192.168.0.2 - - [26/Mar/2023 14:23:19] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:19,917 INFO     receive tx b'\xd9{\xa2\xd8\xb3>\xb9\x11\xbfG\xba\x8f\x009\xbe\xb5\xa1\xca-\x1b'
+2023-03-26 14:23:19,918 INFO     192.168.0.3 - - [26/Mar/2023 14:23:19] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:19,966 INFO     receive tx b'\xbd\x97N0\xef\xd5E\xc2 \x9e\x83\x97\xcb\xeeh\xd3B\x05\xacY'
+2023-03-26 14:23:19,967 INFO     192.168.0.5 - - [26/Mar/2023 14:23:19] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:19,989 INFO     receive tx b'L\x0b\xff>\xa9\x81\xc5d\x8e\xdc%T\xd7\xe7\xd6:\xe3\x17\xe0\x0b'
+2023-03-26 14:23:19,989 INFO     192.168.0.2 - - [26/Mar/2023 14:23:19] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,023 INFO     receive tx b'\xedk\x87@\xef\xa6X\x1a\xd6\n\x17\x99V\xb6W\x8a\xaf\xaf\xe4\x85'
+2023-03-26 14:23:20,024 INFO     192.168.0.3 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,072 INFO     receive tx b'*\xff\xa3\xf9\x041\xabL\x9b\x81\xcc\xaa2\xb5\x05\xc2<\xf2\x9a{'
+2023-03-26 14:23:20,073 INFO     192.168.0.5 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,097 INFO     receive tx b'\xce\xe1,\x8c\x8f\x7f&O\x07\x94.4\xd0!\xc1\xc7=\xca(\x90'
+2023-03-26 14:23:20,098 INFO     192.168.0.2 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,127 INFO     receive tx b"\xe2\x82A\xd4\xca\x8f\xd0g'%S>S\xbf\xe1<\xae\xce\x8d\x12"
+2023-03-26 14:23:20,128 INFO     192.168.0.3 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,177 INFO     receive tx b'=+R}.\xc1M_\xfae Q\\\n\x9c\xea\x92\xbf\xf5@'
+2023-03-26 14:23:20,177 INFO     192.168.0.5 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,203 INFO     receive tx b"\xe9X\x0f\x1aj\xf6\x03\xbc\xb2\xf7J'`\xc9\xa4\xf2\xae\xb9\x1aq"
+2023-03-26 14:23:20,204 INFO     192.168.0.2 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,230 INFO     receive tx b'K\x93\x04\xb3\r\x8fH\xdd,.$6`Q\xb6W\xec\xfe]\xb7'
+2023-03-26 14:23:20,231 INFO     192.168.0.3 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,283 INFO     receive tx b'T5:\x99^\x85;\xb5\\lq\x1a\x00#\x8c\xd8\xbb\t^I'
+2023-03-26 14:23:20,283 INFO     192.168.0.5 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,309 INFO     receive tx b'y\x92\xfc\xcf#\x15\x1d\x17e\x1f[\xc2\xf0\xc2\xfc\xab\x11\xfc\xfd_'
+2023-03-26 14:23:20,310 INFO     192.168.0.2 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,335 INFO     receive tx b'\xed|\xfe\xf4\xd5\xcd\xceF&\x95\x1d3\xd1B\xd6/\x1e1\x97:'
+2023-03-26 14:23:20,336 INFO     192.168.0.3 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,385 INFO     receive block starts - received from network True
+2023-03-26 14:23:20,401 INFO     validate block starts
+2023-03-26 14:23:20,401 INFO     (1, 1679829789.341666, [b'e\xbc\x8e\xe0\xb85W\x14B\x15\xcb\x17QgP\x0eS\xf3\x8b\xb6', b'#?\x81\xa1\xab/e\x1eb\xc3\xe7\x9b\x9b\xcf\x8f\x13\x1c\x1f\x1c\x94', b'1]P;\xadd\x1f\xda\xfd\xf5;\x05\xf9\xbc\xf6\x81B\x94\xb8n', b'y\xf0\xa5\x93\x9c|\xc1l\xc5\x12\xa1\x15FB\xd7\x934\x81#\x98', b'>\xb5\\(\x1bD\xac\xb1[\x99\xa6\xa4X\xd8\xbe\x88R`UX', b'\x9f\x1d\xce\xf1\xd8W\r\xd4w:\x889S\xc1\x8a\xd5~\xd7w?', b'H\x9d\xd0\x0cJ\xaa\r\xbf\x07\xab\xe2\x07\x04\x0f\xd8$\x1c\x15\xabp', b'\xfe\xc5\xaa\xddB\xef\x15\xa4\xb9\xc2\xaf\xa8\xfb)\\33\xcf\x03\xe8', b'\xbd\x97N0\xef\xd5E\xc2 \x9e\x83\x97\xcb\xeeh\xd3B\x05\xacY', b'L\x0b\xff>\xa9\x81\xc5d\x8e\xdc%T\xd7\xe7\xd6:\xe3\x17\xe0\x0b'], b'\x88K\xcb\xa6\xceZ\xc2\xa4\x0b\x05\xc3\xbfA\x10\xe4\x99\x8aXW\xb2', 3)
+2023-03-26 14:23:20,401 INFO     (1, 1679829789.341666, [b'e\xbc\x8e\xe0\xb85W\x14B\x15\xcb\x17QgP\x0eS\xf3\x8b\xb6', b'#?\x81\xa1\xab/e\x1eb\xc3\xe7\x9b\x9b\xcf\x8f\x13\x1c\x1f\x1c\x94', b'1]P;\xadd\x1f\xda\xfd\xf5;\x05\xf9\xbc\xf6\x81B\x94\xb8n', b'y\xf0\xa5\x93\x9c|\xc1l\xc5\x12\xa1\x15FB\xd7\x934\x81#\x98', b'>\xb5\\(\x1bD\xac\xb1[\x99\xa6\xa4X\xd8\xbe\x88R`UX', b'\x9f\x1d\xce\xf1\xd8W\r\xd4w:\x889S\xc1\x8a\xd5~\xd7w?', b'H\x9d\xd0\x0cJ\xaa\r\xbf\x07\xab\xe2\x07\x04\x0f\xd8$\x1c\x15\xabp', b'\xfe\xc5\xaa\xddB\xef\x15\xa4\xb9\xc2\xaf\xa8\xfb)\\33\xcf\x03\xe8', b'\xbd\x97N0\xef\xd5E\xc2 \x9e\x83\x97\xcb\xeeh\xd3B\x05\xacY', b'L\x0b\xff>\xa9\x81\xc5d\x8e\xdc%T\xd7\xe7\xd6:\xe3\x17\xe0\x0b'], b'\x88K\xcb\xa6\xceZ\xc2\xa4\x0b\x05\xc3\xbfA\x10\xe4\x99\x8aXW\xb2', 3)
+2023-03-26 14:23:20,402 INFO     validate block returns True
+2023-03-26 14:23:20,402 INFO     attach block starts
+2023-03-26 14:23:20,402 INFO     attach block end
+2023-03-26 14:23:20,402 INFO     receive block ends with attachment
+2023-03-26 14:23:20,403 INFO     192.168.0.3 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_block HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,403 INFO     receive block starts - received from network True
+2023-03-26 14:23:20,403 INFO     validate block starts
+2023-03-26 14:23:20,403 INFO     (1, 1679829789.3407779, [b'e\xbc\x8e\xe0\xb85W\x14B\x15\xcb\x17QgP\x0eS\xf3\x8b\xb6', b'#?\x81\xa1\xab/e\x1eb\xc3\xe7\x9b\x9b\xcf\x8f\x13\x1c\x1f\x1c\x94', b'1]P;\xadd\x1f\xda\xfd\xf5;\x05\xf9\xbc\xf6\x81B\x94\xb8n', b'y\xf0\xa5\x93\x9c|\xc1l\xc5\x12\xa1\x15FB\xd7\x934\x81#\x98', b'>\xb5\\(\x1bD\xac\xb1[\x99\xa6\xa4X\xd8\xbe\x88R`UX', b'\xfe\xc5\xaa\xddB\xef\x15\xa4\xb9\xc2\xaf\xa8\xfb)\\33\xcf\x03\xe8', b'\x9f\x1d\xce\xf1\xd8W\r\xd4w:\x889S\xc1\x8a\xd5~\xd7w?', b'H\x9d\xd0\x0cJ\xaa\r\xbf\x07\xab\xe2\x07\x04\x0f\xd8$\x1c\x15\xabp', b'\xd9{\xa2\xd8\xb3>\xb9\x11\xbfG\xba\x8f\x009\xbe\xb5\xa1\xca-\x1b', b'\xbd\x97N0\xef\xd5E\xc2 \x9e\x83\x97\xcb\xeeh\xd3B\x05\xacY'], b'\x88K\xcb\xa6\xceZ\xc2\xa4\x0b\x05\xc3\xbfA\x10\xe4\x99\x8aXW\xb2', 28)
+2023-03-26 14:23:20,404 INFO     (1, 1679829789.3407779, [b'e\xbc\x8e\xe0\xb85W\x14B\x15\xcb\x17QgP\x0eS\xf3\x8b\xb6', b'#?\x81\xa1\xab/e\x1eb\xc3\xe7\x9b\x9b\xcf\x8f\x13\x1c\x1f\x1c\x94', b'1]P;\xadd\x1f\xda\xfd\xf5;\x05\xf9\xbc\xf6\x81B\x94\xb8n', b'y\xf0\xa5\x93\x9c|\xc1l\xc5\x12\xa1\x15FB\xd7\x934\x81#\x98', b'>\xb5\\(\x1bD\xac\xb1[\x99\xa6\xa4X\xd8\xbe\x88R`UX', b'\xfe\xc5\xaa\xddB\xef\x15\xa4\xb9\xc2\xaf\xa8\xfb)\\33\xcf\x03\xe8', b'\x9f\x1d\xce\xf1\xd8W\r\xd4w:\x889S\xc1\x8a\xd5~\xd7w?', b'H\x9d\xd0\x0cJ\xaa\r\xbf\x07\xab\xe2\x07\x04\x0f\xd8$\x1c\x15\xabp', b'\xd9{\xa2\xd8\xb3>\xb9\x11\xbfG\xba\x8f\x009\xbe\xb5\xa1\xca-\x1b', b'\xbd\x97N0\xef\xd5E\xc2 \x9e\x83\x97\xcb\xeeh\xd3B\x05\xacY'], b'\x88K\xcb\xa6\xceZ\xc2\xa4\x0b\x05\xc3\xbfA\x10\xe4\x99\x8aXW\xb2', 28)
+2023-03-26 14:23:20,404 INFO     2
+2023-03-26 14:23:20,404 INFO     b'\x04\xf2\x0c\xfed\x1a76Rm\xeb\xbc4\xc7\xfcT\xf3A\xac\xd6'
+2023-03-26 14:23:20,404 INFO     b'\x88K\xcb\xa6\xceZ\xc2\xa4\x0b\x05\xc3\xbfA\x10\xe4\x99\x8aXW\xb2'
+2023-03-26 14:23:20,404 INFO     validate block returns False
+2023-03-26 14:23:20,408 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:20,411 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:20,413 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:20,416 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:20,425 INFO     receive tx b'\x0fs\x19\xc8N\xd6\x9be\xf3e\xa3\xb7\xbc\x02x\xa6\x0e]\xda\x15'
+2023-03-26 14:23:20,425 INFO     192.168.0.2 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,429 INFO     receive tx b'\xbc\xd2\x04\x1c+\x86\xb3\xfb\xe3\x0b8C\xd99\x1d\xc1T\xaa\xac\xe0'
+2023-03-26 14:23:20,438 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:20,439 INFO     start mine_current_block
+2023-03-26 14:23:20,440 INFO     192.168.0.5 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,441 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:20,443 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:20,443 INFO     mining proccess starts
+2023-03-26 14:23:20,445 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:20,446 WARNING  Stop mining!
+2023-03-26 14:23:20,447 INFO     start creation of new block
+2023-03-26 14:23:20,448 INFO     end creation of new block
+2023-03-26 14:23:20,448 INFO     end mine_current_block
+2023-03-26 14:23:20,450 INFO     start mine_current_block
+2023-03-26 14:23:20,452 INFO     mining proccess starts
+2023-03-26 14:23:20,452 INFO     mining done
+2023-03-26 14:23:20,452 INFO     block mined - attempt to attach it
+2023-03-26 14:23:20,457 INFO     receive tx b'\xf7Q\xe5RHW\xed\xf0\x900\xf0\xf4\x08\xfeL\x93\x91\x9a\xb9S'
+2023-03-26 14:23:20,458 INFO     192.168.0.3 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,496 INFO     192.168.0.3 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,498 INFO     receive tx b'\xbc\x01\xf0W\x82\xfa3\xf9t\xf8\xc0C#1W\xfb\xc0\xd0\xd7e'
+2023-03-26 14:23:20,499 INFO     192.168.0.5 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,513 INFO     192.168.0.4 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,514 INFO     receive block ends with resolution
+2023-03-26 14:23:20,515 INFO     192.168.0.4 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_block HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,515 INFO     receive block starts - received from network True
+2023-03-26 14:23:20,515 INFO     validate block starts
+2023-03-26 14:23:20,516 INFO     (1, 1679829789.3426821, [b'e\xbc\x8e\xe0\xb85W\x14B\x15\xcb\x17QgP\x0eS\xf3\x8b\xb6', b'#?\x81\xa1\xab/e\x1eb\xc3\xe7\x9b\x9b\xcf\x8f\x13\x1c\x1f\x1c\x94', b'1]P;\xadd\x1f\xda\xfd\xf5;\x05\xf9\xbc\xf6\x81B\x94\xb8n', b'y\xf0\xa5\x93\x9c|\xc1l\xc5\x12\xa1\x15FB\xd7\x934\x81#\x98', b'\xfe\xc5\xaa\xddB\xef\x15\xa4\xb9\xc2\xaf\xa8\xfb)\\33\xcf\x03\xe8', b'\x9f\x1d\xce\xf1\xd8W\r\xd4w:\x889S\xc1\x8a\xd5~\xd7w?', b'>\xb5\\(\x1bD\xac\xb1[\x99\xa6\xa4X\xd8\xbe\x88R`UX', b'\xd9{\xa2\xd8\xb3>\xb9\x11\xbfG\xba\x8f\x009\xbe\xb5\xa1\xca-\x1b', b'\xbd\x97N0\xef\xd5E\xc2 \x9e\x83\x97\xcb\xeeh\xd3B\x05\xacY', b'H\x9d\xd0\x0cJ\xaa\r\xbf\x07\xab\xe2\x07\x04\x0f\xd8$\x1c\x15\xabp'], b'\x88K\xcb\xa6\xceZ\xc2\xa4\x0b\x05\xc3\xbfA\x10\xe4\x99\x8aXW\xb2', 1)
+2023-03-26 14:23:20,516 INFO     (1, 1679829789.3426821, [b'e\xbc\x8e\xe0\xb85W\x14B\x15\xcb\x17QgP\x0eS\xf3\x8b\xb6', b'#?\x81\xa1\xab/e\x1eb\xc3\xe7\x9b\x9b\xcf\x8f\x13\x1c\x1f\x1c\x94', b'1]P;\xadd\x1f\xda\xfd\xf5;\x05\xf9\xbc\xf6\x81B\x94\xb8n', b'y\xf0\xa5\x93\x9c|\xc1l\xc5\x12\xa1\x15FB\xd7\x934\x81#\x98', b'\xfe\xc5\xaa\xddB\xef\x15\xa4\xb9\xc2\xaf\xa8\xfb)\\33\xcf\x03\xe8', b'\x9f\x1d\xce\xf1\xd8W\r\xd4w:\x889S\xc1\x8a\xd5~\xd7w?', b'>\xb5\\(\x1bD\xac\xb1[\x99\xa6\xa4X\xd8\xbe\x88R`UX', b'\xd9{\xa2\xd8\xb3>\xb9\x11\xbfG\xba\x8f\x009\xbe\xb5\xa1\xca-\x1b', b'\xbd\x97N0\xef\xd5E\xc2 \x9e\x83\x97\xcb\xeeh\xd3B\x05\xacY', b'H\x9d\xd0\x0cJ\xaa\r\xbf\x07\xab\xe2\x07\x04\x0f\xd8$\x1c\x15\xabp'], b'\x88K\xcb\xa6\xceZ\xc2\xa4\x0b\x05\xc3\xbfA\x10\xe4\x99\x8aXW\xb2', 1)
+2023-03-26 14:23:20,516 INFO     2
+2023-03-26 14:23:20,516 INFO     b'\x04\xf2\x0c\xfed\x1a76Rm\xeb\xbc4\xc7\xfcT\xf3A\xac\xd6'
+2023-03-26 14:23:20,516 INFO     b'\x88K\xcb\xa6\xceZ\xc2\xa4\x0b\x05\xc3\xbfA\x10\xe4\x99\x8aXW\xb2'
+2023-03-26 14:23:20,516 INFO     validate block returns False
+2023-03-26 14:23:20,526 INFO     192.168.0.2 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,528 INFO     receive tx b'\xce\xdc\x8a\xb9\xf6i\x143r4\xef\x1a\x8b\xb7+\t\xce\xb5\xf9`'
+2023-03-26 14:23:20,529 INFO     192.168.0.2 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,532 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:20,534 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:20,536 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:20,538 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:20,555 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:20,556 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:20,557 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:20,561 INFO     192.168.0.5 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,563 INFO     receive tx b'\xf6\xc8\xd9\xeaC\x1c\xbc\x93Tr\xa5\xbf\xd9$\xd0\xc8\xd6\xc6\x8d#'
+2023-03-26 14:23:20,564 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:20,566 INFO     192.168.0.3 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,609 INFO     192.168.0.3 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,616 INFO     receive tx b'\xa3\xb1\xe2S\xb4\xb6G}\x189-Q\xee\x89\xad\xf9\xbb\xf0\xf6\x0f'
+2023-03-26 14:23:20,617 INFO     192.168.0.5 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,631 INFO     receive block ends with resolution
+2023-03-26 14:23:20,631 INFO     192.168.0.2 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_block HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,632 INFO     receive block starts - received from network True
+2023-03-26 14:23:20,632 INFO     validate block starts
+2023-03-26 14:23:20,632 INFO     (1, 1679829789.3421938, [b'e\xbc\x8e\xe0\xb85W\x14B\x15\xcb\x17QgP\x0eS\xf3\x8b\xb6', b'#?\x81\xa1\xab/e\x1eb\xc3\xe7\x9b\x9b\xcf\x8f\x13\x1c\x1f\x1c\x94', b'1]P;\xadd\x1f\xda\xfd\xf5;\x05\xf9\xbc\xf6\x81B\x94\xb8n', b'>\xb5\\(\x1bD\xac\xb1[\x99\xa6\xa4X\xd8\xbe\x88R`UX', b'\xfe\xc5\xaa\xddB\xef\x15\xa4\xb9\xc2\xaf\xa8\xfb)\\33\xcf\x03\xe8', b'y\xf0\xa5\x93\x9c|\xc1l\xc5\x12\xa1\x15FB\xd7\x934\x81#\x98', b'H\x9d\xd0\x0cJ\xaa\r\xbf\x07\xab\xe2\x07\x04\x0f\xd8$\x1c\x15\xabp', b'\xd9{\xa2\xd8\xb3>\xb9\x11\xbfG\xba\x8f\x009\xbe\xb5\xa1\xca-\x1b', b'\x9f\x1d\xce\xf1\xd8W\r\xd4w:\x889S\xc1\x8a\xd5~\xd7w?', b'L\x0b\xff>\xa9\x81\xc5d\x8e\xdc%T\xd7\xe7\xd6:\xe3\x17\xe0\x0b'], b'\x88K\xcb\xa6\xceZ\xc2\xa4\x0b\x05\xc3\xbfA\x10\xe4\x99\x8aXW\xb2', 33)
+2023-03-26 14:23:20,632 INFO     (1, 1679829789.3421938, [b'e\xbc\x8e\xe0\xb85W\x14B\x15\xcb\x17QgP\x0eS\xf3\x8b\xb6', b'#?\x81\xa1\xab/e\x1eb\xc3\xe7\x9b\x9b\xcf\x8f\x13\x1c\x1f\x1c\x94', b'1]P;\xadd\x1f\xda\xfd\xf5;\x05\xf9\xbc\xf6\x81B\x94\xb8n', b'>\xb5\\(\x1bD\xac\xb1[\x99\xa6\xa4X\xd8\xbe\x88R`UX', b'\xfe\xc5\xaa\xddB\xef\x15\xa4\xb9\xc2\xaf\xa8\xfb)\\33\xcf\x03\xe8', b'y\xf0\xa5\x93\x9c|\xc1l\xc5\x12\xa1\x15FB\xd7\x934\x81#\x98', b'H\x9d\xd0\x0cJ\xaa\r\xbf\x07\xab\xe2\x07\x04\x0f\xd8$\x1c\x15\xabp', b'\xd9{\xa2\xd8\xb3>\xb9\x11\xbfG\xba\x8f\x009\xbe\xb5\xa1\xca-\x1b', b'\x9f\x1d\xce\xf1\xd8W\r\xd4w:\x889S\xc1\x8a\xd5~\xd7w?', b'L\x0b\xff>\xa9\x81\xc5d\x8e\xdc%T\xd7\xe7\xd6:\xe3\x17\xe0\x0b'], b'\x88K\xcb\xa6\xceZ\xc2\xa4\x0b\x05\xc3\xbfA\x10\xe4\x99\x8aXW\xb2', 33)
+2023-03-26 14:23:20,634 INFO     2
+2023-03-26 14:23:20,635 INFO     b'\x04\xf2\x0c\xfed\x1a76Rm\xeb\xbc4\xc7\xfcT\xf3A\xac\xd6'
+2023-03-26 14:23:20,635 INFO     b'\x88K\xcb\xa6\xceZ\xc2\xa4\x0b\x05\xc3\xbfA\x10\xe4\x99\x8aXW\xb2'
+2023-03-26 14:23:20,635 INFO     validate block returns False
+2023-03-26 14:23:20,634 INFO     receive tx b'\x0fO\x8e\x82T\xc7\xfeE"\x02)\xb9\xc4\x03\xf9\xad\x1by\x92Y'
+2023-03-26 14:23:20,636 INFO     192.168.0.2 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,640 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:20,643 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:20,645 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:20,648 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:20,659 INFO     192.168.0.2 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,660 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:20,663 INFO     receive tx b'\x17\xc7\xc6\x1dJ\xf71\xcb\xbfr\x0c\xe2)\xd2\xbc\x92\xb6 )\x18'
+2023-03-26 14:23:20,664 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:20,664 INFO     192.168.0.3 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,667 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:20,670 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:20,681 INFO     192.168.0.4 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,693 INFO     192.168.0.5 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,723 INFO     192.168.0.3 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,738 INFO     receive block ends with resolution
+2023-03-26 14:23:20,739 INFO     192.168.0.5 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_block HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,739 INFO     receive block starts - received from network False
+2023-03-26 14:23:20,739 INFO     validate block starts
+2023-03-26 14:23:20,740 INFO     (2, 1679829800.4476058, [b'\xd9{\xa2\xd8\xb3>\xb9\x11\xbfG\xba\x8f\x009\xbe\xb5\xa1\xca-\x1b', b'\xedk\x87@\xef\xa6X\x1a\xd6\n\x17\x99V\xb6W\x8a\xaf\xaf\xe4\x85', b'*\xff\xa3\xf9\x041\xabL\x9b\x81\xcc\xaa2\xb5\x05\xc2<\xf2\x9a{', b'\xce\xe1,\x8c\x8f\x7f&O\x07\x94.4\xd0!\xc1\xc7=\xca(\x90', b"\xe2\x82A\xd4\xca\x8f\xd0g'%S>S\xbf\xe1<\xae\xce\x8d\x12", b'=+R}.\xc1M_\xfae Q\\\n\x9c\xea\x92\xbf\xf5@', b"\xe9X\x0f\x1aj\xf6\x03\xbc\xb2\xf7J'`\xc9\xa4\xf2\xae\xb9\x1aq", b'K\x93\x04\xb3\r\x8fH\xdd,.$6`Q\xb6W\xec\xfe]\xb7', b'T5:\x99^\x85;\xb5\\lq\x1a\x00#\x8c\xd8\xbb\t^I', b'y\x92\xfc\xcf#\x15\x1d\x17e\x1f[\xc2\xf0\xc2\xfc\xab\x11\xfc\xfd_'], b'\x04\xf2\x0c\xfed\x1a76Rm\xeb\xbc4\xc7\xfcT\xf3A\xac\xd6', 10)
+2023-03-26 14:23:20,740 INFO     (2, 1679829800.4476058, [b'\xd9{\xa2\xd8\xb3>\xb9\x11\xbfG\xba\x8f\x009\xbe\xb5\xa1\xca-\x1b', b'\xedk\x87@\xef\xa6X\x1a\xd6\n\x17\x99V\xb6W\x8a\xaf\xaf\xe4\x85', b'*\xff\xa3\xf9\x041\xabL\x9b\x81\xcc\xaa2\xb5\x05\xc2<\xf2\x9a{', b'\xce\xe1,\x8c\x8f\x7f&O\x07\x94.4\xd0!\xc1\xc7=\xca(\x90', b"\xe2\x82A\xd4\xca\x8f\xd0g'%S>S\xbf\xe1<\xae\xce\x8d\x12", b'=+R}.\xc1M_\xfae Q\\\n\x9c\xea\x92\xbf\xf5@', b"\xe9X\x0f\x1aj\xf6\x03\xbc\xb2\xf7J'`\xc9\xa4\xf2\xae\xb9\x1aq", b'K\x93\x04\xb3\r\x8fH\xdd,.$6`Q\xb6W\xec\xfe]\xb7', b'T5:\x99^\x85;\xb5\\lq\x1a\x00#\x8c\xd8\xbb\t^I', b'y\x92\xfc\xcf#\x15\x1d\x17e\x1f[\xc2\xf0\xc2\xfc\xab\x11\xfc\xfd_'], b'\x04\xf2\x0c\xfed\x1a76Rm\xeb\xbc4\xc7\xfcT\xf3A\xac\xd6', 10)
+2023-03-26 14:23:20,740 INFO     validate block returns True
+2023-03-26 14:23:20,740 INFO     attach block starts
+2023-03-26 14:23:20,742 INFO     attach block end
+2023-03-26 14:23:20,742 INFO     receive block ends with attachment
+2023-03-26 14:23:20,742 INFO     receive tx b'6d}t\x97\xfd>\xbe\xf53\xe6K*\xfe\xe9y\x89<\xb3\\'
+2023-03-26 14:23:20,749 INFO     receive tx b'\xbe^\x91hz\xdc_\xfb\x0e\xee\x17\xa9n\xafn\x8b`x\xd4P'
+2023-03-26 14:23:20,751 INFO     192.168.0.2 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,750 INFO     192.168.0.5 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,758 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:20,760 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:20,762 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:20,764 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:20,773 INFO     receive block starts - received from network True
+2023-03-26 14:23:20,773 INFO     validate block starts
+2023-03-26 14:23:20,773 INFO     (2, 1679829800.668041, [b'\xd9{\xa2\xd8\xb3>\xb9\x11\xbfG\xba\x8f\x009\xbe\xb5\xa1\xca-\x1b', b'*\xff\xa3\xf9\x041\xabL\x9b\x81\xcc\xaa2\xb5\x05\xc2<\xf2\x9a{', b'\xce\xe1,\x8c\x8f\x7f&O\x07\x94.4\xd0!\xc1\xc7=\xca(\x90', b'\xedk\x87@\xef\xa6X\x1a\xd6\n\x17\x99V\xb6W\x8a\xaf\xaf\xe4\x85', b'=+R}.\xc1M_\xfae Q\\\n\x9c\xea\x92\xbf\xf5@', b"\xe9X\x0f\x1aj\xf6\x03\xbc\xb2\xf7J'`\xc9\xa4\xf2\xae\xb9\x1aq", b"\xe2\x82A\xd4\xca\x8f\xd0g'%S>S\xbf\xe1<\xae\xce\x8d\x12", b'T5:\x99^\x85;\xb5\\lq\x1a\x00#\x8c\xd8\xbb\t^I', b'y\x92\xfc\xcf#\x15\x1d\x17e\x1f[\xc2\xf0\xc2\xfc\xab\x11\xfc\xfd_', b'K\x93\x04\xb3\r\x8fH\xdd,.$6`Q\xb6W\xec\xfe]\xb7'], b'\x04\xf2\x0c\xfed\x1a76Rm\xeb\xbc4\xc7\xfcT\xf3A\xac\xd6', 10)
+2023-03-26 14:23:20,773 INFO     (2, 1679829800.668041, [b'\xd9{\xa2\xd8\xb3>\xb9\x11\xbfG\xba\x8f\x009\xbe\xb5\xa1\xca-\x1b', b'*\xff\xa3\xf9\x041\xabL\x9b\x81\xcc\xaa2\xb5\x05\xc2<\xf2\x9a{', b'\xce\xe1,\x8c\x8f\x7f&O\x07\x94.4\xd0!\xc1\xc7=\xca(\x90', b'\xedk\x87@\xef\xa6X\x1a\xd6\n\x17\x99V\xb6W\x8a\xaf\xaf\xe4\x85', b'=+R}.\xc1M_\xfae Q\\\n\x9c\xea\x92\xbf\xf5@', b"\xe9X\x0f\x1aj\xf6\x03\xbc\xb2\xf7J'`\xc9\xa4\xf2\xae\xb9\x1aq", b"\xe2\x82A\xd4\xca\x8f\xd0g'%S>S\xbf\xe1<\xae\xce\x8d\x12", b'T5:\x99^\x85;\xb5\\lq\x1a\x00#\x8c\xd8\xbb\t^I', b'y\x92\xfc\xcf#\x15\x1d\x17e\x1f[\xc2\xf0\xc2\xfc\xab\x11\xfc\xfd_', b'K\x93\x04\xb3\r\x8fH\xdd,.$6`Q\xb6W\xec\xfe]\xb7'], b'\x04\xf2\x0c\xfed\x1a76Rm\xeb\xbc4\xc7\xfcT\xf3A\xac\xd6', 10)
+2023-03-26 14:23:20,773 INFO     3
+2023-03-26 14:23:20,774 INFO     b'\x05\x07}7\x08\xfc\x9e\xe83JW\xff5\x02\x94\x03g\x1d\x98m'
+2023-03-26 14:23:20,774 INFO     b'\x04\xf2\x0c\xfed\x1a76Rm\xeb\xbc4\xc7\xfcT\xf3A\xac\xd6'
+2023-03-26 14:23:20,775 INFO     validate block returns False
+2023-03-26 14:23:20,777 INFO     receive tx b'xvM \xa7p\xa4";\xeb]\xcbU\xe8\xb4fY\x82\'_'
+2023-03-26 14:23:20,777 INFO     192.168.0.3 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,782 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:20,784 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:20,786 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:20,789 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:20,796 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:20,807 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:20,807 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:20,807 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:20,808 INFO     192.168.0.2 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,833 INFO     192.168.0.4 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,847 INFO     192.168.0.5 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,848 INFO     receive tx b"I\n\x06#\x98\x85!!\xab\xd0\xa1'\xb5]\xcd\x8dA\x9c\xd9\x88"
+2023-03-26 14:23:20,849 INFO     192.168.0.5 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,854 INFO     receive tx b'\x84\x84\xbf\xb0\x89\xdb\xab\x01b\xa9\xda"1;\xcc\x82\xba6\xfc\xbd'
+2023-03-26 14:23:20,855 INFO     192.168.0.2 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,876 INFO     receive tx b'\x8cE\x8d\xd5\xe0\x06\xad\r]\xfe[{\x1f\xea-%6\x18\xea\x94'
+2023-03-26 14:23:20,877 INFO     192.168.0.3 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,880 INFO     receive block ends with resolution
+2023-03-26 14:23:20,881 INFO     192.168.0.3 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_block HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,888 DEBUG    http://192.168.0.3:60203 "POST /post_block HTTP/1.1" 201 17
+2023-03-26 14:23:20,942 INFO     receive tx b'\xfe\xf8Pbb\x17\x9a\x90\x8d\xd7\x85]y\xaf\x0b\xd3\xb1M\xe3?'
+2023-03-26 14:23:20,943 INFO     192.168.0.5 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,955 INFO     192.168.0.2 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,968 INFO     192.168.0.4 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,969 INFO     receive tx b'~G\xb7w^\xaaXY\xd10\xa4|GF\xb3\xd6Q\xaf\xa4\xa3'
+2023-03-26 14:23:20,970 INFO     192.168.0.2 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,985 INFO     192.168.0.5 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:20,988 INFO     receive tx b'y\xb81\xbc\x1c\xe0}\xcc\xdc\x0cL\xb5[Gd\xbc\t>mm'
+2023-03-26 14:23:20,988 INFO     192.168.0.3 - - [26/Mar/2023 14:23:20] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,050 INFO     receive tx b"&\x8b\xb2\x94\xe4\xa0\xac\xb8\x0bPKS\x82%\xcf' \x07\xbc\x96"
+2023-03-26 14:23:21,051 INFO     192.168.0.5 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,071 INFO     receive tx b'\xbc\xf8i\xac2\xadt\x08\xd7\t\xab{cj\xed%\xc4Y\x95\xd8'
+2023-03-26 14:23:21,076 INFO     192.168.0.2 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,076 INFO     receive block starts - received from network True
+2023-03-26 14:23:21,076 INFO     validate block starts
+2023-03-26 14:23:21,077 INFO     (3, 1679829801.0422778, [b'\xed|\xfe\xf4\xd5\xcd\xceF&\x95\x1d3\xd1B\xd6/\x1e1\x97:', b'\x0fs\x19\xc8N\xd6\x9be\xf3e\xa3\xb7\xbc\x02x\xa6\x0e]\xda\x15', b'\xbc\xd2\x04\x1c+\x86\xb3\xfb\xe3\x0b8C\xd99\x1d\xc1T\xaa\xac\xe0', b'\xbc\x01\xf0W\x82\xfa3\xf9t\xf8\xc0C#1W\xfb\xc0\xd0\xd7e', b'\xce\xdc\x8a\xb9\xf6i\x143r4\xef\x1a\x8b\xb7+\t\xce\xb5\xf9`', b'\xf7Q\xe5RHW\xed\xf0\x900\xf0\xf4\x08\xfeL\x93\x91\x9a\xb9S', b'\xa3\xb1\xe2S\xb4\xb6G}\x189-Q\xee\x89\xad\xf9\xbb\xf0\xf6\x0f', b'\x0fO\x8e\x82T\xc7\xfeE"\x02)\xb9\xc4\x03\xf9\xad\x1by\x92Y', b'\xf6\xc8\xd9\xeaC\x1c\xbc\x93Tr\xa5\xbf\xd9$\xd0\xc8\xd6\xc6\x8d#', b'6d}t\x97\xfd>\xbe\xf53\xe6K*\xfe\xe9y\x89<\xb3\\'], b'\x03\x8fV\x8bB\x92\x86\x04\xb0{\x8b\x9f\x98Q\xe3\xb5\\\xc5\xb7\xbb', 12)
+2023-03-26 14:23:21,077 INFO     (3, 1679829801.0422778, [b'\xed|\xfe\xf4\xd5\xcd\xceF&\x95\x1d3\xd1B\xd6/\x1e1\x97:', b'\x0fs\x19\xc8N\xd6\x9be\xf3e\xa3\xb7\xbc\x02x\xa6\x0e]\xda\x15', b'\xbc\xd2\x04\x1c+\x86\xb3\xfb\xe3\x0b8C\xd99\x1d\xc1T\xaa\xac\xe0', b'\xbc\x01\xf0W\x82\xfa3\xf9t\xf8\xc0C#1W\xfb\xc0\xd0\xd7e', b'\xce\xdc\x8a\xb9\xf6i\x143r4\xef\x1a\x8b\xb7+\t\xce\xb5\xf9`', b'\xf7Q\xe5RHW\xed\xf0\x900\xf0\xf4\x08\xfeL\x93\x91\x9a\xb9S', b'\xa3\xb1\xe2S\xb4\xb6G}\x189-Q\xee\x89\xad\xf9\xbb\xf0\xf6\x0f', b'\x0fO\x8e\x82T\xc7\xfeE"\x02)\xb9\xc4\x03\xf9\xad\x1by\x92Y', b'\xf6\xc8\xd9\xeaC\x1c\xbc\x93Tr\xa5\xbf\xd9$\xd0\xc8\xd6\xc6\x8d#', b'6d}t\x97\xfd>\xbe\xf53\xe6K*\xfe\xe9y\x89<\xb3\\'], b'\x03\x8fV\x8bB\x92\x86\x04\xb0{\x8b\x9f\x98Q\xe3\xb5\\\xc5\xb7\xbb', 12)
+2023-03-26 14:23:21,077 INFO     3
+2023-03-26 14:23:21,077 INFO     b'\x05\x07}7\x08\xfc\x9e\xe83JW\xff5\x02\x94\x03g\x1d\x98m'
+2023-03-26 14:23:21,077 INFO     b'\x03\x8fV\x8bB\x92\x86\x04\xb0{\x8b\x9f\x98Q\xe3\xb5\\\xc5\xb7\xbb'
+2023-03-26 14:23:21,077 INFO     validate block returns False
+2023-03-26 14:23:21,081 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:21,083 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:21,087 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:21,089 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:21,088 INFO     receive tx b'\xf3xR\xec= \x9aC\x96?\xd8C]\x96q\xd6\xea;\xd8\r'
+2023-03-26 14:23:21,091 INFO     192.168.0.3 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,093 INFO     192.168.0.4 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,096 INFO     192.168.0.2 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,099 DEBUG    http://192.168.0.2:60202 "POST /post_block HTTP/1.1" 201 17
+2023-03-26 14:23:21,102 INFO     192.168.0.5 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,102 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:21,102 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:21,104 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:21,106 DEBUG    http://192.168.0.5:60205 "POST /post_block HTTP/1.1" 201 17
+2023-03-26 14:23:21,108 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:21,112 DEBUG    http://192.168.0.4:60204 "POST /post_block HTTP/1.1" 201 17
+2023-03-26 14:23:21,157 INFO     start creation of new block
+2023-03-26 14:23:21,159 INFO     end creation of new block
+2023-03-26 14:23:21,159 INFO     end mine_current_block
+2023-03-26 14:23:21,161 INFO     start mine_current_block
+2023-03-26 14:23:21,162 INFO     mining proccess starts
+2023-03-26 14:23:21,162 INFO     mining done
+2023-03-26 14:23:21,162 INFO     block mined - attempt to attach it
+2023-03-26 14:23:21,176 INFO     receive tx b'\xe6\xa0\x84\x92R\x96\xaeV5v\x86Z\xe7X\xb1>\xc8\x08V\xea'
+2023-03-26 14:23:21,177 INFO     192.168.0.2 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,179 INFO     receive tx b'\xda!Ly\xef\xa1\x17\x9d5\xd6\x8d\xa5\xc4A\xef\x8d\xcd5\xe5\x8d'
+2023-03-26 14:23:21,180 INFO     192.168.0.5 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,181 INFO     receive block ends with resolution
+2023-03-26 14:23:21,182 INFO     192.168.0.3 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_block HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,182 INFO     receive block starts - received from network True
+2023-03-26 14:23:21,182 INFO     validate block starts
+2023-03-26 14:23:21,182 INFO     (3, 1679829800.9771388, [b'\xed|\xfe\xf4\xd5\xcd\xceF&\x95\x1d3\xd1B\xd6/\x1e1\x97:', b'\xbc\xd2\x04\x1c+\x86\xb3\xfb\xe3\x0b8C\xd99\x1d\xc1T\xaa\xac\xe0', b'\xf7Q\xe5RHW\xed\xf0\x900\xf0\xf4\x08\xfeL\x93\x91\x9a\xb9S', b'\xbc\x01\xf0W\x82\xfa3\xf9t\xf8\xc0C#1W\xfb\xc0\xd0\xd7e', b'\x0fs\x19\xc8N\xd6\x9be\xf3e\xa3\xb7\xbc\x02x\xa6\x0e]\xda\x15', b'\xf6\xc8\xd9\xeaC\x1c\xbc\x93Tr\xa5\xbf\xd9$\xd0\xc8\xd6\xc6\x8d#', b'\xa3\xb1\xe2S\xb4\xb6G}\x189-Q\xee\x89\xad\xf9\xbb\xf0\xf6\x0f', b'\xce\xdc\x8a\xb9\xf6i\x143r4\xef\x1a\x8b\xb7+\t\xce\xb5\xf9`', b'\x17\xc7\xc6\x1dJ\xf71\xcb\xbfr\x0c\xe2)\xd2\xbc\x92\xb6 )\x18', b'\x0fO\x8e\x82T\xc7\xfeE"\x02)\xb9\xc4\x03\xf9\xad\x1by\x92Y'], b'\x05\x07}7\x08\xfc\x9e\xe83JW\xff5\x02\x94\x03g\x1d\x98m', 1)
+2023-03-26 14:23:21,183 INFO     (3, 1679829800.9771388, [b'\xed|\xfe\xf4\xd5\xcd\xceF&\x95\x1d3\xd1B\xd6/\x1e1\x97:', b'\xbc\xd2\x04\x1c+\x86\xb3\xfb\xe3\x0b8C\xd99\x1d\xc1T\xaa\xac\xe0', b'\xf7Q\xe5RHW\xed\xf0\x900\xf0\xf4\x08\xfeL\x93\x91\x9a\xb9S', b'\xbc\x01\xf0W\x82\xfa3\xf9t\xf8\xc0C#1W\xfb\xc0\xd0\xd7e', b'\x0fs\x19\xc8N\xd6\x9be\xf3e\xa3\xb7\xbc\x02x\xa6\x0e]\xda\x15', b'\xf6\xc8\xd9\xeaC\x1c\xbc\x93Tr\xa5\xbf\xd9$\xd0\xc8\xd6\xc6\x8d#', b'\xa3\xb1\xe2S\xb4\xb6G}\x189-Q\xee\x89\xad\xf9\xbb\xf0\xf6\x0f', b'\xce\xdc\x8a\xb9\xf6i\x143r4\xef\x1a\x8b\xb7+\t\xce\xb5\xf9`', b'\x17\xc7\xc6\x1dJ\xf71\xcb\xbfr\x0c\xe2)\xd2\xbc\x92\xb6 )\x18', b'\x0fO\x8e\x82T\xc7\xfeE"\x02)\xb9\xc4\x03\xf9\xad\x1by\x92Y'], b'\x05\x07}7\x08\xfc\x9e\xe83JW\xff5\x02\x94\x03g\x1d\x98m', 1)
+2023-03-26 14:23:21,183 INFO     validate block returns True
+2023-03-26 14:23:21,183 INFO     attach block starts
+2023-03-26 14:23:21,183 INFO     attach block end
+2023-03-26 14:23:21,183 INFO     receive block ends with attachment
+2023-03-26 14:23:21,184 INFO     192.168.0.2 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_block HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,184 INFO     receive block starts - received from network True
+2023-03-26 14:23:21,184 INFO     validate block starts
+2023-03-26 14:23:21,184 INFO     (3, 1679829800.8898194, [b'\xed|\xfe\xf4\xd5\xcd\xceF&\x95\x1d3\xd1B\xd6/\x1e1\x97:', b'\x0fs\x19\xc8N\xd6\x9be\xf3e\xa3\xb7\xbc\x02x\xa6\x0e]\xda\x15', b'\xf7Q\xe5RHW\xed\xf0\x900\xf0\xf4\x08\xfeL\x93\x91\x9a\xb9S', b'\xbc\xd2\x04\x1c+\x86\xb3\xfb\xe3\x0b8C\xd99\x1d\xc1T\xaa\xac\xe0', b'\xce\xdc\x8a\xb9\xf6i\x143r4\xef\x1a\x8b\xb7+\t\xce\xb5\xf9`', b'\xf6\xc8\xd9\xeaC\x1c\xbc\x93Tr\xa5\xbf\xd9$\xd0\xc8\xd6\xc6\x8d#', b'\xbc\x01\xf0W\x82\xfa3\xf9t\xf8\xc0C#1W\xfb\xc0\xd0\xd7e', b'\x0fO\x8e\x82T\xc7\xfeE"\x02)\xb9\xc4\x03\xf9\xad\x1by\x92Y', b'\x17\xc7\xc6\x1dJ\xf71\xcb\xbfr\x0c\xe2)\xd2\xbc\x92\xb6 )\x18', b'\xa3\xb1\xe2S\xb4\xb6G}\x189-Q\xee\x89\xad\xf9\xbb\xf0\xf6\x0f'], b'\x05\x07}7\x08\xfc\x9e\xe83JW\xff5\x02\x94\x03g\x1d\x98m', 1)
+2023-03-26 14:23:21,185 INFO     (3, 1679829800.8898194, [b'\xed|\xfe\xf4\xd5\xcd\xceF&\x95\x1d3\xd1B\xd6/\x1e1\x97:', b'\x0fs\x19\xc8N\xd6\x9be\xf3e\xa3\xb7\xbc\x02x\xa6\x0e]\xda\x15', b'\xf7Q\xe5RHW\xed\xf0\x900\xf0\xf4\x08\xfeL\x93\x91\x9a\xb9S', b'\xbc\xd2\x04\x1c+\x86\xb3\xfb\xe3\x0b8C\xd99\x1d\xc1T\xaa\xac\xe0', b'\xce\xdc\x8a\xb9\xf6i\x143r4\xef\x1a\x8b\xb7+\t\xce\xb5\xf9`', b'\xf6\xc8\xd9\xeaC\x1c\xbc\x93Tr\xa5\xbf\xd9$\xd0\xc8\xd6\xc6\x8d#', b'\xbc\x01\xf0W\x82\xfa3\xf9t\xf8\xc0C#1W\xfb\xc0\xd0\xd7e', b'\x0fO\x8e\x82T\xc7\xfeE"\x02)\xb9\xc4\x03\xf9\xad\x1by\x92Y', b'\x17\xc7\xc6\x1dJ\xf71\xcb\xbfr\x0c\xe2)\xd2\xbc\x92\xb6 )\x18', b'\xa3\xb1\xe2S\xb4\xb6G}\x189-Q\xee\x89\xad\xf9\xbb\xf0\xf6\x0f'], b'\x05\x07}7\x08\xfc\x9e\xe83JW\xff5\x02\x94\x03g\x1d\x98m', 1)
+2023-03-26 14:23:21,185 INFO     4
+2023-03-26 14:23:21,185 INFO     b'\x04\x1a\xfa\x98\xc5\xa7\xb4\x08\xc9\x86\xa9\xa3#yY\xd5d\xf8\x82\xb6'
+2023-03-26 14:23:21,185 INFO     b'\x05\x07}7\x08\xfc\x9e\xe83JW\xff5\x02\x94\x03g\x1d\x98m'
+2023-03-26 14:23:21,185 INFO     validate block returns False
+2023-03-26 14:23:21,188 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:21,191 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:21,193 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:21,196 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:21,202 INFO     receive tx b'\xc2=U\x97\xaf\xb4[i$\xd1`Ln\xd6\x96R\xb3[w\xe4'
+2023-03-26 14:23:21,203 INFO     192.168.0.3 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,203 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:21,211 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:21,212 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:21,214 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:21,226 INFO     192.168.0.4 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,279 INFO     receive tx b'\xde@\x93e\xcc\xd8\xfc\x8c\xc3.`s\x12\x0f\x0f\xf3\x1a\xc1-\x8e'
+2023-03-26 14:23:21,280 INFO     receive tx b'D\xdc\xcb\x85s\x84\xbc\xb6\xbd\x9e$]\x10\xf1\xc2{\xa5nV`'
+2023-03-26 14:23:21,282 INFO     192.168.0.2 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,281 INFO     192.168.0.5 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,287 INFO     receive block ends with resolution
+2023-03-26 14:23:21,287 INFO     192.168.0.5 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_block HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,288 INFO     receive block starts - received from network False
+2023-03-26 14:23:21,288 INFO     validate block starts
+2023-03-26 14:23:21,288 INFO     (3, 1679829801.157896, [b'\xed|\xfe\xf4\xd5\xcd\xceF&\x95\x1d3\xd1B\xd6/\x1e1\x97:', b'\x0fs\x19\xc8N\xd6\x9be\xf3e\xa3\xb7\xbc\x02x\xa6\x0e]\xda\x15', b'\xbc\xd2\x04\x1c+\x86\xb3\xfb\xe3\x0b8C\xd99\x1d\xc1T\xaa\xac\xe0', b'\xf7Q\xe5RHW\xed\xf0\x900\xf0\xf4\x08\xfeL\x93\x91\x9a\xb9S', b'\xbc\x01\xf0W\x82\xfa3\xf9t\xf8\xc0C#1W\xfb\xc0\xd0\xd7e', b'\xce\xdc\x8a\xb9\xf6i\x143r4\xef\x1a\x8b\xb7+\t\xce\xb5\xf9`', b'\xf6\xc8\xd9\xeaC\x1c\xbc\x93Tr\xa5\xbf\xd9$\xd0\xc8\xd6\xc6\x8d#', b'\xa3\xb1\xe2S\xb4\xb6G}\x189-Q\xee\x89\xad\xf9\xbb\xf0\xf6\x0f', b'\x0fO\x8e\x82T\xc7\xfeE"\x02)\xb9\xc4\x03\xf9\xad\x1by\x92Y', b'\x17\xc7\xc6\x1dJ\xf71\xcb\xbfr\x0c\xe2)\xd2\xbc\x92\xb6 )\x18'], b'\x05\x07}7\x08\xfc\x9e\xe83JW\xff5\x02\x94\x03g\x1d\x98m', 18)
+2023-03-26 14:23:21,289 INFO     (3, 1679829801.157896, [b'\xed|\xfe\xf4\xd5\xcd\xceF&\x95\x1d3\xd1B\xd6/\x1e1\x97:', b'\x0fs\x19\xc8N\xd6\x9be\xf3e\xa3\xb7\xbc\x02x\xa6\x0e]\xda\x15', b'\xbc\xd2\x04\x1c+\x86\xb3\xfb\xe3\x0b8C\xd99\x1d\xc1T\xaa\xac\xe0', b'\xf7Q\xe5RHW\xed\xf0\x900\xf0\xf4\x08\xfeL\x93\x91\x9a\xb9S', b'\xbc\x01\xf0W\x82\xfa3\xf9t\xf8\xc0C#1W\xfb\xc0\xd0\xd7e', b'\xce\xdc\x8a\xb9\xf6i\x143r4\xef\x1a\x8b\xb7+\t\xce\xb5\xf9`', b'\xf6\xc8\xd9\xeaC\x1c\xbc\x93Tr\xa5\xbf\xd9$\xd0\xc8\xd6\xc6\x8d#', b'\xa3\xb1\xe2S\xb4\xb6G}\x189-Q\xee\x89\xad\xf9\xbb\xf0\xf6\x0f', b'\x0fO\x8e\x82T\xc7\xfeE"\x02)\xb9\xc4\x03\xf9\xad\x1by\x92Y', b'\x17\xc7\xc6\x1dJ\xf71\xcb\xbfr\x0c\xe2)\xd2\xbc\x92\xb6 )\x18'], b'\x05\x07}7\x08\xfc\x9e\xe83JW\xff5\x02\x94\x03g\x1d\x98m', 18)
+2023-03-26 14:23:21,289 INFO     4
+2023-03-26 14:23:21,289 INFO     b'\x04\x1a\xfa\x98\xc5\xa7\xb4\x08\xc9\x86\xa9\xa3#yY\xd5d\xf8\x82\xb6'
+2023-03-26 14:23:21,289 INFO     b'\x05\x07}7\x08\xfc\x9e\xe83JW\xff5\x02\x94\x03g\x1d\x98m'
+2023-03-26 14:23:21,289 INFO     validate block returns False
+2023-03-26 14:23:21,290 INFO     start creation of new block
+2023-03-26 14:23:21,292 INFO     end creation of new block
+2023-03-26 14:23:21,292 INFO     end mine_current_block
+2023-03-26 14:23:21,294 INFO     start mine_current_block
+2023-03-26 14:23:21,294 INFO     mining proccess starts
+2023-03-26 14:23:21,295 INFO     mining done
+2023-03-26 14:23:21,295 INFO     block mined - attempt to attach it
+2023-03-26 14:23:21,295 INFO     receive block starts - received from network False
+2023-03-26 14:23:21,295 INFO     validate block starts
+2023-03-26 14:23:21,295 INFO     (4, 1679829801.290124, [b'6d}t\x97\xfd>\xbe\xf53\xe6K*\xfe\xe9y\x89<\xb3\\', b'\xbe^\x91hz\xdc_\xfb\x0e\xee\x17\xa9n\xafn\x8b`x\xd4P', b'xvM \xa7p\xa4";\xeb]\xcbU\xe8\xb4fY\x82\'_', b"I\n\x06#\x98\x85!!\xab\xd0\xa1'\xb5]\xcd\x8dA\x9c\xd9\x88", b'\x84\x84\xbf\xb0\x89\xdb\xab\x01b\xa9\xda"1;\xcc\x82\xba6\xfc\xbd', b'\x8cE\x8d\xd5\xe0\x06\xad\r]\xfe[{\x1f\xea-%6\x18\xea\x94', b'\xfe\xf8Pbb\x17\x9a\x90\x8d\xd7\x85]y\xaf\x0b\xd3\xb1M\xe3?', b'~G\xb7w^\xaaXY\xd10\xa4|GF\xb3\xd6Q\xaf\xa4\xa3', b'y\xb81\xbc\x1c\xe0}\xcc\xdc\x0cL\xb5[Gd\xbc\t>mm', b"&\x8b\xb2\x94\xe4\xa0\xac\xb8\x0bPKS\x82%\xcf' \x07\xbc\x96"], b'\x04\x1a\xfa\x98\xc5\xa7\xb4\x08\xc9\x86\xa9\xa3#yY\xd5d\xf8\x82\xb6', 1)
+2023-03-26 14:23:21,295 INFO     (4, 1679829801.290124, [b'6d}t\x97\xfd>\xbe\xf53\xe6K*\xfe\xe9y\x89<\xb3\\', b'\xbe^\x91hz\xdc_\xfb\x0e\xee\x17\xa9n\xafn\x8b`x\xd4P', b'xvM \xa7p\xa4";\xeb]\xcbU\xe8\xb4fY\x82\'_', b"I\n\x06#\x98\x85!!\xab\xd0\xa1'\xb5]\xcd\x8dA\x9c\xd9\x88", b'\x84\x84\xbf\xb0\x89\xdb\xab\x01b\xa9\xda"1;\xcc\x82\xba6\xfc\xbd', b'\x8cE\x8d\xd5\xe0\x06\xad\r]\xfe[{\x1f\xea-%6\x18\xea\x94', b'\xfe\xf8Pbb\x17\x9a\x90\x8d\xd7\x85]y\xaf\x0b\xd3\xb1M\xe3?', b'~G\xb7w^\xaaXY\xd10\xa4|GF\xb3\xd6Q\xaf\xa4\xa3', b'y\xb81\xbc\x1c\xe0}\xcc\xdc\x0cL\xb5[Gd\xbc\t>mm', b"&\x8b\xb2\x94\xe4\xa0\xac\xb8\x0bPKS\x82%\xcf' \x07\xbc\x96"], b'\x04\x1a\xfa\x98\xc5\xa7\xb4\x08\xc9\x86\xa9\xa3#yY\xd5d\xf8\x82\xb6', 1)
+2023-03-26 14:23:21,295 INFO     validate block returns True
+2023-03-26 14:23:21,295 INFO     attach block starts
+2023-03-26 14:23:21,296 INFO     attach block end
+2023-03-26 14:23:21,296 INFO     receive block ends with attachment
+2023-03-26 14:23:21,308 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:21,311 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:21,313 INFO     receive tx b'kWX\x9bt\xe3\xea3\xc0)3\xca\x1f\xd7\x84\x90\xef\x95*\x8e'
+2023-03-26 14:23:21,314 INFO     192.168.0.3 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,316 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:21,319 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:21,332 DEBUG    http://192.168.0.2:60202 "POST /post_block HTTP/1.1" 201 17
+2023-03-26 14:23:21,349 INFO     192.168.0.5 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,373 INFO     192.168.0.3 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,385 INFO     192.168.0.4 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,392 INFO     receive tx b'\xfb\xe3\x80\n\x17\xa1\x0eP\xdb\xb1\x9eAj\x06\xa2z\xd0\xfd\xcbn'
+2023-03-26 14:23:21,393 INFO     192.168.0.2 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,403 INFO     receive tx b'\x85\xb0\x13t\x1cF\xd0t\x9d\x80\x04\t*S\xa4\xb0cQk\x98'
+2023-03-26 14:23:21,404 INFO     192.168.0.5 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,427 INFO     receive tx b'd\xbem\xbeg\xbb\x86\xb2F\x90B\x90uV\xab\x8fF\x92\x93\x81'
+2023-03-26 14:23:21,428 INFO     192.168.0.3 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,481 DEBUG    http://192.168.0.5:60205 "POST /post_block HTTP/1.1" 201 17
+2023-03-26 14:23:21,498 INFO     receive tx b'\x91\xa6\x8f\x8e:\xcc\xa7\xc8P\xce\xbe\xfb\xf6&G/p\x86Pl'
+2023-03-26 14:23:21,499 INFO     192.168.0.2 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,513 INFO     192.168.0.4 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,516 INFO     receive tx b'-\x87\xd2l\xd7\x06Q\xfe!\xb2\x08Wz\xa7R\xad\xd6Z|6'
+2023-03-26 14:23:21,517 INFO     192.168.0.5 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,522 INFO     192.168.0.3 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,527 DEBUG    http://192.168.0.3:60203 "POST /post_block HTTP/1.1" 201 17
+2023-03-26 14:23:21,538 INFO     receive tx b'w\xfbPCD\x9fW\x10^\x15\xab$\xc0\x9a\x9b.\x1f\xec\x9c\x05'
+2023-03-26 14:23:21,539 INFO     192.168.0.3 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,603 INFO     receive tx b'\xfd\x13\x93\xea\xed\xdbV\x87\r\xae\x0cR>/\xbd`,91\x9e'
+2023-03-26 14:23:21,603 INFO     192.168.0.2 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,615 INFO     receive tx b'~\xca\x03KJ\x93\x0f\xac&j\xf3d\xfcg\xee6\xd8\xa5aw'
+2023-03-26 14:23:21,616 INFO     192.168.0.5 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,634 INFO     192.168.0.4 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,638 DEBUG    http://192.168.0.4:60204 "POST /post_block HTTP/1.1" 201 17
+2023-03-26 14:23:21,642 INFO     receive tx b'J\x16\x8b\xc7<=\xc7F\x93\x19\xf1\x81jR\x19)\xb1\xb2\x1eH'
+2023-03-26 14:23:21,643 INFO     192.168.0.3 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,666 INFO     receive block starts - received from network True
+2023-03-26 14:23:21,675 INFO     validate block starts
+2023-03-26 14:23:21,675 INFO     (5, 1679829801.6222384, [b'\xbc\xf8i\xac2\xadt\x08\xd7\t\xab{cj\xed%\xc4Y\x95\xd8', b'\xf3xR\xec= \x9aC\x96?\xd8C]\x96q\xd6\xea;\xd8\r', b'\xe6\xa0\x84\x92R\x96\xaeV5v\x86Z\xe7X\xb1>\xc8\x08V\xea', b'\xc2=U\x97\xaf\xb4[i$\xd1`Ln\xd6\x96R\xb3[w\xe4', b'\xda!Ly\xef\xa1\x17\x9d5\xd6\x8d\xa5\xc4A\xef\x8d\xcd5\xe5\x8d', b'D\xdc\xcb\x85s\x84\xbc\xb6\xbd\x9e$]\x10\xf1\xc2{\xa5nV`', b'kWX\x9bt\xe3\xea3\xc0)3\xca\x1f\xd7\x84\x90\xef\x95*\x8e', b'\xde@\x93e\xcc\xd8\xfc\x8c\xc3.`s\x12\x0f\x0f\xf3\x1a\xc1-\x8e', b'\xfb\xe3\x80\n\x17\xa1\x0eP\xdb\xb1\x9eAj\x06\xa2z\xd0\xfd\xcbn', b'd\xbem\xbeg\xbb\x86\xb2F\x90B\x90uV\xab\x8fF\x92\x93\x81'], b'\x0f\xd5?\xab3\t\x8ej\xd7?_\x952<{\xc6\x9d\xbfXB', 5)
+2023-03-26 14:23:21,675 INFO     (5, 1679829801.6222384, [b'\xbc\xf8i\xac2\xadt\x08\xd7\t\xab{cj\xed%\xc4Y\x95\xd8', b'\xf3xR\xec= \x9aC\x96?\xd8C]\x96q\xd6\xea;\xd8\r', b'\xe6\xa0\x84\x92R\x96\xaeV5v\x86Z\xe7X\xb1>\xc8\x08V\xea', b'\xc2=U\x97\xaf\xb4[i$\xd1`Ln\xd6\x96R\xb3[w\xe4', b'\xda!Ly\xef\xa1\x17\x9d5\xd6\x8d\xa5\xc4A\xef\x8d\xcd5\xe5\x8d', b'D\xdc\xcb\x85s\x84\xbc\xb6\xbd\x9e$]\x10\xf1\xc2{\xa5nV`', b'kWX\x9bt\xe3\xea3\xc0)3\xca\x1f\xd7\x84\x90\xef\x95*\x8e', b'\xde@\x93e\xcc\xd8\xfc\x8c\xc3.`s\x12\x0f\x0f\xf3\x1a\xc1-\x8e', b'\xfb\xe3\x80\n\x17\xa1\x0eP\xdb\xb1\x9eAj\x06\xa2z\xd0\xfd\xcbn', b'd\xbem\xbeg\xbb\x86\xb2F\x90B\x90uV\xab\x8fF\x92\x93\x81'], b'\x0f\xd5?\xab3\t\x8ej\xd7?_\x952<{\xc6\x9d\xbfXB', 5)
+2023-03-26 14:23:21,675 INFO     validate block returns True
+2023-03-26 14:23:21,676 INFO     attach block starts
+2023-03-26 14:23:21,676 INFO     attach block end
+2023-03-26 14:23:21,676 INFO     receive block ends with attachment
+2023-03-26 14:23:21,677 INFO     192.168.0.5 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_block HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,678 INFO     receive block starts - received from network True
+2023-03-26 14:23:21,678 INFO     validate block starts
+2023-03-26 14:23:21,678 INFO     (5, 1679829801.5206573, [b'\xbc\xf8i\xac2\xadt\x08\xd7\t\xab{cj\xed%\xc4Y\x95\xd8', b'\xf3xR\xec= \x9aC\x96?\xd8C]\x96q\xd6\xea;\xd8\r', b'\xda!Ly\xef\xa1\x17\x9d5\xd6\x8d\xa5\xc4A\xef\x8d\xcd5\xe5\x8d', b'\xe6\xa0\x84\x92R\x96\xaeV5v\x86Z\xe7X\xb1>\xc8\x08V\xea', b'\xc2=U\x97\xaf\xb4[i$\xd1`Ln\xd6\x96R\xb3[w\xe4', b'\xde@\x93e\xcc\xd8\xfc\x8c\xc3.`s\x12\x0f\x0f\xf3\x1a\xc1-\x8e', b'D\xdc\xcb\x85s\x84\xbc\xb6\xbd\x9e$]\x10\xf1\xc2{\xa5nV`', b'kWX\x9bt\xe3\xea3\xc0)3\xca\x1f\xd7\x84\x90\xef\x95*\x8e', b'\xfb\xe3\x80\n\x17\xa1\x0eP\xdb\xb1\x9eAj\x06\xa2z\xd0\xfd\xcbn', b'\x85\xb0\x13t\x1cF\xd0t\x9d\x80\x04\t*S\xa4\xb0cQk\x98'], b'\x0f\xd5?\xab3\t\x8ej\xd7?_\x952<{\xc6\x9d\xbfXB', 10)
+2023-03-26 14:23:21,678 INFO     (5, 1679829801.5206573, [b'\xbc\xf8i\xac2\xadt\x08\xd7\t\xab{cj\xed%\xc4Y\x95\xd8', b'\xf3xR\xec= \x9aC\x96?\xd8C]\x96q\xd6\xea;\xd8\r', b'\xda!Ly\xef\xa1\x17\x9d5\xd6\x8d\xa5\xc4A\xef\x8d\xcd5\xe5\x8d', b'\xe6\xa0\x84\x92R\x96\xaeV5v\x86Z\xe7X\xb1>\xc8\x08V\xea', b'\xc2=U\x97\xaf\xb4[i$\xd1`Ln\xd6\x96R\xb3[w\xe4', b'\xde@\x93e\xcc\xd8\xfc\x8c\xc3.`s\x12\x0f\x0f\xf3\x1a\xc1-\x8e', b'D\xdc\xcb\x85s\x84\xbc\xb6\xbd\x9e$]\x10\xf1\xc2{\xa5nV`', b'kWX\x9bt\xe3\xea3\xc0)3\xca\x1f\xd7\x84\x90\xef\x95*\x8e', b'\xfb\xe3\x80\n\x17\xa1\x0eP\xdb\xb1\x9eAj\x06\xa2z\xd0\xfd\xcbn', b'\x85\xb0\x13t\x1cF\xd0t\x9d\x80\x04\t*S\xa4\xb0cQk\x98'], b'\x0f\xd5?\xab3\t\x8ej\xd7?_\x952<{\xc6\x9d\xbfXB', 10)
+2023-03-26 14:23:21,678 INFO     6
+2023-03-26 14:23:21,678 INFO     b'\x05\x85\xe9\xb72\xf1\xea]\x96\x08T\xa0\xaeYmyc\x07\xfc\xbc'
+2023-03-26 14:23:21,678 INFO     b'\x0f\xd5?\xab3\t\x8ej\xd7?_\x952<{\xc6\x9d\xbfXB'
+2023-03-26 14:23:21,679 INFO     validate block returns False
+2023-03-26 14:23:21,684 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:21,687 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:21,691 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:21,693 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:21,709 INFO     start creation of new block
+2023-03-26 14:23:21,712 INFO     end creation of new block
+2023-03-26 14:23:21,712 INFO     end mine_current_block
+2023-03-26 14:23:21,715 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:21,716 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:21,718 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:21,719 DEBUG    http://192.168.0.4:60204 "POST /request_blockchain_length HTTP/1.1" 201 18
+2023-03-26 14:23:21,723 INFO     receive tx b'Y\xb8fN\x90L\xcb-\xb7\xe9\x8dW=\xc1\xf1#9\xc9~\x0c'
+2023-03-26 14:23:21,723 INFO     192.168.0.2 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,727 INFO     receive tx b'\xc6h\x1f>\xd2\xd2\xe2rp\xdd\xfb\xfa\xffa\x8a\x8f\x97=NY'
+2023-03-26 14:23:21,727 INFO     192.168.0.5 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,749 INFO     receive tx b'\x8b\x00i\x90\\\xc5\xac\xcf\x89K\x01>k\xfe"\x97W\xd2`\t'
+2023-03-26 14:23:21,750 INFO     192.168.0.3 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,760 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:21,763 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:21,765 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:21,768 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:21,773 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:21,775 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:21,781 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:21,783 INFO     192.168.0.5 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,784 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:21,789 INFO     192.168.0.2 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,796 INFO     192.168.0.4 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,796 INFO     receive block ends with resolution
+2023-03-26 14:23:21,797 INFO     192.168.0.4 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_block HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,799 INFO     192.168.0.3 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /request_blockchain_diff HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,814 INFO     receive tx b'\xd3\xe4\xaac\xcd3\x05.\xb89\xb1\xf9\xc9\x89},E\x00\xc7J'
+2023-03-26 14:23:21,815 INFO     192.168.0.2 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,835 INFO     receive tx b'/\t\xe4\x93\xdcs\x06\x11\xe5\xc56\x1e0Z\x15\xd4\x07\xcae9'
+2023-03-26 14:23:21,836 INFO     192.168.0.5 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,854 INFO     receive tx b'\xc8N]\xf3\xa1\xb5\x1b<\x7f\x88\xb0\xfd\xa6\xfe8\x95/\x1c6\x0e'
+2023-03-26 14:23:21,854 INFO     192.168.0.3 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,859 INFO     receive tx b'\xdbtq\xb49\x97G\xcf\x91\xac2\x12\x06\xb0\x8b\xb38\xcb\xd3u'
+2023-03-26 14:23:21,866 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:21,868 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:21,871 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:21,874 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:21,878 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:21,880 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:21,881 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:21,883 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:21,920 INFO     receive tx b'\x0b\xc1\x90\xc1\x1f}(\xe4\xd7J\x158X\xdf\xa0`\x18\xba\xa8\xf0'
+2023-03-26 14:23:21,920 INFO     192.168.0.2 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,941 INFO     receive tx b'\xcf\xcah`\xc4R\xd2\xe6\xef\x1e\xfc\x19v$\xd6\xdb\xc0\xd4\xd1\xb7'
+2023-03-26 14:23:21,942 INFO     192.168.0.5 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,958 INFO     receive tx b'\xd2\xb4\xa6\x82\x1f\xab\x98!\xd5N$r0\x0b\xa4\xaf@T\xb9\x8d'
+2023-03-26 14:23:21,959 INFO     192.168.0.3 - - [26/Mar/2023 14:23:21] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:21,965 INFO     receive tx b"\xb8\x93\xf5\x88EJ\xd7(2\xb8v\x07\xce'J|\xd3\xcd;\xa0"
+2023-03-26 14:23:21,972 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:21,974 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:21,977 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:21,980 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:21,983 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:21,985 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:21,985 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:21,988 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,026 INFO     receive tx b'0\xae!v!\xab9}\xca\xcf\xdb\x1b\xb3\xf7\xd0\xf3+\xac\xfa\x88'
+2023-03-26 14:23:22,027 INFO     192.168.0.2 - - [26/Mar/2023 14:23:22] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:22,048 INFO     receive tx b"2\xf8-\x88Q\x9b0Z\x97'\n\x06\xbf\xdf\xd9\xd6\x96\xbaV\xfb"
+2023-03-26 14:23:22,049 INFO     192.168.0.5 - - [26/Mar/2023 14:23:22] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:22,070 INFO     receive tx b'x\xe5\xbb\xf6!/e#\x9c\xd6\x7f\xda"g\xa7\xe3\x13\xa7\xe07'
+2023-03-26 14:23:22,071 INFO     receive tx b'\xa6P+w\xf5yq\xd4\xfd\x1eeF\xa7\xfdq\x02\x0f\xf5\xc9\x97'
+2023-03-26 14:23:22,072 INFO     192.168.0.3 - - [26/Mar/2023 14:23:22] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:22,080 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:22,083 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:22,085 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:22,088 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:22,094 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,095 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,096 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,096 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,129 INFO     receive tx b'\x98{hf/X\x99\x1e\xb5\xac\xb8\xad\x9f\xecR\xd6\xb1\xf9\xc9B'
+2023-03-26 14:23:22,130 INFO     192.168.0.2 - - [26/Mar/2023 14:23:22] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:22,153 INFO     receive tx b'\xbc\xe0\xdf\t\xacI\x18\x16\x01\xe5\x98\xf7\xcb\xa1:n;|\xca\x91'
+2023-03-26 14:23:22,154 INFO     192.168.0.5 - - [26/Mar/2023 14:23:22] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:22,174 INFO     receive tx b'\xf7?\xa7!\xe03i$\xd8\x18\x99\x9c\xb80H\xba\xa0}\xa9\xf3'
+2023-03-26 14:23:22,175 INFO     192.168.0.3 - - [26/Mar/2023 14:23:22] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:22,178 INFO     receive tx b'\x8c\x13\x08\xef\xe8\xf8\x1e"|\x90$\x0b\x14\xe2\xa7Q\x02<\x9a,'
+2023-03-26 14:23:22,185 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:22,188 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:22,191 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:22,194 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:22,199 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,200 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,201 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,203 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,236 INFO     receive tx b'\xc1p{\xf9%\xfa \x0c\x88\xf4e\x91r\xea\xe9\x98\xb4\xed\x15{'
+2023-03-26 14:23:22,237 INFO     192.168.0.2 - - [26/Mar/2023 14:23:22] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:22,257 INFO     receive tx b'\xb9\xf4\x1b\xb6\xb3\x7f\xf6-Wk\x91_\xfe\x8f<\x16\xcb\xe5\xca\xe2'
+2023-03-26 14:23:22,258 INFO     192.168.0.5 - - [26/Mar/2023 14:23:22] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:22,278 INFO     receive tx b'\xa5\x8bGU\xdf\x90q\xd6!P\xa4\xf6\x7f&;v\xa4\xf0\xd0\x9c'
+2023-03-26 14:23:22,279 INFO     192.168.0.3 - - [26/Mar/2023 14:23:22] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:22,284 INFO     receive tx b'H\xf2\xca\x1c\xc7\xa8\xb5\xfbH\xa29\xab:\xea\xd6\xabt,3\x00'
+2023-03-26 14:23:22,293 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:22,295 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:22,297 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:22,299 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:22,306 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,307 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,309 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,310 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,345 INFO     receive tx b"\\{\xe4\xcbZ'\xbcA\xc9\xe8\x1c+`\x00\xd2\xda_\x90\xf7L"
+2023-03-26 14:23:22,346 INFO     192.168.0.2 - - [26/Mar/2023 14:23:22] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:22,367 INFO     receive tx b'<\xf9d*2f\xf8\xb6\x81\xca\xd9\xd1\xbe\x1e5\xb0\\\x05I['
+2023-03-26 14:23:22,368 INFO     192.168.0.5 - - [26/Mar/2023 14:23:22] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:22,385 INFO     receive tx b'\x03$D\xfe\xccC\xf4\x87\x07\xcdaRb\xf4\xe3\x1f\xb9N\xae^'
+2023-03-26 14:23:22,386 INFO     192.168.0.3 - - [26/Mar/2023 14:23:22] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:22,390 INFO     receive tx b'\x0f\xdf\x1e\xfcTog7A\xd0\x17qnsU\x8f\x7f\xbf\t\x8b'
+2023-03-26 14:23:22,398 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:22,401 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:22,403 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:22,406 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:22,409 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,412 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,413 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,415 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,471 INFO     receive tx b'\xbdw\x8f\xf1kk^\x9aUxB\x7f\xf1(a\xf7\xe4\xf6k\xf9'
+2023-03-26 14:23:22,472 INFO     192.168.0.5 - - [26/Mar/2023 14:23:22] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:22,496 INFO     receive tx b'\xff\xea-\xba\x0c\x1c~\x87D*\xc4\x1e~\x93\x8e\x9c\x13l\x87m'
+2023-03-26 14:23:22,501 INFO     receive tx b"y\xea\xf8\xab\xae'\x17\xf6'\x87\xf2)\xa4\x10\x9f\x8c\x1e\x8d\x97\x18"
+2023-03-26 14:23:22,502 INFO     192.168.0.3 - - [26/Mar/2023 14:23:22] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:22,507 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:22,510 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:22,513 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:22,517 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:22,521 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,523 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,523 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,524 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,577 INFO     receive tx b'\xba\x1cQ\x8c\x92\xef\x88\x1e\xe2\x9aP\x7f%}\xa5D\n\xad\x1ag'
+2023-03-26 14:23:22,578 INFO     192.168.0.5 - - [26/Mar/2023 14:23:22] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:22,602 INFO     receive tx b'/\xf7@\xa0R\xec\x9eIv\xdd\xe1\x1e\x0b}\xbf\xc6\xd6\x03(\xc1'
+2023-03-26 14:23:22,603 INFO     192.168.0.3 - - [26/Mar/2023 14:23:22] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:22,605 INFO     receive tx b'\xe0EG\xc0\xc0\xd7\xe1\xe3?\x851C\x8b\xaf\x8e\x8d]\xde/\xeb'
+2023-03-26 14:23:22,613 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:22,615 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:22,618 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:22,620 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:22,626 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,628 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,630 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,631 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,684 INFO     receive tx b'\xc7l\x03R\xdc\xb5\xeeG( L\xf6\x0c\x9bq\xa2\x1a\x00\x1ez'
+2023-03-26 14:23:22,685 INFO     192.168.0.5 - - [26/Mar/2023 14:23:22] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:22,707 INFO     receive tx b"\x80y\xcc\xe0O\x89\xc38dt\x9c\x92\x0ex'\xfe\xfbO\xca\xea"
+2023-03-26 14:23:22,708 INFO     192.168.0.3 - - [26/Mar/2023 14:23:22] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:22,711 INFO     receive tx b'\xcc\x80\xcaL-\x94@\xbe\x1b0D\x8e\x150\xe6\xd2\xe2\xe0\xa1\x08'
+2023-03-26 14:23:22,718 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:22,721 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:22,724 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:22,726 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:22,732 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,733 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,735 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,736 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,814 INFO     receive tx b'\xda.2W\x02\x17\xd0\xda\xb8V\x15\x0b\xe4],\xa9\xf7\x05\x82\x91'
+2023-03-26 14:23:22,815 INFO     192.168.0.3 - - [26/Mar/2023 14:23:22] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:22,817 INFO     receive tx b'nn@\xd0j\xcd2\x87\x97\x10H.\xde\xae\x90\xf2\x94\xd2_x'
+2023-03-26 14:23:22,824 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:22,827 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:22,830 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:22,832 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:22,837 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,838 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,839 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,841 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,917 INFO     receive tx b'\xf6\x10\xbf\x12\xaaO\xc5/\x00+\xc3\xa52\x16cg>\x11\xd0\xa9'
+2023-03-26 14:23:22,918 INFO     192.168.0.3 - - [26/Mar/2023 14:23:22] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:22,922 INFO     receive tx b'tEE\x95\xd5\xdc^y-H\x07\x92\xc0\xfaNH\x9a\xd6\xd5F'
+2023-03-26 14:23:22,930 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:22,932 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:22,935 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:22,938 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:22,943 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,943 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,944 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:22,945 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,025 INFO     receive tx b'8\xa5[\x95\x01\x0cA\rY\x99>\x17\xf2\xea\xbem.\x04\xc4%'
+2023-03-26 14:23:23,026 INFO     192.168.0.3 - - [26/Mar/2023 14:23:23] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:23,028 INFO     receive tx b'z\xf1 \xf2_EeR.\xcf\xe1\x08>\xb0N:]8\x11\xb6'
+2023-03-26 14:23:23,035 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:23,038 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:23,041 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:23,043 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:23,047 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,049 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,051 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,052 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,127 INFO     receive tx b'[\xa0\x1e\x98\x18\xa7 \xf4;\x951\x9e:\xd4}l\x077\x8cd'
+2023-03-26 14:23:23,128 INFO     192.168.0.3 - - [26/Mar/2023 14:23:23] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:23,133 INFO     receive tx b'\x13b\x87\xe1KfW\x7fcm\xd9\xbc\xb4@@7\xff\xcd\xb0\x96'
+2023-03-26 14:23:23,141 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:23,144 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:23,148 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:23,146 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:23,155 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,156 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,158 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,159 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,235 INFO     receive tx b'B\xc16\xa9,\xc6\xf6\xd4\xf0MJ\xc1h~\xbb\x8a\x1c\xd3uh'
+2023-03-26 14:23:23,236 INFO     192.168.0.3 - - [26/Mar/2023 14:23:23] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:23,239 INFO     receive tx b'=<5C\xa0\x94=\xdd\x03\x00\xca\x96\xa2\xcf\xdcR\xd8=q\x07'
+2023-03-26 14:23:23,246 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:23,251 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:23,253 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:23,249 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:23,260 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,261 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,263 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,264 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,339 INFO     receive tx b'\xb6\xa5\xf6\xc8\x82\xc17c\x0c\xd6}\xcd$&\x80\x9e\xcf\x81\x12\xde'
+2023-03-26 14:23:23,339 INFO     192.168.0.3 - - [26/Mar/2023 14:23:23] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:23,345 INFO     receive tx b'\xe8\xc7{w\x80e\x13\xc2*\x9a\xce\x9fL\x8fK\x87\xfb-\xc7\x13'
+2023-03-26 14:23:23,352 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:23,355 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:23,358 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:23,360 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:23,365 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,366 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,368 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,369 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,444 INFO     receive tx b'APnVxx\x0c\x93\xc6\xa5i8\xb6s\x9b\x82\xd2\x9d6\x1b'
+2023-03-26 14:23:23,445 INFO     192.168.0.3 - - [26/Mar/2023 14:23:23] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:23,450 INFO     receive tx b'$c\x9cD)vl\xa5U\xb1!Y\xb1\x0b1\xdd\xbe\xe9\xdaP'
+2023-03-26 14:23:23,457 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:23,459 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:23,463 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:23,461 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:23,470 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,471 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,472 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,474 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,549 INFO     receive tx b'\xa9\x1a\x0b\x0fgI\t\x90\x8bzA\xc1d\x89\xb6\xac\xe4\x02Y\x9a'
+2023-03-26 14:23:23,550 INFO     192.168.0.3 - - [26/Mar/2023 14:23:23] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:23,555 INFO     receive tx b';\xc6\x05\x08\xa6~Ws\xf2*\x9e\x87iE\xb3\x1d\xe9\xcd\xeb\xcc'
+2023-03-26 14:23:23,562 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:23,564 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:23,566 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:23,568 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:23,574 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,575 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,576 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,578 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,658 INFO     receive tx b"\xca\xfa\x85\xa4\xec\xe0\xe2\xdekR\x13\xb1\xba\xadPo':\x92\x99"
+2023-03-26 14:23:23,659 INFO     192.168.0.3 - - [26/Mar/2023 14:23:23] "[35m[1mPOST /post_transaction HTTP/1.1[0m" 201 -
+2023-03-26 14:23:23,660 INFO     receive tx b'\xf5\x90i\x89\xea\x99\xb6m\xb0\n!\x88\x16\xb9j=\xf4\xf1IV'
+2023-03-26 14:23:23,660 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:23,668 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:23,670 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:23,672 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:23,674 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:23,680 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,681 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,683 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,684 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,766 INFO     receive tx b'\xb7\xb0u\xbf\r\x85\xa7=A\xe8f\r\xff\\~DAj\x19\xcd'
+2023-03-26 14:23:23,773 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:23,775 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:23,779 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:23,777 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:23,786 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,787 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,788 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,790 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,872 INFO     receive tx b'A\xcc\x9c\x8f%X\xb5\xb6\x90\xc0N$\x15KGO=\x04\xbd\xad'
+2023-03-26 14:23:23,872 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:23,878 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:23,881 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:23,883 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:23,885 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:23,891 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,893 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,894 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,895 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,977 INFO     receive tx b':\xb0Cs\x8d<\xad\x01D"\x12K\xea\x19\x01Jq\xdf\xa1\xab'
+2023-03-26 14:23:23,984 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:23,986 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:23,988 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:23,990 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:23,997 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:23,998 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,000 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,001 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,082 INFO     receive tx b'y6\t[\x84\x17\x97\xad\xc8I\xbe^\xcf\xe8\x89\x1c\n\tW\xe5'
+2023-03-26 14:23:24,089 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:24,092 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:24,096 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:24,094 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:24,103 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,105 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,106 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,107 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,188 INFO     receive tx b';\x1b\x7f\x1b\xed\xc0\x95\xd7M%\xfbA\x11T\xd4rm\xa5j\x11'
+2023-03-26 14:23:24,195 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:24,198 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:24,200 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:24,202 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:24,207 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,209 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,210 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,212 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,293 INFO     receive tx b'5,\xf3\x87\xffp\xd52/\x06x\x88Z\x8f\x1e\x8ex\x1d\xe0\xe1'
+2023-03-26 14:23:24,301 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:24,303 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:24,307 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:24,305 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:24,314 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,316 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,317 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,319 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,399 INFO     receive tx b'\xcacq\xf3lJ\xfc\x92\x16\\\x8aV\x97\x828\xb6\x1bTO\x8e'
+2023-03-26 14:23:24,400 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:24,407 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:24,410 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:24,413 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:24,415 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:24,421 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,422 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,424 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,425 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,506 INFO     receive tx b'B\x9es\x12A`*\xc8t~X\xd7Q\x10\xaa{\x1d\xfa\x85\x04'
+2023-03-26 14:23:24,514 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:24,516 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:24,520 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:24,518 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:24,527 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,529 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,530 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,532 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,612 INFO     receive tx b'\x96G\x1a{Y9\x18\x05*\xf0\xdc=\xe0\x15[\x08\x00v\xea\x0f'
+2023-03-26 14:23:24,619 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:24,622 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:24,625 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:24,627 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:24,633 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,635 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,636 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,638 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,718 INFO     receive tx b'\xa8\x92\x04\xa2oZ8\xfe\xeb\xb5}\x9ax\xd8\x006\xfa\xeb\x1a\x1d'
+2023-03-26 14:23:24,726 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:24,728 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:24,732 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:24,730 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:24,739 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,741 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,742 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,744 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,824 INFO     receive tx b'\xf6\xc5\xf4}\x12\x06\x88\xc0\xf8\xa3\xd8M\xdc\xf5\r\xb5\x9b,\rk'
+2023-03-26 14:23:24,833 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:24,835 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:24,838 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:24,840 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:24,847 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,849 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,849 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,850 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,931 INFO     receive tx b'\x14\xd44\x17f<\x9f!\xc0\x85\x04-\xf4c\xbd\x8b\xa0Z\xb7\x1d'
+2023-03-26 14:23:24,938 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:24,940 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:24,943 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:24,945 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:24,952 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,954 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,955 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:24,956 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,036 INFO     receive tx b"\xf1\xe1\xe0\x93\xb8:\xf9'\xfeI\x03^\x0b\x90n\r\xde\x95\x9c\x83"
+2023-03-26 14:23:25,044 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:25,047 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:25,049 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:25,051 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:25,058 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,059 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,060 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,062 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,142 INFO     receive tx b'\x9a\xdb\x1bP\x88\xacm\xdd>\t\xa32\xaag\x8b \x9c\xb4\xee\xc7'
+2023-03-26 14:23:25,149 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:25,152 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:25,157 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:25,154 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:25,164 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,166 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,167 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,169 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,248 INFO     receive tx b"/{9x\xbe0\x8c6\xa2YiG\xc0L\xdd'\x17+v\x0f"
+2023-03-26 14:23:25,255 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:25,258 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:25,260 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:25,262 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:25,268 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,270 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,271 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,272 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,353 INFO     receive tx b'\xa4W:D\xf4//e\xcb\xfb\xa6\x12\xda\xba\xfa\xc2X\x1f\x81J'
+2023-03-26 14:23:25,360 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:25,364 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:25,366 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:25,369 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:25,374 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,374 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,375 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,377 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,458 INFO     receive tx b'\xec\x02\x9c\xd4\xb8\xfe\xd9\\1\xabtp\\\xab\x94\x1a\xe0&\xbd\x98'
+2023-03-26 14:23:25,465 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:25,468 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:25,472 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:25,470 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:25,479 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,480 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,482 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,483 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,563 INFO     receive tx b'\xfbt>\xc5*\xd4g\xe1\xea\xc6\xb45o\x8b\xc5Z*\xfeD\xc9'
+2023-03-26 14:23:25,572 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:25,575 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:25,579 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:25,577 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:25,586 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,587 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,589 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,590 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,669 INFO     receive tx b':\x08C\xcb\xb7\x17{\xb5\xc1F:@I\xc5)N34\xb7\xb8'
+2023-03-26 14:23:25,677 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:25,679 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:25,684 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:25,682 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:25,691 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,693 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,694 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,696 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,775 INFO     receive tx b'x?0\xcb\x0fR\xfe\xd1\xb5\xe3\x80\x1e\xa8\xb8\x8c\xfd68\xaa\xe2'
+2023-03-26 14:23:25,783 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:25,786 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:25,788 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:25,790 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:25,795 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,796 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,798 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,799 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,881 INFO     receive tx b'<\\VW\x9c\x98&\xed\xb6\xd7\x99\xc3\x8c~\xa9r\xd6\xe7??'
+2023-03-26 14:23:25,891 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:25,894 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:25,896 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:25,898 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:25,904 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,906 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,907 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,909 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:25,989 INFO     receive tx b'\xa1\x8bF\x8fRc6\xa6\xad$\x93C\x12\x89n\xed\xa3\x8b\xc3\x02'
+2023-03-26 14:23:25,996 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:25,998 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:26,001 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:26,002 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:26,007 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,008 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,009 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,010 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,094 INFO     receive tx b'\xc5\x0739K\xa3\xe0\xd6\x1eT8\x87\x80O^yd\xfc1t'
+2023-03-26 14:23:26,100 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:26,102 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:26,105 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:26,107 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:26,112 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,113 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,113 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,114 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,199 INFO     receive tx b'\xff\x1e^2lk\xc0\xbej\xa8lC\xe1\x82##\x83A\xbf\x85'
+2023-03-26 14:23:26,206 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:26,209 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:26,211 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:26,212 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:26,219 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,220 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,221 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,222 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,305 INFO     receive tx b'\x91T\xe8(\xdd]\x9c\xa6\xec\x92\x1c?U\xc8\xa9\x95\x0b\xbb\x86\x8b'
+2023-03-26 14:23:26,312 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:26,314 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:26,317 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:26,319 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:26,324 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,325 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,326 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,328 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,410 INFO     receive tx b'\xc3\xf2\xf9\x07\xcfj\xa5H\xe0&\xf65_9\x92hYZ\x85\x93'
+2023-03-26 14:23:26,417 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:26,420 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:26,424 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:26,422 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:26,432 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,434 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,435 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,436 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,515 INFO     receive tx b'm\x88!\x85\x92\xe7(\xca\xa8\xd03\xcbG\x93\x0fZ\x90|\x13\xf6'
+2023-03-26 14:23:26,515 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:26,524 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:26,527 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:26,531 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:26,529 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:26,538 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,539 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,541 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,542 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,621 INFO     receive tx b'{/\xa7\x91\x0f\xe2\xfd\x83O=\xe4\xa8\x85\xf3:\xfd\xd9\xf2\xe0\x80'
+2023-03-26 14:23:26,628 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:26,631 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:26,634 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:26,636 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:26,642 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,643 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,645 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,646 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,727 INFO     receive tx b'\x0f\xf60\xb7\xed\xda\x93D?\xeb\xbb\xd7\xca\x95\xb3N4\tz6'
+2023-03-26 14:23:26,735 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:26,738 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:26,740 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:26,742 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:26,749 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,750 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,752 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,753 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,833 INFO     receive tx b'\x80\x05\x0f\xd7\xd9=\xeb\xe3\x9c^5)\xf1o\x12\x03\x9e\xf90\x8a'
+2023-03-26 14:23:26,841 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:26,844 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:26,846 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:26,849 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:26,853 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,855 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,857 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,858 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,939 INFO     receive tx b'.\x86K)\xcb\x8d\xee\xb2!\xf5\x81\xb4S\x01\n\x92n0\x994'
+2023-03-26 14:23:26,946 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:26,949 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:26,951 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:26,953 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:26,959 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,961 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,962 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:26,963 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,045 INFO     receive tx b'|\xea\xacP%\n\x05\xae\xdb\xe7\x8a\xdc\xf00c\x12\x87\xff\xf1\x89'
+2023-03-26 14:23:27,053 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:27,055 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:27,059 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:27,057 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:27,066 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,067 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,068 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,070 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,151 INFO     receive tx b'\x1e\xa7\xec\xc7\xddI\xb37\x92\xf3\xdf\x00\x8c\xb0+\x80P\xef`\xdb'
+2023-03-26 14:23:27,159 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:27,162 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:27,164 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:27,166 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:27,172 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,173 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,174 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,174 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,257 INFO     receive tx b'\xe1\xa36\xb0\x05\xcd\xd1\x91`a\x10\x0b+`\xe5\x07p\x83\xa3\xab'
+2023-03-26 14:23:27,264 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:27,267 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:27,270 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:27,272 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:27,278 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,280 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,281 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,283 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,363 INFO     receive tx b'Cl\xb3\x1d\xc6\x0b\xb0\xc4\x8a\xd06\xc5l\x11\xd5F*zS\x0c'
+2023-03-26 14:23:27,370 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:27,372 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:27,375 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:27,378 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:27,384 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,385 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,387 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,388 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,468 INFO     receive tx b'{\xd5]\xe5\x9b\x00\xa9\xd3\xf6\xd1\xe1\xaaD+,\x04\x0c\xb4\xbc\x94'
+2023-03-26 14:23:27,469 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,476 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:27,478 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:27,481 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:27,484 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:27,486 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,490 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,491 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,492 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,574 INFO     receive tx b'\xbc\xd2,1\xa3\xf2Y\xa2\xe0g|\xc5\xdaw\xdcK\xc4\xed\xd7n'
+2023-03-26 14:23:27,574 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,581 DEBUG    Starting new HTTP connection (1): 192.168.0.5:60205
+2023-03-26 14:23:27,584 DEBUG    Starting new HTTP connection (1): 192.168.0.2:60202
+2023-03-26 14:23:27,587 DEBUG    Starting new HTTP connection (1): 192.168.0.3:60203
+2023-03-26 14:23:27,589 DEBUG    Starting new HTTP connection (1): 192.168.0.4:60204
+2023-03-26 14:23:27,594 DEBUG    http://192.168.0.5:60205 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,596 DEBUG    http://192.168.0.2:60202 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,597 DEBUG    http://192.168.0.4:60204 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,599 DEBUG    http://192.168.0.3:60203 "POST /post_transaction HTTP/1.1" 201 17
+2023-03-26 14:23:27,680 INFO     receive tx b'8=P\xe5D\xf2\xc0\x9d\x1d\xd9\xa9\xefX\xa2&\xf7:\xaf\x11\xcc'
+2023-03-26 14:23:27,680 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,680 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,680 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,681 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,681 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,681 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,681 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,681 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,681 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,681 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,681 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,682 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,682 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,682 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,682 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,682 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,682 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,682 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,682 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,682 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,683 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,683 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,683 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,683 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,683 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,683 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,683 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,683 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,683 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,684 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,684 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,684 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,684 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,684 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,684 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,684 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,684 INFO     Your wallet does not have enough coins for this transcaction to be performed.
+2023-03-26 14:23:27,684 INFO     Your wallet does not have enough coins for this transcaction to be performed.

@@ -1,0 +1,102 @@
+running with d=4, cap=10, total_nodes=5
+end of init phase
+starting time: 1679829799.8069382
+attach block: block time: 11.017163515090942 current time:1679829800.3579414
+completed resolution at current time:1679829800.5346363
+completed resolution at current time:1679829800.6967466
+creating new block at time: 1679829800.7871192
+completed resolution at current time:1679829800.85054
+completed resolution at current time:1679829800.9707592
+completed resolution at current time:1679829801.1008914
+completed resolution at current time:1679829801.2396834
+completed resolution at current time:1679829801.396074
+completed resolution at current time:1679829801.517767
+completed resolution at current time:1679829801.6347504
+attach block: block time: 0.11630678176879883 current time:1679829801.636964
+completed resolution at current time:1679829801.8107889
+creating new block at time: 1679829801.8482847
+
+ NODE #4 - BLOCK #5 - b'\x088\t\n\xd18\x97t\xd7\x13+ K\xe5c\x0b\t\xf7L\xc6'
+	------------------
+	Transaction Id: bcf869ac32ad7408d709ab7b636aed25c45995d8
+	Amount: 6
+	Sender: PublicKey(7144198732796762910497265642960777365650309016543431769639742076353353765007317223564592710510159692367244789347538165314674817012523422408799765070325667, 65537)
+	Receiver: PublicKey(7144198732796762910497265642960777365650309016543431769639742076353353765007317223564592710510159692367244789347538165314674817012523422408799765070325667, 65537)
+	------------------
+			
+
+	------------------
+	Transaction Id: f37852ec3d209a43963fd8435d9671d6ea3bd80d
+	Amount: 5
+	Sender: PublicKey(9836938345670520863830439110037851532569831979777390152137886041378800368652060632243996706929204829340388684119162243576102126294979079517428633151161369, 65537)
+	Receiver: PublicKey(9836938345670520863830439110037851532569831979777390152137886041378800368652060632243996706929204829340388684119162243576102126294979079517428633151161369, 65537)
+	------------------
+			
+
+	------------------
+	Transaction Id: da214c79efa1179d35d68da5c441ef8dcd35e58d
+	Amount: 8
+	Sender: PublicKey(10138030287999799370936482907521640569548475479539383481747428563401965338170218260519418757271997438221380687315542412686228272977341124050880672082199763, 65537)
+	Receiver: PublicKey(10138030287999799370936482907521640569548475479539383481747428563401965338170218260519418757271997438221380687315542412686228272977341124050880672082199763, 65537)
+	------------------
+			
+
+	------------------
+	Transaction Id: e6a084925296ae563576865ae758b13ec80856ea
+	Amount: 5
+	Sender: PublicKey(7144198732796762910497265642960777365650309016543431769639742076353353765007317223564592710510159692367244789347538165314674817012523422408799765070325667, 65537)
+	Receiver: PublicKey(7144198732796762910497265642960777365650309016543431769639742076353353765007317223564592710510159692367244789347538165314674817012523422408799765070325667, 65537)
+	------------------
+			
+
+	------------------
+	Transaction Id: c23d5597afb45b6924d1604c6ed69652b35b77e4
+	Amount: 9
+	Sender: PublicKey(9836938345670520863830439110037851532569831979777390152137886041378800368652060632243996706929204829340388684119162243576102126294979079517428633151161369, 65537)
+	Receiver: PublicKey(7790669888616321587944460360928795799900306611820399547016328664198875037511052410232776938844458072156525735821733497995314589334085985137381051290555223, 65537)
+	------------------
+			
+
+	------------------
+	Transaction Id: de409365ccd8fc8cc32e6073120f0ff31ac12d8e
+	Amount: 1
+	Sender: PublicKey(10138030287999799370936482907521640569548475479539383481747428563401965338170218260519418757271997438221380687315542412686228272977341124050880672082199763, 65537)
+	Receiver: PublicKey(8812964231007605828066527662412342461510408009002720218810949353018277471398258635535575598412696854274785785967845352004859268221346444043043521253056321, 65537)
+	------------------
+			
+
+	------------------
+	Transaction Id: 44dccb857384bcb6bd9e245d10f1c27ba56e5660
+	Amount: 10
+	Sender: PublicKey(7144198732796762910497265642960777365650309016543431769639742076353353765007317223564592710510159692367244789347538165314674817012523422408799765070325667, 65537)
+	Receiver: PublicKey(8812964231007605828066527662412342461510408009002720218810949353018277471398258635535575598412696854274785785967845352004859268221346444043043521253056321, 65537)
+	------------------
+			
+
+	------------------
+	Transaction Id: 6b57589b74e3ea33c02933ca1fd78490ef952a8e
+	Amount: 3
+	Sender: PublicKey(9836938345670520863830439110037851532569831979777390152137886041378800368652060632243996706929204829340388684119162243576102126294979079517428633151161369, 65537)
+	Receiver: PublicKey(8812964231007605828066527662412342461510408009002720218810949353018277471398258635535575598412696854274785785967845352004859268221346444043043521253056321, 65537)
+	------------------
+			
+
+	------------------
+	Transaction Id: fbe3800a17a10e50dbb19e416a06a27ad0fdcb6e
+	Amount: 3
+	Sender: PublicKey(7144198732796762910497265642960777365650309016543431769639742076353353765007317223564592710510159692367244789347538165314674817012523422408799765070325667, 65537)
+	Receiver: PublicKey(9836938345670520863830439110037851532569831979777390152137886041378800368652060632243996706929204829340388684119162243576102126294979079517428633151161369, 65537)
+	------------------
+			
+
+	------------------
+	Transaction Id: 85b013741c46d0749d8004092a53a4b063516b98
+	Amount: 3
+	Sender: PublicKey(10138030287999799370936482907521640569548475479539383481747428563401965338170218260519418757271997438221380687315542412686228272977341124050880672082199763, 65537)
+	Receiver: PublicKey(7144198732796762910497265642960777365650309016543431769639742076353353765007317223564592710510159692367244789347538165314674817012523422408799765070325667, 65537)
+	------------------
+			
+
+[<transaction.Transaction object at 0x7f9260081750>, <transaction.Transaction object at 0x7f9260081890>, <transaction.Transaction object at 0x7f9260075a50>]
+[<transaction.Transaction object at 0x7f9260083e10>, <transaction.Transaction object at 0x7f92600754d0>, <transaction.Transaction object at 0x7f926009e550>, <transaction.Transaction object at 0x7f926007ad50>, <transaction.Transaction object at 0x7f926007a350>, <transaction.Transaction object at 0x7f926007a050>, <transaction.Transaction object at 0x7f9260059c90>, <transaction.Transaction object at 0x7f9260083b90>, <transaction.Transaction object at 0x7f9260083910>, <transaction.Transaction object at 0x7f9260073d10>, <transaction.Transaction object at 0x7f92600695d0>, <transaction.Transaction object at 0x7f92600c41d0>, <transaction.Transaction object at 0x7f92600c4690>, <transaction.Transaction object at 0x7f9260053c90>, <transaction.Transaction object at 0x7f92600533d0>, <transaction.Transaction object at 0x7f9260053710>, <transaction.Transaction object at 0x7f926006b210>, <transaction.Transaction object at 0x7f926006bfd0>, <transaction.Transaction object at 0x7f926006b790>, <transaction.Transaction object at 0x7f926006bbd0>, <transaction.Transaction object at 0x7f926006b610>, <transaction.Transaction object at 0x7f92600a6510>, <transaction.Transaction object at 0x7f92600a6610>, <transaction.Transaction object at 0x7f92600a6bd0>, <transaction.Transaction object at 0x7f92600a6d90>, <transaction.Transaction object at 0x7f92600a6a90>, <transaction.Transaction object at 0x7f92600a61d0>, <transaction.Transaction object at 0x7f92600758d0>, <transaction.Transaction object at 0x7f9260075f90>, <transaction.Transaction object at 0x7f9260075fd0>, <transaction.Transaction object at 0x7f926000bb90>, <transaction.Transaction object at 0x7f926000bb10>, <transaction.Transaction object at 0x7f926000b150>, <transaction.Transaction object at 0x7f926000b390>, <transaction.Transaction object at 0x7f926007a090>, <transaction.Transaction object at 0x7f926007a890>, <transaction.Transaction object at 0x7f9260059850>, <transaction.Transaction object at 0x7f9260059750>, <transaction.Transaction object at 0x7f9260071650>, <transaction.Transaction object at 0x7f92600713d0>, <transaction.Transaction object at 0x7f9260071ad0>, <transaction.Transaction object at 0x7f9260071c90>, <transaction.Transaction object at 0x7f9260048510>, <transaction.Transaction object at 0x7f926006b1d0>, <transaction.Transaction object at 0x7f926006b490>, <transaction.Transaction object at 0x7f926006b8d0>, <transaction.Transaction object at 0x7f9260053410>, <transaction.Transaction object at 0x7f92600698d0>, <transaction.Transaction object at 0x7f92600c4750>, <transaction.Transaction object at 0x7f926001a510>, <transaction.Transaction object at 0x7f926001a710>, <transaction.Transaction object at 0x7f92600730d0>, <transaction.Transaction object at 0x7f9260073810>, <transaction.Transaction object at 0x7f926009ecd0>, <transaction.Transaction object at 0x7f9260083150>, <transaction.Transaction object at 0x7f9260006390>, <transaction.Transaction object at 0x7f9260006f50>, <transaction.Transaction object at 0x7f9260006dd0>, <transaction.Transaction object at 0x7f9260080250>, <transaction.Transaction object at 0x7f9260903090>, <transaction.Transaction object at 0x7f9260026390>, <transaction.Transaction object at 0x7f9260026090>, <transaction.Transaction object at 0x7f9260059050>, <transaction.Transaction object at 0x7f926000b190>, <transaction.Transaction object at 0x7f926000b090>, <transaction.Transaction object at 0x7f926000b7d0>, <transaction.Transaction object at 0x7f9260071890>, <transaction.Transaction object at 0x7f9260071250>, <transaction.Transaction object at 0x7f926001cb50>, <transaction.Transaction object at 0x7f926001c890>, <transaction.Transaction object at 0x7f926001c9d0>, <transaction.Transaction object at 0x7f926001ced0>, <transaction.Transaction object at 0x7f926001c790>, <transaction.Transaction object at 0x7f926088c2d0>, <transaction.Transaction object at 0x7f926088c590>, <transaction.Transaction object at 0x7f926088c850>, <transaction.Transaction object at 0x7f926088cb10>, <transaction.Transaction object at 0x7f926088cdd0>, <transaction.Transaction object at 0x7f92608900d0>, <transaction.Transaction object at 0x7f9260890390>, <transaction.Transaction object at 0x7f9260890650>, <transaction.Transaction object at 0x7f9260071450>, <transaction.Transaction object at 0x7f9260071550>, <transaction.Transaction object at 0x7f926000ba90>, <transaction.Transaction object at 0x7f9260069dd0>, <transaction.Transaction object at 0x7f9260026fd0>, <transaction.Transaction object at 0x7f9260903490>, <transaction.Transaction object at 0x7f9260080f10>, <transaction.Transaction object at 0x7f9260048c10>, <transaction.Transaction object at 0x7f9260006ed0>, <transaction.Transaction object at 0x7f926007a310>, <transaction.Transaction object at 0x7f9260073250>, <transaction.Transaction object at 0x7f926001a050>, <transaction.Transaction object at 0x7f92600c4450>, <transaction.Transaction object at 0x7f926006b750>]
+6

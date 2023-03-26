@@ -2,7 +2,7 @@ import sys
 import logging
 import config
 
-from network_wrapper import *
+from network_wrapper5 import *
 
 logging.basicConfig(level=logging.DEBUG, filename="logfile", filemode="w+",
     format="%(asctime)-15s %(levelname)-8s %(message)s")
@@ -27,15 +27,15 @@ def parse_cmdline():
             except:
                 print("Wrong arguments.")
             else:
-                #n.create_transaction(recipient_id,amount)
+                n.create_transaction(recipient_id,amount)
                 print(f"create {recipient_id} {amount}")
 
         elif cmd[0] == "view" and len(cmd) == 1:
-            #n.view_transaction()
+            n.view_transaction()
             print("view...")
 
         elif cmd[0] == "balance"  and len(cmd) == 1:
-            #n.wallet_balance(n.node_id)
+            n.wallet_balance(n.node_id)
             print("balance...")
         elif cmd[0]  == "help":
             print(help_msg)
@@ -44,15 +44,22 @@ def parse_cmdline():
 
 
 role = sys.argv[1]
-if role != "bootstrap" and role != "node":
+if role == "bootstrap":
+    ip = config.BOOTSTRAP_IP 
+    port = config.BOOTSTRAP_PORT
+    is_bootstrap = True
+elif role == "node":
+    ip = config.NODE_IP
+    port = config.NODE_PORT
+    is_bootstrap = False
+else:
     print(help_msg)
-is_bootstrap = role=="bootstrap"
+    exit()
 
 print("Initializing noobcoin node...")
-bootstrap_wrapper = node_network_wrapper(config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, is_bootstrap)
-    
+wrapper = node_network_wrapper(ip, port, config.NODE_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, is_bootstrap)
+n = wrapper.node    
 parse_cmdline()
-
 
 
 

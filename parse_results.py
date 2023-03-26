@@ -13,14 +13,15 @@ def calc_single_c_d_n(capasity, difficulty, total_nodes):
     throughput_all_nodes = []
     block_time_all_nodes = []
 
-    a = pathlib.Path("auto_script/10nodes/results")
-    for filename in a.rglob("*.txt"):
-        regex_filename = r"node(\d-\d)_c(\d+)_d(\d+)_n(\d+)"
+    a = pathlib.Path("auto_script/")
+    for filename in a.rglob(f"*_c{capasity}_d{difficulty}_n{total_nodes}.txt"):
+        regex_filename = r"node([\d-]+)_c(\d+)_d(\d+)_n(\d+)"
         nodeid, c, d, n = re.findall(regex_filename, str(filename))[0]
 
-        if not (int(c) == capasity and int(d) == difficulty and int(n)==total_nodes):
-            continue
-        # print(filename)
+        # if not (int(c) == capasity and int(d) == difficulty and int(n)==total_nodes):
+        #     continue
+    
+        print(filename)
         f = open(filename, 'r')
         raw_file = f.read()
         f.close()
@@ -42,8 +43,10 @@ def calc_single_c_d_n(capasity, difficulty, total_nodes):
             continue
         
         regex_create_time = "creating new block at time: (\d+.\d+)\n"
-        create_matches = [float(t) for t in re.findall(regex_create_time, raw_file)]
+        create_matches = [start_time]+[float(t) for t in re.findall(regex_create_time, raw_file)]
         time_between_block_creations = [j-i for i, j in zip(create_matches[:-1], create_matches[1:])]
+        if time_between_block_creations == []:
+            continue # no blocks where created
         avg_block_time_per_node = avg(time_between_block_creations)
 
         throughput_all_nodes.append(throughput)
@@ -61,15 +64,16 @@ def calc_throughput(c, d, n):
 
 
 cap = [1,5,10]
+
+##########################################################
+##                    FOR 5 NODES                       ##
+##########################################################
+
 throughput_d4 = []
 blocktime_d4 = []
 
 throughput_d5 = []
 blocktime_d5 = []
-
-##########################################################
-##                    FOR 5 NODES                       ##
-##########################################################
 
 for c in cap:
     t, b = calc_single_c_d_n(c, 4, 10)
@@ -84,11 +88,11 @@ for c in cap:
 #------------------------|
 # Throughput vs capasity |
 #------------------------|
-fig, ax = plt.subplots(figsize=(6, 5), dpi=80)
+fig, ax = plt.subplots()
 plt.plot(cap, throughput_d4, "--*", label="d=4")
 plt.plot(cap, throughput_d5, "--*", label="d=5")
 ax.legend()
-plt.title("Throughput vs capasity for 5 node system")
+plt.title("Throughput vs capacity for 5 node system")
 plt.xlabel("Block capacity")
 plt.ylabel("Throughput (transactions/sec)")
 ax.set_xticks(cap)
@@ -102,7 +106,7 @@ fig, ax = plt.subplots() #figsize=(6, 5), dpi=80
 plt.plot(cap, blocktime_d4, "--*", label="d=4")
 plt.plot(cap, blocktime_d5, "--*", label="d=5")
 ax.legend()
-plt.title("Block time vs capasity for 5 node system")
+plt.title("Block time vs capacity for 5 node system")
 plt.xlabel("Block capacity")
 plt.ylabel("Block time (sec)")
 ax.set_xticks(cap)
@@ -131,14 +135,14 @@ plt.title("Scaling of throughput")
 plt.xlabel("Number of nodes")
 plt.ylabel("Throughput (transactions/sec)")
 ax.set_xticks([5,10])
-ax.set_yticks(blocktime_d4_c1+blocktime_d4_c5+blocktime_d4_c10+blocktime_d5_c1+blocktime_d5_c5+blocktime_d5_c10)
+# ax.set_yticks(blocktime_d4_c1+blocktime_d4_c5+blocktime_d4_c10+blocktime_d5_c1+blocktime_d5_c5+blocktime_d5_c10)
 
 
 #------------------------|
 # Block time vs nodes    |
 #------------------------|
 
-fig, ax = plt.subplots(figsize=(6, 5), dpi=80)
+fig, ax = plt.subplots()
 plt.plot([5, 10], [calc_block_time(1, 4, 5), calc_block_time(1, 4, 10)], "--*", label="c=1, d=4")
 plt.plot([5, 10], [calc_block_time(5, 4, 5), calc_block_time(5, 4, 10)], "--*", label="c=5, d=4")
 plt.plot([5, 10], [calc_block_time(10, 4, 5), calc_block_time(10, 4, 10)], "--*", label="c=10, d=4")
@@ -151,7 +155,7 @@ plt.title("Scaling of block time")
 plt.xlabel("Number of nodes")
 plt.ylabel("Block time (sec)")
 ax.set_xticks([5,10])
-ax.set_yticks(blocktime_d4_c1+blocktime_d4_c5+blocktime_d4_c10+blocktime_d5_c1+blocktime_d5_c5+blocktime_d5_c10)
+# ax.set_yticks(blocktime_d4_c1+blocktime_d4_c5+blocktime_d4_c10+blocktime_d5_c1+blocktime_d5_c5+blocktime_d5_c10)
 
 
 
