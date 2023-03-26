@@ -55,6 +55,28 @@ else:
     print(help_msg)
     exit()
 
+
+ if role == "bootstrap":
+        bootstrap_wrapper = node_network_wrapper(config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, True)
+        print("end of init phase")
+        # node_wrapper = node_network_wrapper(NODE_IP, NODE_PORT, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT)
+
+        n = bootstrap_wrapper.node
+        time.sleep(2)
+        n.create_transaction(1, 100)
+        n.create_transaction(2, 100)
+        n.create_transaction(3, 100)
+        
+          
+       
+    elif role == "node":
+        node_wrapper = node_network_wrapper(config.NODE_IP, config.NODE_PORT, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, False)
+        print("end of init phase")
+        n = node_wrapper.node        
+
+
+
+
 print("Initializing noobcoin node...")
 wrapper = node_network_wrapper(ip, port, config.NODE_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, is_bootstrap)
 n = wrapper.node    

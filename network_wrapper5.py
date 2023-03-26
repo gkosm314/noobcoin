@@ -53,6 +53,11 @@ class node_network_wrapper:
             
             self.node = self.bootstrap_node.produce_node()
 
+            for node_id in self.node.public_key.keys():
+                if node_id == self.node.node_id:
+                    continue
+                self.node.create_transaction(node_id, 100)
+
 
     def register(self):
         '''send public key to bootstrap'''
@@ -192,9 +197,6 @@ if __name__=="__main__":
 
         n = bootstrap_wrapper.node
         time.sleep(2)
-        n.create_transaction(1, 100)
-        n.create_transaction(2, 100)
-        n.create_transaction(3, 100)
         
         time.sleep(secs)
         print(f'starting time: {time.time()}')

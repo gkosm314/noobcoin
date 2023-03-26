@@ -193,9 +193,6 @@ if __name__=="__main__":
 
         n = bootstrap_wrapper.node
         time.sleep(2)
-        n.create_transaction(1, 100)
-        n.create_transaction(2, 100)
-        n.create_transaction(3, 100)
         
         time.sleep(secs)
         print(f'starting time: {time.time()}')
