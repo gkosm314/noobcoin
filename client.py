@@ -35,8 +35,7 @@ def parse_cmdline():
             print("view...")
 
         elif cmd[0] == "balance"  and len(cmd) == 1:
-            n.wallet_balance(n.node_id)
-            print("balance...")
+            print(f"balance: {n.wallet_balance(n.node_id)}")
         elif cmd[0]  == "help":
             print(help_msg)
         else:
