@@ -182,6 +182,7 @@ if __name__=="__main__":
         n.view_transactions()
         print(n.current_block.transactions)
         print(n.transactions_buffer)
+        print(n.wallet_balance(n.node_id))    
         print(len(n.current_blockchain))
     
     print(f"running with d={config.difficulty}, cap={config.capacity}, total_nodes={config.TOTAL_NODES}")
