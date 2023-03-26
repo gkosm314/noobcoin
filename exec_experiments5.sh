@@ -48,7 +48,7 @@ for d in 4 5
 do
     for cap in 1 5 10
     do  
-        echo "executing capacity $cap, difficulty $d..."
+        echo "[$(date +"%T")] executing capacity $cap, difficulty $d..."
         for vm_num in 1 2 3 4 5
         do
             if ((vm_num == 1))

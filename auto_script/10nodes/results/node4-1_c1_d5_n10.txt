@@ -1,258 +1,140 @@
+running with d=5, cap=1, total_nodes=10
 end of init phase
-attach block: block time: 3.0091488361358643 current time:1679827168.4114377
-completed resolution at current time:1679827168.7051046
-completed resolution at current time:1679827168.9315362
-completed resolution at current time:1679827169.1570842
-completed resolution at current time:1679827169.2753522
-completed resolution at current time:1679827169.4946995
-completed resolution at current time:1679827169.7131195
-completed resolution at current time:1679827169.9525099
-creating new block at time: 1679827170.0314171
-completed resolution at current time:1679827170.0892262
-completed resolution at current time:1679827170.3089466
-completed resolution at current time:1679827170.4294999
-completed resolution at current time:1679827170.672579
-completed resolution at current time:1679827170.7875712
-completed resolution at current time:1679827170.9010413
-completed resolution at current time:1679827171.0176241
-attach block: block time: 5.0376880168914795 current time:1679827175.7294538
-attach block: block time: 0.023972272872924805 current time:1679827175.7611458
-attach block: block time: 0.024860620498657227 current time:1679827175.8395696
-completed resolution at current time:1679827176.0624197
-attach block: block time: 0.1534285545349121 current time:1679827176.064634
-starting time: 1679827176.2638469
-completed resolution at current time:1679827176.4032276
-completed resolution at current time:1679827176.584709
-attach block: block time: 0.14764094352722168 current time:1679827176.6656518
-attach block: block time: 0.0249786376953125 current time:1679827176.864712
-attach block: block time: 0.03512072563171387 current time:1679827176.9282277
-creating new block at time: 1679827177.0790324
-attach block: block time: 0.006258249282836914 current time:1679827177.0853636
-attach block: block time: 0.03716588020324707 current time:1679827177.3731508
-attach block: block time: 0.03554892539978027 current time:1679827177.4844856
-attach block: block time: 0.04597139358520508 current time:1679827177.631251
-attach block: block time: 0.02795696258544922 current time:1679827177.778155
-completed resolution at current time:1679827178.0691855
-attach block: block time: 0.2788050174713135 current time:1679827178.0722568
-creating new block at time: 1679827178.1950302
-completed resolution at current time:1679827178.285258
-attach block: block time: 0.09237957000732422 current time:1679827178.2874553
-attach block: block time: 0.12495708465576172 current time:1679827178.5864124
-attach block: block time: 0.13727307319641113 current time:1679827178.827855
-attach block: block time: 0.1680464744567871 current time:1679827179.086997
-attach block: block time: 0.04158902168273926 current time:1679827179.1537652
-creating new block at time: 1679827179.2993205
-attach block: block time: 0.004186391830444336 current time:1679827179.3035495
-attach block: block time: 0.036693572998046875 current time:1679827179.637064
-attach block: block time: 0.030483007431030273 current time:1679827180.0320876
-attach block: block time: 0.11534428596496582 current time:1679827180.481855
-creating new block at time: 1679827180.714428
-attach block: block time: 0.11891889572143555 current time:1679827180.8334024
-creating new block at time: 1679827181.8434293
-attach block: block time: 0.055203914642333984 current time:1679827181.898682
-creating new block at time: 1679827182.9234784
-attach block: block time: 0.05869030952453613 current time:1679827182.9822156
-creating new block at time: 1679827184.097134
-attach block: block time: 0.08654356002807617 current time:1679827184.1837335
-creating new block at time: 1679827185.2118595
-attach block: block time: 0.2798769474029541 current time:1679827185.4918487
-creating new block at time: 1679827186.601994
-completed resolution at current time:1679827186.813948
-completed resolution at current time:1679827186.9709861
-attach block: block time: 0.3709840774536133 current time:1679827186.9730458
-completed resolution at current time:1679827187.5879965
-completed resolution at current time:1679827187.7410424
-completed resolution at current time:1679827187.8871088
-completed resolution at current time:1679827188.0314326
-creating new block at time: 1679827188.193429
-completed resolution at current time:1679827188.1922317
-completed resolution at current time:1679827188.4283469
-completed resolution at current time:1679827188.6654441
-completed resolution at current time:1679827188.8975189
-completed resolution at current time:1679827189.2232263
-completed resolution at current time:1679827189.3603303
-completed resolution at current time:1679827189.6135523
-completed resolution at current time:1679827189.8382468
-completed resolution at current time:1679827189.9516866
-completed resolution at current time:1679827190.0698023
-completed resolution at current time:1679827190.296546
-completed resolution at current time:1679827190.5132325
-completed resolution at current time:1679827190.6319683
-completed resolution at current time:1679827190.7503343
-completed resolution at current time:1679827190.874293
-attach block: block time: 0.1228322982788086 current time:1679827190.8764117
-completed resolution at current time:1679827191.308592
-completed resolution at current time:1679827191.4215238
-completed resolution at current time:1679827191.5370188
-attach block: block time: 0.20971131324768066 current time:1679827191.5591006
-completed resolution at current time:1679827191.8148632
-attach block: block time: 0.198225736618042 current time:1679827191.8173773
-creating new block at time: 1679827192.0896335
-completed resolution at current time:1679827192.1329832
-attach block: block time: 0.003999233245849609 current time:1679827192.245438
-attach block: block time: 0.22469663619995117 current time:1679827192.697904
-attach block: block time: 0.2305443286895752 current time:1679827193.228495
-attach block: block time: 0.042639970779418945 current time:1679827193.620475
-creating new block at time: 1679827193.6573243
-attach block: block time: 0.006119251251220703 current time:1679827193.6635017
-attach block: block time: 0.043859243392944336 current time:1679827193.8133616
-attach block: block time: 0.04382610321044922 current time:1679827193.9603128
-attach block: block time: 0.1424713134765625 current time:1679827194.363462
-creating new block at time: 1679827194.7733543
-attach block: block time: 0.06652498245239258 current time:1679827194.839925
-creating new block at time: 1679827196.0514836
-completed resolution at current time:1679827196.1622496
-completed resolution at current time:1679827196.3564968
-completed resolution at current time:1679827196.5218318
-completed resolution at current time:1679827196.6401577
-completed resolution at current time:1679827196.7595363
-completed resolution at current time:1679827196.8842463
-completed resolution at current time:1679827197.0036116
-completed resolution at current time:1679827197.1205637
-attach block: block time: 0.23764705657958984 current time:1679827197.1240518
-completed resolution at current time:1679827197.4166298
-completed resolution at current time:1679827197.5494976
-completed resolution at current time:1679827197.7678676
-completed resolution at current time:1679827197.886739
-completed resolution at current time:1679827198.0029008
-creating new block at time: 1679827198.0354128
-completed resolution at current time:1679827198.22577
-completed resolution at current time:1679827198.3592172
-attach block: block time: 0.13387846946716309 current time:1679827198.363529
-completed resolution at current time:1679827198.904265
-completed resolution at current time:1679827199.1263077
-attach block: block time: 0.1496882438659668 current time:1679827199.4446414
-creating new block at time: 1679827199.583633
-attach block: block time: 0.01010274887084961 current time:1679827199.5938168
-attach block: block time: 0.39661502838134766 current time:1679827200.6835082
-creating new block at time: 1679827200.7036262
-attach block: block time: 0.007412433624267578 current time:1679827200.7116082
-creating new block at time: 1679827202.0218928
-attach block: block time: 0.005732059478759766 current time:1679827202.027692
-creating new block at time: 1679827203.2544715
-completed resolution at current time:1679827203.3465018
-attach block: block time: 0.0047571659088134766 current time:1679827203.3534834
-completed resolution at current time:1679827203.4897342
-completed resolution at current time:1679827203.7114992
-completed resolution at current time:1679827204.172259
-completed resolution at current time:1679827204.4167876
-creating new block at time: 1679827204.4607885
-completed resolution at current time:1679827204.5364332
-completed resolution at current time:1679827204.7537653
-completed resolution at current time:1679827204.8792608
-completed resolution at current time:1679827205.0188751
-completed resolution at current time:1679827205.2466497
-attach block: block time: 0.22629857063293457 current time:1679827205.2487006
-completed resolution at current time:1679827205.582101
-completed resolution at current time:1679827205.7196853
-completed resolution at current time:1679827205.9442914
-completed resolution at current time:1679827206.0601702
-attach block: block time: 0.14880156517028809 current time:1679827206.0925992
-completed resolution at current time:1679827206.3603368
-attach block: block time: 0.0906057357788086 current time:1679827206.4558284
-creating new block at time: 1679827206.462465
-attach block: block time: 0.006146669387817383 current time:1679827206.4686584
-completed resolution at current time:1679827206.839264
-attach block: block time: 0.1111593246459961 current time:1679827206.8767314
-attach block: block time: 0.02966928482055664 current time:1679827206.9405882
-attach block: block time: 0.041568756103515625 current time:1679827207.0149667
-creating new block at time: 1679827207.4763157
-attach block: block time: 0.12005281448364258 current time:1679827207.4817104
-attach block: block time: 0.004689931869506836 current time:1679827207.4881425
-attach block: block time: 0.032038211822509766 current time:1679827207.6371894
-attach block: block time: 0.030705928802490234 current time:1679827207.7877114
-attach block: block time: 0.039231061935424805 current time:1679827207.863285
-attach block: block time: 0.042850494384765625 current time:1679827208.0354574
-attach block: block time: 0.037758827209472656 current time:1679827208.1089194
-attach block: block time: 0.04493117332458496 current time:1679827208.2020106
-creating new block at time: 1679827208.294574
-attach block: block time: 0.011924505233764648 current time:1679827208.3065634
-attach block: block time: 0.03705644607543945 current time:1679827208.4563909
-attach block: block time: 0.0400996208190918 current time:1679827208.6082466
-attach block: block time: 0.036943912506103516 current time:1679827208.6782377
-attach block: block time: 0.0443263053894043 current time:1679827208.8580892
-attach block: block time: 0.042508602142333984 current time:1679827208.9294717
-creating new block at time: 1679827209.1155672
-attach block: block time: 0.04830646514892578 current time:1679827209.1241188
-attach block: block time: 0.00789952278137207 current time:1679827209.1354668
-attach block: block time: 0.03778529167175293 current time:1679827209.2726147
-attach block: block time: 0.04467010498046875 current time:1679827209.4290454
-attach block: block time: 0.042104244232177734 current time:1679827209.5983267
-attach block: block time: 0.03542041778564453 current time:1679827209.6693428
-attach block: block time: 0.04613852500915527 current time:1679827209.8512757
-attach block: block time: 0.046326637268066406 current time:1679827209.9391599
-creating new block at time: 1679827210.0432117
-attach block: block time: 0.008871316909790039 current time:1679827210.0521505
-attach block: block time: 0.041048288345336914 current time:1679827210.1922908
-attach block: block time: 0.041396141052246094 current time:1679827210.3487082
-attach block: block time: 0.0454404354095459 current time:1679827210.521082
-attach block: block time: 0.03799724578857422 current time:1679827210.5908346
-attach block: block time: 0.04095625877380371 current time:1679827210.6650615
-attach block: block time: 0.02935171127319336 current time:1679827210.8432832
-creating new block at time: 1679827210.959158
-attach block: block time: 0.010946273803710938 current time:1679827210.9701793
-attach block: block time: 0.041249752044677734 current time:1679827211.1100695
-attach block: block time: 0.04135704040527344 current time:1679827211.1689365
-attach block: block time: 0.04417109489440918 current time:1679827211.3435736
-attach block: block time: 0.04240012168884277 current time:1679827211.4140124
-attach block: block time: 0.04381918907165527 current time:1679827211.5855038
-attach block: block time: 0.04027509689331055 current time:1679827211.667845
-creating new block at time: 1679827211.7778883
-attach block: block time: 0.006932735443115234 current time:1679827211.7848623
-attach block: block time: 0.039536476135253906 current time:1679827211.924868
-attach block: block time: 0.03998851776123047 current time:1679827211.983924
-attach block: block time: 0.041793107986450195 current time:1679827212.1611557
-attach block: block time: 0.04058384895324707 current time:1679827212.3319452
-attach block: block time: 0.03074502944946289 current time:1679827212.3946254
-attach block: block time: 0.04646015167236328 current time:1679827212.49239
-creating new block at time: 1679827212.5930128
-attach block: block time: 0.0077571868896484375 current time:1679827212.6008174
-attach block: block time: 0.04390549659729004 current time:1679827212.7472565
-attach block: block time: 0.05344653129577637 current time:1679827212.9191024
-attach block: block time: 0.04647660255432129 current time:1679827213.0882885
-attach block: block time: 0.045749664306640625 current time:1679827213.1563537
-attach block: block time: 0.045444488525390625 current time:1679827213.3234797
-attach block: block time: 0.04881715774536133 current time:1679827213.4157107
-creating new block at time: 1679827213.5084364
-attach block: block time: 0.012490272521972656 current time:1679827213.520988
-attach block: block time: 0.04073643684387207 current time:1679827213.664614
-attach block: block time: 0.03883934020996094 current time:1679827213.835083
-attach block: block time: 0.04669928550720215 current time:1679827213.914359
-attach block: block time: 0.04489874839782715 current time:1679827214.0770001
-attach block: block time: 0.03967928886413574 current time:1679827214.1365912
-attach block: block time: 0.0441889762878418 current time:1679827214.3301365
-creating new block at time: 1679827214.43008
-attach block: block time: 0.016591548919677734 current time:1679827214.4467993
-attach block: block time: 0.042691707611083984 current time:1679827214.584997
-attach block: block time: 0.03689765930175781 current time:1679827214.660362
-attach block: block time: 0.041288137435913086 current time:1679827214.8287551
-attach block: block time: 0.0402529239654541 current time:1679827214.8936515
-attach block: block time: 0.04673051834106445 current time:1679827215.061183
-attach block: block time: 0.047167301177978516 current time:1679827215.2527628
-creating new block at time: 1679827215.2550128
-attach block: block time: 0.010693788528442383 current time:1679827215.2657387
-attach block: block time: 0.04048323631286621 current time:1679827215.5032566
-attach block: block time: 0.03885841369628906 current time:1679827215.5823147
-attach block: block time: 0.04725027084350586 current time:1679827215.7534332
-attach block: block time: 0.0453336238861084 current time:1679827215.9178536
-attach block: block time: 0.044107675552368164 current time:1679827215.9796848
-attach block: block time: 0.04186677932739258 current time:1679827216.1697342
-creating new block at time: 1679827216.2729855
-attach block: block time: 0.01006174087524414 current time:1679827216.2830973
-attach block: block time: 0.040117740631103516 current time:1679827216.421957
-attach block: block time: 0.05485796928405762 current time:1679827216.6241887
-attach block: block time: 0.04344964027404785 current time:1679827216.6747582
-creating new block at time: 1679827217.190612
+starting time: 1679856014.6091704
+attach block: block time: 13.018967866897583 current time:1679856016.8024673
+completed resolution at current time:1679856016.9612944
+completed resolution at current time:1679856017.0940754
+completed resolution at current time:1679856017.3239233
+creating new block at time: 1679856017.5163622
+completed resolution at current time:1679856017.5486228
+completed resolution at current time:1679856017.6698399
+completed resolution at current time:1679856017.910362
+completed resolution at current time:1679856018.026402
+completed resolution at current time:1679856018.2450826
+completed resolution at current time:1679856018.4697752
+completed resolution at current time:1679856018.595065
+completed resolution at current time:1679856018.7129674
+completed resolution at current time:1679856018.8359168
+attach block: block time: 0.0022153854370117188 current time:1679856018.8400998
+attach block: block time: 0.028539180755615234 current time:1679856019.062529
+attach block: block time: 0.18203449249267578 current time:1679856019.3704042
+attach block: block time: 0.03890562057495117 current time:1679856019.4168038
+creating new block at time: 1679856019.649474
+attach block: block time: 0.3992645740509033 current time:1679856020.0487785
+attach block: block time: 0.1804032325744629 current time:1679856020.6498325
+attach block: block time: 0.04049086570739746 current time:1679856020.6933095
+creating new block at time: 1679856021.1601372
+attach block: block time: 0.0022978782653808594 current time:1679856021.162477
+creating new block at time: 1679856022.1743085
+attach block: block time: 0.4249610900878906 current time:1679856022.1861215
+attach block: block time: 0.20941829681396484 current time:1679856022.504318
+attach block: block time: 0.06613945960998535 current time:1679856023.2553632
+creating new block at time: 1679856023.6292584
+attach block: block time: 0.18989014625549316 current time:1679856023.819188
+attach block: block time: 0.18823695182800293 current time:1679856024.3423812
+creating new block at time: 1679856024.929642
+attach block: block time: 0.3172128200531006 current time:1679856025.2468963
+attach block: block time: 0.036266326904296875 current time:1679856025.5018485
+completed resolution at current time:1679856026.0442543
+creating new block at time: 1679856026.1604135
+completed resolution at current time:1679856026.1637428
+completed resolution at current time:1679856026.2794797
+attach block: block time: 0.004945039749145508 current time:1679856026.287022
+completed resolution at current time:1679856026.542377
+completed resolution at current time:1679856026.6896858
+attach block: block time: 0.047387123107910156 current time:1679856026.69258
+attach block: block time: 0.027222871780395508 current time:1679856026.8657558
+attach block: block time: 0.032213687896728516 current time:1679856026.9702692
+attach block: block time: 0.038773536682128906 current time:1679856027.0742197
+attach block: block time: 0.027644634246826172 current time:1679856027.2226148
+creating new block at time: 1679856027.29703
+attach block: block time: 0.003991603851318359 current time:1679856027.3010678
+attach block: block time: 0.035003662109375 current time:1679856027.4721003
+attach block: block time: 0.03538680076599121 current time:1679856027.5946884
+attach block: block time: 0.03708934783935547 current time:1679856027.7867172
+attach block: block time: 0.025290966033935547 current time:1679856027.876096
+completed resolution at current time:1679856028.1457546
+creating new block at time: 1679856028.2088976
+completed resolution at current time:1679856028.260384
+completed resolution at current time:1679856028.3808036
+attach block: block time: 0.1211237907409668 current time:1679856028.3836424
+completed resolution at current time:1679856028.6837027
+attach block: block time: 0.14460110664367676 current time:1679856028.705538
+completed resolution at current time:1679856028.9358559
+attach block: block time: 0.12174463272094727 current time:1679856028.9842656
+attach block: block time: 0.02547144889831543 current time:1679856029.090319
+completed resolution at current time:1679856029.2596962
+attach block: block time: 0.08213329315185547 current time:1679856029.3908062
+creating new block at time: 1679856029.394234
+attach block: block time: 0.0035331249237060547 current time:1679856029.3977938
+attach block: block time: 0.03283095359802246 current time:1679856029.5790858
+attach block: block time: 0.0353701114654541 current time:1679856029.6258714
+attach block: block time: 0.03694415092468262 current time:1679856029.8353252
+attach block: block time: 0.0404200553894043 current time:1679856029.9087522
+attach block: block time: 0.02832651138305664 current time:1679856030.004765
+attach block: block time: 0.12134480476379395 current time:1679856030.2632725
+attach block: block time: 0.03163027763366699 current time:1679856030.3012257
+creating new block at time: 1679856030.4063394
+attach block: block time: 0.006670475006103516 current time:1679856030.4130616
+attach block: block time: 0.03739333152770996 current time:1679856030.4971452
+attach block: block time: 0.0346987247467041 current time:1679856030.641667
+attach block: block time: 0.03350400924682617 current time:1679856030.7457268
+attach block: block time: 0.035040855407714844 current time:1679856030.8183322
+attach block: block time: 0.03599691390991211 current time:1679856031.0253336
+attach block: block time: 0.041700124740600586 current time:1679856031.0807648
+attach block: block time: 0.03808331489562988 current time:1679856031.2211082
+creating new block at time: 1679856031.3222473
+attach block: block time: 0.0065212249755859375 current time:1679856031.3288264
+attach block: block time: 0.036133766174316406 current time:1679856031.5116544
+attach block: block time: 0.02817225456237793 current time:1679856031.5497406
+attach block: block time: 0.03804755210876465 current time:1679856031.6647515
+attach block: block time: 0.03666377067565918 current time:1679856031.8340757
+attach block: block time: 0.034990549087524414 current time:1679856031.9431007
+attach block: block time: 0.041383981704711914 current time:1679856032.0978887
+attach block: block time: 0.03652644157409668 current time:1679856032.1444774
+creating new block at time: 1679856032.237384
+attach block: block time: 0.004974365234375 current time:1679856032.2423992
+attach block: block time: 0.04216146469116211 current time:1679856032.4328263
+attach block: block time: 0.02655506134033203 current time:1679856032.5612192
+attach block: block time: 0.03787088394165039 current time:1679856032.6803455
+attach block: block time: 0.038141727447509766 current time:1679856032.750933
+attach block: block time: 0.038079261779785156 current time:1679856032.8605685
+attach block: block time: 0.04056954383850098 current time:1679856033.0136852
+attach block: block time: 0.0391845703125 current time:1679856033.1612813
+creating new block at time: 1679856033.2505932
+attach block: block time: 0.008661985397338867 current time:1679856033.259312
+attach block: block time: 0.03752326965332031 current time:1679856033.345211
+attach block: block time: 0.03451824188232422 current time:1679856033.481493
+attach block: block time: 0.039536476135253906 current time:1679856033.5977948
+attach block: block time: 0.02710247039794922 current time:1679856033.7558284
+attach block: block time: 0.040406227111816406 current time:1679856033.881678
+attach block: block time: 0.03395438194274902 current time:1679856034.0245745
+attach block: block time: 0.03695058822631836 current time:1679856034.0745175
+creating new block at time: 1679856034.1684432
+attach block: block time: 0.006707906723022461 current time:1679856034.1751928
+attach block: block time: 0.03615880012512207 current time:1679856034.3617942
+attach block: block time: 0.031949520111083984 current time:1679856034.4942405
+attach block: block time: 0.037499427795410156 current time:1679856034.614123
+attach block: block time: 0.040570735931396484 current time:1679856034.6815755
+attach block: block time: 0.0378720760345459 current time:1679856034.7966535
+attach block: block time: 0.043210506439208984 current time:1679856034.9463356
+creating new block at time: 1679856035.083472
+attach block: block time: 0.038667917251586914 current time:1679856035.0931742
+attach block: block time: 0.005176544189453125 current time:1679856035.0998354
+attach block: block time: 0.041805267333984375 current time:1679856035.2831023
+attach block: block time: 0.041553497314453125 current time:1679856035.4178786
+creating new block at time: 1679856036.107665
 
- NODE #7 - BLOCK #157 - b'\x04|1\xd2\x91\xfd\xdd\xb0\xa2\x19K\xa9[\xe7\xe7y\xb9`\x8a\x95'
+ NODE #8 - BLOCK #92 - b'\x02\xd0QA\xa7\x80\x83\x18\xfbJ\x8eCFxc\xceS8?\x14'
 	------------------
-	Transaction Id: 50e590aa1f703491b19acc391abd9405bbe573d6
+	Transaction Id: 4d8f2f20e5d8e3671b277ea02a28f38681c75b39
 	Amount: 4
-	Sender: PublicKey(8149593976566626717063756710445533360810208893026601415788648910936325806894268344787912621817034545935156127653290274959949503315337989973682210717062943, 65537)
-	Receiver: PublicKey(8549724008886332617707645970699555587581769599396984045144899818543581327442312605399460073331074834819871853745819321351327839640468460844205732401400561, 65537)
+	Sender: PublicKey(6879468817147903527626674587862064090214644669195041998985345700151739231294336336903859417584708526277522366088836086955725213620734517964154078009183341, 65537)
+	Receiver: PublicKey(7609836631090490687006387450043140308052955148494575515555186219714797730962633678450049417784663043292157877879553723710428975117707443955143266750469239, 65537)
 	------------------
 			
 
 []
 []
-158
+79
+93
