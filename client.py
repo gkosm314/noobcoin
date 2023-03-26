@@ -58,6 +58,7 @@ else:
 
 print("Initializing noobcoin node...")
 wrapper = node_network_wrapper(ip, port, config.BOOTSTRAP_IP, config.BOOTSTRAP_PORT, config.TOTAL_NODES, is_bootstrap)
+time.sleep(10)
 n = wrapper.node    
 parse_cmdline()
 
