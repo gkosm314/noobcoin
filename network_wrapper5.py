@@ -176,7 +176,7 @@ if __name__=="__main__":
     config.TOTAL_NODES = total_nodes_cmd_arg
 
     def test_func(n):
-        time.sleep(360)
+        time.sleep(50)
         n.view_transactions()
         print(n.current_block.transactions)
         print(n.transactions_buffer)

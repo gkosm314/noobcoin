@@ -51,6 +51,14 @@ def calc_single_c_d_n(capasity, difficulty, total_nodes):
 
     return (avg(throughput_all_nodes), avg(block_time_all_nodes))
 
+def calc_block_time(c, d, n):
+    _, b = calc_single_c_d_n(c, d, n)
+    return b
+
+def calc_throughput(c, d, n):
+    t, _ = calc_single_c_d_n(c, d, n)
+    return t
+
 
 cap = [1,5,10]
 throughput_d4 = []
@@ -58,6 +66,10 @@ blocktime_d4 = []
 
 throughput_d5 = []
 blocktime_d5 = []
+
+##########################################################
+##                    FOR 5 NODES                       ##
+##########################################################
 
 for c in cap:
     t, b = calc_single_c_d_n(c, 4, 10)
@@ -68,37 +80,78 @@ for c in cap:
     throughput_d5.append(t)
     blocktime_d5.append(b)
 
-    # print(throughput)
 
-##########################
-# Throughput vs capasity #
-##########################
+#------------------------|
+# Throughput vs capasity |
+#------------------------|
 fig, ax = plt.subplots(figsize=(6, 5), dpi=80)
 plt.plot(cap, throughput_d4, "--*", label="d=4")
 plt.plot(cap, throughput_d5, "--*", label="d=5")
 ax.legend()
-# plt.title("a")
+plt.title("Throughput vs capasity for 5 node system")
 plt.xlabel("Block capacity")
 plt.ylabel("Throughput (transactions/sec)")
-#show axis ticks only where points are
 ax.set_xticks(cap)
 ax.set_yticks(throughput_d4+throughput_d5)
 
 
-##########################
-# Block time vs capasity #
-##########################
-fig, ax = plt.subplots(figsize=(6, 5), dpi=80)
+#------------------------|
+# Block time vs capasity |
+#------------------------|
+fig, ax = plt.subplots() #figsize=(6, 5), dpi=80
 plt.plot(cap, blocktime_d4, "--*", label="d=4")
 plt.plot(cap, blocktime_d5, "--*", label="d=5")
 ax.legend()
-# plt.title("a")
+plt.title("Block time vs capasity for 5 node system")
 plt.xlabel("Block capacity")
 plt.ylabel("Block time (sec)")
-#show axis ticks only where points are
 ax.set_xticks(cap)
 ax.set_yticks(blocktime_d4+blocktime_d5)
 
+
+
+##########################################################
+##                    FOR 10 NODES                      ##
+##########################################################
+
+#------------------------|
+# Throughput vs nodes    |
+#------------------------|
+
+fig, ax = plt.subplots() #figsize=(6, 5), dpi=80
+plt.plot([5, 10], [calc_throughput(1, 4, 5), calc_throughput(1, 4, 10)], "--*", label="c=1, d=4")
+plt.plot([5, 10], [calc_throughput(5, 4, 5), calc_throughput(5, 4, 10)], "--*", label="c=5, d=4")
+plt.plot([5, 10], [calc_throughput(10, 4, 5), calc_throughput(10, 4, 10)], "--*", label="c=10, d=4")
+plt.plot([5, 10], [calc_throughput(1, 5, 5), calc_throughput(1, 5, 10)], "--*", label="c=1, d=5")
+plt.plot([5, 10], [calc_throughput(5, 5, 5), calc_throughput(5, 5, 10)], "--*", label="c=5, d=5")
+plt.plot([5, 10], [calc_throughput(10, 5, 5), calc_throughput(10, 5, 10)], "--*", label="c=10, d=5")
+
+ax.legend()
+plt.title("Scaling of throughput")
+plt.xlabel("Number of nodes")
+plt.ylabel("Throughput (transactions/sec)")
+ax.set_xticks([5,10])
+ax.set_yticks(blocktime_d4_c1+blocktime_d4_c5+blocktime_d4_c10+blocktime_d5_c1+blocktime_d5_c5+blocktime_d5_c10)
+
+
+#------------------------|
+# Block time vs nodes    |
+#------------------------|
+
+fig, ax = plt.subplots(figsize=(6, 5), dpi=80)
+plt.plot([5, 10], [calc_block_time(1, 4, 5), calc_block_time(1, 4, 10)], "--*", label="c=1, d=4")
+plt.plot([5, 10], [calc_block_time(5, 4, 5), calc_block_time(5, 4, 10)], "--*", label="c=5, d=4")
+plt.plot([5, 10], [calc_block_time(10, 4, 5), calc_block_time(10, 4, 10)], "--*", label="c=10, d=4")
+plt.plot([5, 10], [calc_block_time(1, 5, 5), calc_block_time(1, 5, 10)], "--*", label="c=1, d=5")
+plt.plot([5, 10], [calc_block_time(5, 5, 5), calc_block_time(5, 5, 10)], "--*", label="c=5, d=5")
+plt.plot([5, 10], [calc_block_time(10, 5, 5), calc_block_time(10, 5, 10)], "--*", label="c=10, d=5")
+
+ax.legend()
+plt.title("Scaling of block time")
+plt.xlabel("Number of nodes")
+plt.ylabel("Block time (sec)")
+ax.set_xticks([5,10])
+ax.set_yticks(blocktime_d4_c1+blocktime_d4_c5+blocktime_d4_c10+blocktime_d5_c1+blocktime_d5_c5+blocktime_d5_c10)
 
 
 
