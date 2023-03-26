@@ -10,149 +10,149 @@ import config
 import node
 import rest_api
 import wallet
+from network_wrapper5 import *
 
-
-class node_network_wrapper:
+# class node_network_wrapper:
     
-    def __init__(self, node_ip_arg, node_port_arg, bootstrap_ip_arg, bootstrap_port_arg, total_nodes_arg, is_bootstrap):
-        if not is_bootstrap:
-            self.node = node.uninitialized_node()
-        else:
-            self.bootstrap_node = node.bootstrap_node(total_nodes_arg, bootstrap_ip_arg, bootstrap_port_arg)
-            self.nodes_cnt = 1 # take into account bootstrap
+#     def __init__(self, node_ip_arg, node_port_arg, bootstrap_ip_arg, bootstrap_port_arg, total_nodes_arg, is_bootstrap):
+#         if not is_bootstrap:
+#             self.node = node.uninitialized_node()
+#         else:
+#             self.bootstrap_node = node.bootstrap_node(total_nodes_arg, bootstrap_ip_arg, bootstrap_port_arg)
+#             self.nodes_cnt = 1 # take into account bootstrap
 
-        self.ip = node_ip_arg     
-        self.port = node_port_arg 
-        self.bootstrap_ip = bootstrap_ip_arg
-        self.bootstrap_port = bootstrap_port_arg
+#         self.ip = node_ip_arg     
+#         self.port = node_port_arg 
+#         self.bootstrap_ip = bootstrap_ip_arg
+#         self.bootstrap_port = bootstrap_port_arg
 
-        self.api_server = rest_api.node_api_server(self.ip, self.port, self)
-        self.registration_completed = False 
-        self.init_state_bcast_completed = False 
+#         self.api_server = rest_api.node_api_server(self.ip, self.port, self)
+#         self.registration_completed = False 
+#         self.init_state_bcast_completed = False 
 
-        self.api_server.run() 
+#         self.api_server.run() 
 
-        if not is_bootstrap:
-            time.sleep(3)
-            self.register()
+#         if not is_bootstrap:
+#             time.sleep(3)
+#             self.register()
 
-            while 1:
-                if self.registration_completed:
-                    logging.info("node registered")
-                    break
-                time.sleep(1)
-        else:
-            while 1:
-                if self.registration_completed: 
-                    logging.info("All nodes registered")
-                    break
-                time.sleep(1)
+#             while 1:
+#                 if self.registration_completed:
+#                     logging.info("node registered")
+#                     break
+#                 time.sleep(1)
+#         else:
+#             while 1:
+#                 if self.registration_completed: 
+#                     logging.info("All nodes registered")
+#                     break
+#                 time.sleep(1)
         
-            time.sleep(10)
-            self.bcast_initial_state()
+#             time.sleep(10)
+#             self.bcast_initial_state()
             
-            self.node = self.bootstrap_node.produce_node()
+#             self.node = self.bootstrap_node.produce_node()
 
 
-    def register(self):
-        '''send public key to bootstrap'''
+#     def register(self):
+#         '''send public key to bootstrap'''
 
-        headers = {"Content-Type": "application/json; charset=utf-8"}
+#         headers = {"Content-Type": "application/json; charset=utf-8"}
         
-        payload_dict = {
-            "my_public_key": self.node.wallet.public_key, 
-            "my_ip": self.ip, 
-            "my_port": self.port
-        }
-        payload_json = jsonpickle.encode(payload_dict, keys=True)
+#         payload_dict = {
+#             "my_public_key": self.node.wallet.public_key, 
+#             "my_ip": self.ip, 
+#             "my_port": self.port
+#         }
+#         payload_json = jsonpickle.encode(payload_dict, keys=True)
         
-        req = requests.post(f"http://{self.bootstrap_ip}:{self.bootstrap_port}/register", headers=headers, data = payload_json)
-        time.sleep(5)
-        logging.info("i just registered myself and received", req.json())
-        added_flag = req.json()['added']
-        my_id = req.json()['assigned_id']
-        if added_flag:
-            self.node.set_node_id(my_id)  
+#         req = requests.post(f"http://{self.bootstrap_ip}:{self.bootstrap_port}/register", headers=headers, data = payload_json)
+#         time.sleep(5)
+#         logging.info("i just registered myself and received", req.json())
+#         added_flag = req.json()['added']
+#         my_id = req.json()['assigned_id']
+#         if added_flag:
+#             self.node.set_node_id(my_id)  
 
-    def save_net_info(self, public_keys_table_arg, ips_table_arg, genesis_block_arg):
-        self.node.set_network_info_table(ips_table_arg)
-        self.node.set_public_key_table(public_keys_table_arg)
-        self.node.set_genesis_block(genesis_block_arg)
+#     def save_net_info(self, public_keys_table_arg, ips_table_arg, genesis_block_arg):
+#         self.node.set_network_info_table(ips_table_arg)
+#         self.node.set_public_key_table(public_keys_table_arg)
+#         self.node.set_genesis_block(genesis_block_arg)
 
-        self.node = self.node.produce_node()
-        logging.info("saving info...")
-        self.registration_completed = True
+#         self.node = self.node.produce_node()
+#         logging.info("saving info...")
+#         self.registration_completed = True
 
-    def handle_incoming_tx(self, tx):
-        self.node.receive_transaction(tx)
+#     def handle_incoming_tx(self, tx):
+#         self.node.receive_transaction(tx)
 
-    def handle_incoming_block(self, b):
-        self.node.receive_block(b, True)
+#     def handle_incoming_block(self, b):
+#         self.node.receive_block(b, True)
 
-    def get_blockchain_length(self):
-        return len(self.node.current_blockchain)
+#     def get_blockchain_length(self):
+#         return len(self.node.current_blockchain)
 
-    def get_blockchain_diff(self, hashes_list):
-        i = 0
-        if len(hashes_list) > len(self.node.current_blockchain):
-            return ([], hashes_list[-1], len(hashes_list))
-        while i < len(hashes_list):
-            if hashes_list[i] == self.node.current_blockchain.chain[i].current_hash: 
-                i+=1
-            else:
-                break
-        diff = self.node.current_blockchain.chain[i:]
-        # print(diff)
-        if not diff: # diff is empty
-            parent_hash = hashes_list[-1]
-        else:    
-            parent_hash = diff[0].previous_hash
-        # print(parent_hash)
-        return (diff, parent_hash, len(self.node.current_blockchain))
+#     def get_blockchain_diff(self, hashes_list):
+#         i = 0
+#         if len(hashes_list) > len(self.node.current_blockchain):
+#             return ([], hashes_list[-1], len(hashes_list))
+#         while i < len(hashes_list):
+#             if hashes_list[i] == self.node.current_blockchain.chain[i].current_hash: 
+#                 i+=1
+#             else:
+#                 break
+#         diff = self.node.current_blockchain.chain[i:]
+#         # print(diff)
+#         if not diff: # diff is empty
+#             parent_hash = hashes_list[-1]
+#         else:    
+#             parent_hash = diff[0].previous_hash
+#         # print(parent_hash)
+#         return (diff, parent_hash, len(self.node.current_blockchain))
 
-    def register_node(self, node_ip, node_port, node_public_key): 
-        new_id = self.bootstrap_node.add_node(node_public_key, node_ip, node_port)
+#     def register_node(self, node_ip, node_port, node_public_key): 
+#         new_id = self.bootstrap_node.add_node(node_public_key, node_ip, node_port)
         
-        if (new_id == -1): # node has been already added
-            return {"added": False, "assigned_id": -1}
+#         if (new_id == -1): # node has been already added
+#             return {"added": False, "assigned_id": -1}
 
-        self.nodes_cnt+=1
+#         self.nodes_cnt+=1
 
-        if (self.nodes_cnt == self.bootstrap_node.number_of_nodes): # all nodes have registered
-            self.registration_completed = True
+#         if (self.nodes_cnt == self.bootstrap_node.number_of_nodes): # all nodes have registered
+#             self.registration_completed = True
 
-        elif (self.nodes_cnt > self.bootstrap_node.number_of_nodes): # all nodes have registered
-            return {"added": False, "assigned_id": -2}
+#         elif (self.nodes_cnt > self.bootstrap_node.number_of_nodes): # all nodes have registered
+#             return {"added": False, "assigned_id": -2}
 
-        return {"added": True, "assigned_id": new_id}
+#         return {"added": True, "assigned_id": new_id}
 
-    def bcast_initial_state(self):
-        '''Broadcast to all the nodes the network info table, public key table and genesis block'''
+#     def bcast_initial_state(self):
+#         '''Broadcast to all the nodes the network info table, public key table and genesis block'''
         
-        logging.info("broadcasting init state")
-        headers = {"Content-Type": "application/json; charset=utf-8"}
-        payload_dict = {
-            "public_keys_table": self.bootstrap_node.public_key_table, 
-            "ips_table": self.bootstrap_node.network_info_table, 
-            "genesis_block": self.bootstrap_node.g
-        }
-        payload_json = jsonpickle.encode(payload_dict, keys=True)
+#         logging.info("broadcasting init state")
+#         headers = {"Content-Type": "application/json; charset=utf-8"}
+#         payload_dict = {
+#             "public_keys_table": self.bootstrap_node.public_key_table, 
+#             "ips_table": self.bootstrap_node.network_info_table, 
+#             "genesis_block": self.bootstrap_node.g
+#         }
+#         payload_json = jsonpickle.encode(payload_dict, keys=True)
         
-        def unicast(network_info_tuple_arg, payload_json_arg):
-            ip, port = network_info_tuple_arg
-            req = requests.post(f"http://{ip}:{port}/post_net_info", headers=headers, data = payload_json_arg)
+#         def unicast(network_info_tuple_arg, payload_json_arg):
+#             ip, port = network_info_tuple_arg
+#             req = requests.post(f"http://{ip}:{port}/post_net_info", headers=headers, data = payload_json_arg)
             
-        pool = Pool(self.bootstrap_node.number_of_nodes-1)
+#         pool = Pool(self.bootstrap_node.number_of_nodes-1)
         
-        for public_key, network_info_tuple in self.bootstrap_node.network_info_table.items():
-            if public_key == self.bootstrap_node.wallet.public_key:
-                # don't broadcast to self
-                continue
+#         for public_key, network_info_tuple in self.bootstrap_node.network_info_table.items():
+#             if public_key == self.bootstrap_node.wallet.public_key:
+#                 # don't broadcast to self
+#                 continue
         
-            pool.apply_async(unicast, (network_info_tuple, payload_json,))
+#             pool.apply_async(unicast, (network_info_tuple, payload_json,))
 
-        pool.close()
-        pool.join()
+#         pool.close()
+#         pool.join()
     
 if __name__=="__main__":
     # logging.basicConfig(level=logging.WARNING)
