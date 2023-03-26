@@ -28,11 +28,10 @@ def parse_cmdline():
                 print("Wrong arguments.")
             else:
                 n.create_transaction(recipient_id,amount)
-                print(f"create {recipient_id} {amount}")
+                print(f"creating {recipient_id} {amount}...")
 
         elif cmd[0] == "view" and len(cmd) == 1:
-            n.view_transaction()
-            print("view...")
+            n.view_transactions()
 
         elif cmd[0] == "balance"  and len(cmd) == 1:
             print(f"balance: {n.wallet_balance(n.node_id)}")
