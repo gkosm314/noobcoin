@@ -54,6 +54,7 @@ class node_network_wrapper:
             self.node = self.bootstrap_node.produce_node()
 
             for node_id in self.node.public_key.keys():
+                print('sending to node {node_id}')
                 if node_id == self.node.node_id:
                     continue
                 self.node.create_transaction(node_id, 100)
